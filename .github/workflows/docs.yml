@@ -6,13 +6,18 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
-    name: "Doxygen + Sphinx → GitHub Pages"
+  build:
+    name: "Doxygen + Sphinx → artifact"
     runs-on: ubuntu-22.04
-
     steps:
     - uses: actions/checkout@v4
 
@@ -22,9 +27,7 @@ jobs:
         sudo apt-get install -y doxygen
 
     - name: Install Python dependencies
-      run: |
-        python3 -m pip install --upgrade pip
-        python3 -m pip install -r docs/requirements.txt
+      run: python3 -m pip install -r docs/requirements.txt
 
     - name: Build Doxygen XML
       working-directory: ./docs
@@ -32,17 +35,26 @@ jobs:
         mkdir -p _doxygen/xml
         doxygen Doxyfile
 
+    - name: Setup Pages
+      uses: actions/configure-pages@v5
+
     - name: Build Sphinx HTML
       working-directory: ./docs
       run: python3 -m sphinx -M html . _build -n -q
 
-    - name: Add nojekyll
-      run: touch docs/_build/html/.nojekyll
-
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4
+    - name: Upload Pages artifact
+      uses: actions/upload-pages-artifact@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs/_build/html
-        publish_branch: gh-pages
-        force_orphan: true
+        path: docs/_build/html
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-22.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
