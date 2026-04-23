@@ -1,0 +1,46 @@
+name: Build and deploy C++ API docs
+
+on:
+  push:
+    branches: [api-docs/preview]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    name: "Doxygen + Sphinx → GitHub Pages"
+    runs-on: ubuntu-22.04
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update -q
+        sudo apt-get install -y doxygen
+
+    - name: Install Python dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        python3 -m pip install sphinx sphinx-inline-tabs breathe
+
+    - name: Build Doxygen XML
+      working-directory: ./docs
+      run: doxygen Doxyfile
+
+    - name: Build Sphinx HTML
+      working-directory: ./docs
+      run: python3 -m sphinx -M html . _build -n -q
+
+    - name: Add nojekyll
+      run: touch docs/_build/html/.nojekyll
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs/_build/html
+        publish_branch: gh-pages
+        force_orphan: true
