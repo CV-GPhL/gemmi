@@ -94,6 +94,7 @@ Contents
    ChangeLog <https://github.com/project-gemmi/gemmi/releases>
    Python API reference <https://project-gemmi.github.io/python-api/>
    api
+   C++ API (Doxygen HTML) <doxygen/index.html>
 
 Credits
 =======

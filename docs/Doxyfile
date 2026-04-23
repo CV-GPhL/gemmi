@@ -20,11 +20,13 @@ EXCLUDE_PATTERNS       = ace_*.hpp \
                          ccp4ener.hpp \
                          mmcif_impl.hpp
 
-# Output: XML only (Breathe consumes this; Sphinx produces HTML)
+# Output: XML for Breathe/Sphinx, and standalone HTML
 GENERATE_XML           = YES
-GENERATE_HTML          = NO
+GENERATE_HTML          = YES
 GENERATE_LATEX         = NO
 XML_OUTPUT             = _doxygen/xml
+HTML_OUTPUT            = _doxygen/html
+GENERATE_TREEVIEW      = YES
 
 # Extraction
 EXTRACT_ALL            = YES
