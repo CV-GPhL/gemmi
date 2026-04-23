@@ -28,7 +28,9 @@ jobs:
 
     - name: Build Doxygen XML
       working-directory: ./docs
-      run: doxygen Doxyfile
+      run: |
+        mkdir -p _doxygen/xml
+        doxygen Doxyfile
 
     - name: Build Sphinx HTML
       working-directory: ./docs
