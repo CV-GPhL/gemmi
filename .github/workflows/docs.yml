@@ -6,17 +6,11 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
+  contents: write
 
 jobs:
-  build:
-    name: "Doxygen + Sphinx → artifact"
+  build-and-deploy:
+    name: "Doxygen + Sphinx → gh-pages"
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
@@ -35,9 +29,6 @@ jobs:
         mkdir -p _doxygen/xml _doxygen/html
         doxygen Doxyfile
 
-    - name: Setup Pages
-      uses: actions/configure-pages@v5
-
     - name: Build Sphinx HTML
       working-directory: ./docs
       run: python3 -m sphinx -M html . _build -n -q
@@ -45,19 +36,10 @@ jobs:
     - name: Copy Doxygen HTML into Sphinx output
       run: cp -r docs/_doxygen/html docs/_build/html/doxygen
 
-    - name: Upload Pages artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: docs/_build/html
-
-  deploy:
-    name: Deploy to GitHub Pages
-    needs: build
-    runs-on: ubuntu-22.04
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
     - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: docs/_build/html
+        publish_branch: gh-pages
+        force_orphan: true
