@@ -1,0 +1,24 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node174 [label="tao::pegtl::if_must",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node174 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 [label="gemmi::cif::rules::\lquoted\< pegtl::one\<'\"'\> \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1cif_1_1rules_1_1quoted.html",tooltip=" "];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="gemmi::cif::rules::\ldoublequoted",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1cif_1_1rules_1_1doublequoted.html",tooltip=" "];
+  Node174 -> Node177 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node177 [label="gemmi::cif::rules::\lcomment",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1cif_1_1rules_1_1comment.html",tooltip=" "];
+  Node174 -> Node178 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node178 [label="gemmi::cif::rules::\ldataitem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1cif_1_1rules_1_1dataitem.html",tooltip=" "];
+  Node174 -> Node179 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node179 [label="gemmi::cif::rules::\lframe",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1cif_1_1rules_1_1frame.html",tooltip=" "];
+  Node174 -> Node180 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node180 [label="gemmi::cif::rules::loop",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1cif_1_1rules_1_1loop.html",tooltip=" "];
+  Node174 -> Node181 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node181 [label="gemmi::cif::rules::\lquoted\< Q \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1cif_1_1rules_1_1quoted.html",tooltip=" "];
+  Node174 -> Node182 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node182 [label="gemmi::cif::rules::\ltextfield",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1cif_1_1rules_1_1textfield.html",tooltip=" "];
+}

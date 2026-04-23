@@ -1,0 +1,27 @@
+var structgemmi_1_1GruberVector =
+[
+    [ "GruberVector", "structgemmi_1_1GruberVector.html#abd57160b2c2c07a71b2da7026ed92e8d", null ],
+    [ "GruberVector", "structgemmi_1_1GruberVector.html#a0b5f585567cc2fb58f3774ed23737ed0", null ],
+    [ "GruberVector", "structgemmi_1_1GruberVector.html#aaa12f9ae0212120442d7bbfd31f93895", null ],
+    [ "GruberVector", "structgemmi_1_1GruberVector.html#a456a91ef907502867089854ce48f9b9b", null ],
+    [ "buerger_reduce", "structgemmi_1_1GruberVector.html#aa41f2ad19c2afd8c856ad7d1138c3e4f", null ],
+    [ "buerger_step", "structgemmi_1_1GruberVector.html#aa7544e1bda0a28badd1b1948c4623f6a", null ],
+    [ "cell_parameters", "structgemmi_1_1GruberVector.html#af39d87807a234a9e106a4882d9efe7b2", null ],
+    [ "get_cell", "structgemmi_1_1GruberVector.html#ab8a5ba0af467abec747590eac30ad00a", null ],
+    [ "is_buerger", "structgemmi_1_1GruberVector.html#a5cceef9e72412497e23b0abfcb2db64d", null ],
+    [ "is_niggli", "structgemmi_1_1GruberVector.html#a7fca13ccee58bcabc426d311f5b09d4e", null ],
+    [ "is_normalized", "structgemmi_1_1GruberVector.html#a7c263b5929218a68703da22333442499", null ],
+    [ "niggli_reduce", "structgemmi_1_1GruberVector.html#a335c3634c68b8406461b4ab0502d8de3", null ],
+    [ "niggli_step", "structgemmi_1_1GruberVector.html#a34873142be11b69fff8007af892d09f7", null ],
+    [ "normalize", "structgemmi_1_1GruberVector.html#a287f97ae02371e77d2161a51cd45c5ff", null ],
+    [ "parameters", "structgemmi_1_1GruberVector.html#a7973337a3ae4e4fd7e15a6beb189fbde", null ],
+    [ "selling", "structgemmi_1_1GruberVector.html#a569d4b0dff33ca4934151262d683303a", null ],
+    [ "set_change_of_basis", "structgemmi_1_1GruberVector.html#a11aacee47f950ec22391bd7904e5c6e6", null ],
+    [ "A", "structgemmi_1_1GruberVector.html#a33d39df5ace68fdef33d90192ffd0b63", null ],
+    [ "B", "structgemmi_1_1GruberVector.html#a9976bf2be5ca75ec338421dce9a751e4", null ],
+    [ "C", "structgemmi_1_1GruberVector.html#a1329ddde912f04f3cfa1530060f9c563", null ],
+    [ "change_of_basis", "structgemmi_1_1GruberVector.html#a5f78c3e5e1ae75b3b34f9a58e3d7dc23", null ],
+    [ "eta", "structgemmi_1_1GruberVector.html#a7aafd2dcecb84c653008bb5039e4dd51", null ],
+    [ "xi", "structgemmi_1_1GruberVector.html#a6c1d2570b7ec972f97f3a066260edebd", null ],
+    [ "zeta", "structgemmi_1_1GruberVector.html#adaa0ef4d1f2630f384dbc405203e04af", null ]
+];

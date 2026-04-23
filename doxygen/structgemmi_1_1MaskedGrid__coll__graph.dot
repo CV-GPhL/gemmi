@@ -1,0 +1,25 @@
+digraph "gemmi::MaskedGrid&lt; T, V &gt;"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="gemmi::MaskedGrid\<\l T, V \>",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" grid" ,fontname="Helvetica"];
+  Node2 [label="gemmi::Grid\< T \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1Grid.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="gemmi::GridBase\< T \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1GridBase.html",tooltip="Common base for Grid and ReciprocalGrid templates."];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="gemmi::GridMeta",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1GridMeta.html",tooltip="Metadata common to all grid types (not dependent on stored data type)."];
+  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" unit_cell" ,fontname="Helvetica"];
+  Node5 [label="gemmi::UnitCell",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1UnitCell.html",tooltip="Unit cell with pre-calculated transformation matrices and properties. Stores crystallographic unit ce..."];
+  Node6 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="gemmi::UnitCellParameters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1UnitCellParameters.html",tooltip="Base parameters for a unit cell (6 parameters: 3 lengths and 3 angles). Stores the six independent pa..."];
+  Node7 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" frac\north" ,fontname="Helvetica"];
+  Node7 [label="gemmi::Transform",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1Transform.html",tooltip="Affine transformation: y = mat * x + vec."];
+  Node8 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" mat" ,fontname="Helvetica"];
+  Node8 [label="gemmi::Mat33",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1Mat33.html",tooltip="3×3 matrix of doubles"];
+  Node9 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" vec" ,fontname="Helvetica"];
+  Node9 [label="gemmi::Vec3_\< double \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1Vec3__.html",tooltip=" "];
+  Node10 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" spacegroup" ,fontname="Helvetica"];
+  Node10 [label="gemmi::SpaceGroup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1SpaceGroup.html",tooltip="A crystallographic space group definition."];
+}

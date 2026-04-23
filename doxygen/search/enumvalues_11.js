@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['t_6554',['T',['../namespacegemmi.html#a40476b27b97bc7ac8284d3b077b36cbfab9ece18c950afbfa6b0fdbfa4ff731d3',1,'gemmi']]],
+  ['ta_6555',['Ta',['../namespacegemmi.html#a94546274ac42b2449734db86790c2cb5a86a1ea3adf8fbb53eb7a9b6b6b01c020',1,'gemmi']]],
+  ['tb_6556',['Tb',['../namespacegemmi.html#a94546274ac42b2449734db86790c2cb5abd63cda5e59ddb168ec03847f26b831b',1,'gemmi']]],
+  ['tc_6557',['Tc',['../namespacegemmi.html#a94546274ac42b2449734db86790c2cb5a1e165145a97571da936032f6bdc25987',1,'gemmi']]],
+  ['td_6558',['Td',['../namespacegemmi.html#a40476b27b97bc7ac8284d3b077b36cbfa7205636bb6ee2cc464c30ce1cda43caa',1,'gemmi']]],
+  ['te_6559',['Te',['../namespacegemmi.html#a94546274ac42b2449734db86790c2cb5a2408730ad248ad4e4aa36fb14f5e0631',1,'gemmi']]],
+  ['tetragonal_6560',['Tetragonal',['../namespacegemmi.html#aef6247ca0a6a25cc3825d783c8d33cdaa97c0069c1c88eef33e1c1db21d38de43',1,'gemmi']]],
+  ['th_6561',['Th',['../namespacegemmi.html#a94546274ac42b2449734db86790c2cb5aeeeb9a8eb45dd351d9ec0eb4acce66ce',1,'gemmi::Th()'],['../namespacegemmi.html#a40476b27b97bc7ac8284d3b077b36cbfaeeeb9a8eb45dd351d9ec0eb4acce66ce',1,'gemmi::Th()']]],
+  ['ti_6562',['Ti',['../namespacegemmi.html#a94546274ac42b2449734db86790c2cb5a5bcf1228cc875c5071ead303f941a4db',1,'gemmi']]],
+  ['tl_6563',['Tl',['../namespacegemmi.html#a94546274ac42b2449734db86790c2cb5a0de3ba01184b62b2d8e5b01ca4842f76',1,'gemmi']]],
+  ['tm_6564',['Tm',['../namespacegemmi.html#a94546274ac42b2449734db86790c2cb5a0f3526400dc9d9fd89be71e0074ee009',1,'gemmi']]],
+  ['torsion_6565',['Torsion',['../structgemmi_1_1Topo.html#aabd72360df0914b2ce2556ac84ae9c37a326dff39a0698a0740c8be77528b89b8',1,'gemmi::Topo']]],
+  ['triclinic_6566',['Triclinic',['../namespacegemmi.html#aef6247ca0a6a25cc3825d783c8d33cdaa45d3988e303ecb4da2498e707d28ad39',1,'gemmi']]],
+  ['trigonal_6567',['Trigonal',['../namespacegemmi.html#aef6247ca0a6a25cc3825d783c8d33cdaae8ae83920b1b094435999b5380270e72',1,'gemmi']]],
+  ['triple_6568',['Triple',['../namespacegemmi.html#ae924d6b4137d52b14f2dee82fe3a1df1a3b973d4da6ce40c0eb65394fb6222971',1,'gemmi']]],
+  ['ts_6569',['Ts',['../namespacegemmi.html#a94546274ac42b2449734db86790c2cb5a6a2389c404bc1b338fb35293fd4c19d3',1,'gemmi']]],
+  ['turn_6570',['Turn',['../namespacegemmi.html#a1628699b3f3e8c388de96122a4ddcdd8a6b12be2513bab07567150f54467bc568',1,'gemmi']]],
+  ['turn_5f3_6571',['Turn_3',['../namespacegemmi.html#a2d4c9c44aac77f6c7e9cc9e3c2995c89a4f08c389615f4de6b534d6ab2696c17c',1,'gemmi']]],
+  ['turn_5f4_6572',['Turn_4',['../namespacegemmi.html#a2d4c9c44aac77f6c7e9cc9e3c2995c89ac91f2386e30d135ec7a8f27382ed2795',1,'gemmi']]],
+  ['turn_5f5_6573',['Turn_5',['../namespacegemmi.html#a2d4c9c44aac77f6c7e9cc9e3c2995c89a77e7773231c677436fede344fb93bb8f',1,'gemmi']]],
+  ['turn_5fpp_6574',['Turn_PP',['../namespacegemmi.html#a2d4c9c44aac77f6c7e9cc9e3c2995c89ac98472ecfd8f81927c7aee86b6e33a3b',1,'gemmi']]]
+];

@@ -1,0 +1,20 @@
+digraph "gemmi::Topo::Link"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="gemmi::Topo::Link",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="A link between two residues with associated restraints."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" aliasing1\naliasing2" ,fontname="Helvetica"];
+  Node2 [label="gemmi::ChemComp::Aliasing",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1ChemComp_1_1Aliasing.html",tooltip="Atom naming aliasing for a specific polymer group."];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" res1\nres2" ,fontname="Helvetica"];
+  Node3 [label="gemmi::Residue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1Residue.html",tooltip="Represents a single residue (amino acid, nucleotide, or other). A residue is identified by its number..."];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="gemmi::ResidueId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1ResidueId.html",tooltip="Complete residue identifier: sequence ID + segment + residue name."];
+  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" seqid" ,fontname="Helvetica"];
+  Node5 [label="gemmi::SeqId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1SeqId.html",tooltip="Residue sequence identifier: sequence number plus insertion code."];
+  Node6 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" num" ,fontname="Helvetica"];
+  Node6 [label="gemmi::OptionalInt\l\< INT_MIN \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1OptionalInt.html",tooltip=" "];
+  Node7 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" sifts_unp" ,fontname="Helvetica"];
+  Node7 [label="gemmi::SiftsUnpResidue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1SiftsUnpResidue.html",tooltip="Reference to a UniProt residue via SIFTS mapping."];
+  Node6 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" label_seq" ,fontname="Helvetica"];
+}

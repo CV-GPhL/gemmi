@@ -1,0 +1,27 @@
+var structgemmi_1_1XdsAsciiMetadata =
+[
+    [ "Iset", "structgemmi_1_1XdsAsciiMetadata_1_1Iset.html", "structgemmi_1_1XdsAsciiMetadata_1_1Iset" ],
+    [ "cell_axes", "structgemmi_1_1XdsAsciiMetadata.html#a50cec7e2b94b571ba11e27745b881824", null ],
+    [ "cell_constants", "structgemmi_1_1XdsAsciiMetadata.html#ac68ed5aa38c5f0c8a8ed804f4f4d014e", null ],
+    [ "detector_distance", "structgemmi_1_1XdsAsciiMetadata.html#a343d94f6e1e40d7682c2b696431c8698", null ],
+    [ "friedels_law", "structgemmi_1_1XdsAsciiMetadata.html#ab865a8597b54e0a474fb4586055b5dc9", null ],
+    [ "generated_by", "structgemmi_1_1XdsAsciiMetadata.html#af4a5199584dd736c36c440b26adfef0f", null ],
+    [ "incident_beam_dir", "structgemmi_1_1XdsAsciiMetadata.html#a7898f2102fff3a170a9fc95f853559f5", null ],
+    [ "isets", "structgemmi_1_1XdsAsciiMetadata.html#ad617be145289095f856b3382430a0ea4", null ],
+    [ "nx", "structgemmi_1_1XdsAsciiMetadata.html#aacc2f22ae56be141248c59764f61cfcf", null ],
+    [ "ny", "structgemmi_1_1XdsAsciiMetadata.html#ae9255e9f8c58c988945ac6468dd763a8", null ],
+    [ "orgx", "structgemmi_1_1XdsAsciiMetadata.html#a1803fb658aabd405a225e1fcbbfc83db", null ],
+    [ "orgy", "structgemmi_1_1XdsAsciiMetadata.html#a0a810ea2ef0577a38e5bda4e1da747f4", null ],
+    [ "oscillation_range", "structgemmi_1_1XdsAsciiMetadata.html#af39af3bf8d3b4c62eab71a02babcb859", null ],
+    [ "qx", "structgemmi_1_1XdsAsciiMetadata.html#ac60312e5c0cb2f246e7f8bd8d9e7888a", null ],
+    [ "qy", "structgemmi_1_1XdsAsciiMetadata.html#ad1add6ecebfe51db60a1810a4d3e5305", null ],
+    [ "read_columns", "structgemmi_1_1XdsAsciiMetadata.html#aaf8903699a68bc7c3a8a0e7ee0190557", null ],
+    [ "reflecting_range_esd", "structgemmi_1_1XdsAsciiMetadata.html#a0b966fd3fe18be5632cd197ac497f969", null ],
+    [ "rotation_axis", "structgemmi_1_1XdsAsciiMetadata.html#a8eedf7496af46e3f187cf51084312843", null ],
+    [ "source_path", "structgemmi_1_1XdsAsciiMetadata.html#aa255f7af65d40c655c31848dbd294beb", null ],
+    [ "spacegroup_number", "structgemmi_1_1XdsAsciiMetadata.html#af8dfac4943a6ea08601d0c395bedb01d", null ],
+    [ "starting_angle", "structgemmi_1_1XdsAsciiMetadata.html#a79e40366a9d77007e250bf7c8ad4c5eb", null ],
+    [ "starting_frame", "structgemmi_1_1XdsAsciiMetadata.html#a9132f99da15a516f8f3caf1aee1a166a", null ],
+    [ "version_str", "structgemmi_1_1XdsAsciiMetadata.html#a9d1f14d4d2d72731ecd6d61ae2447b99", null ],
+    [ "wavelength", "structgemmi_1_1XdsAsciiMetadata.html#aa7eb25c1df4f1d5c19994c1392e645a5", null ]
+];

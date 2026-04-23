@@ -1,0 +1,2020 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Macromolecular models" href="mol.html"><link rel="prev" title="Miscellaneous utils" href="misc.html">
+
+    <!-- Generated with Sphinx 8.1.3 and Furo 2025.12.19 -->
+        <title>Chemistry - Gemmi 0.7.6-dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=ee168a85" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Gemmi 0.7.6-dev documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  <span class="sidebar-brand-text">Gemmi 0.7.6-dev documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="install.html">Installation</a><input aria-label="Toggle navigation of Installation" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#c-library">C++ library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#python-module">Python module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#fortran-and-c-bindings">Fortran and C bindings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#webassembly">WebAssembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#program">Program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#testing">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="program.html">Gemmi program</a><input aria-label="Toggle navigation of Gemmi program" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="program.html#validate">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#grep">grep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#cif2json">cif2json</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#json2cif">json2cif</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#cifdiff">cifdiff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#convert">convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#set">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#tags">tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#map">map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#mask">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#mtz">mtz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#mtz2cif">mtz2cif</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#cif2mtz">cif2mtz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#sf2map">sf2map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#map2sf">map2sf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#merge">merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#ecalc">ecalc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#sfcalc">sfcalc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#fprime">fprime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#reindex">reindex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#residues">residues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#align">align</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#sg">sg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#contents">contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#contact">contact</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#blobs">blobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#h">h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#mondiff">mondiff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#crd">crd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#drg">drg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#wcn">wcn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#xds2mtz">xds2mtz</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Prerequisites</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="cif.html">CIF Parser</a><input aria-label="Toggle navigation of CIF Parser" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#what-are-star-cif-ddl-mmcif">What are STAR, CIF, DDL, mmCIF?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#what-is-parsed">What is parsed?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#dom-and-sax">DOM and SAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#reading-and-writing">Reading and writing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#document">Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#block">Block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#pairs-and-loops">Pairs and Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#column">Column</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#table">Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#validation">Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#design-choices">Design choices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="symmetry.html">Symmetry</a><input aria-label="Toggle navigation of Symmetry" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="symmetry.html#space-group-table">Space group table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetry.html#spacegroup">SpaceGroup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetry.html#operations">Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetry.html#groups-of-operations">Groups of Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetry.html#asu">ASU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetry.html#twinning">Twinning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetry.html#c-example">C++ Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetry.html#implementation-notes">Implementation notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="cell.html">Math and unit cell</a><input aria-label="Toggle navigation of Math and unit cell" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="cell.html#vectors-and-coordinates">Vectors and coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cell.html#x3-matrices">3x3 matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cell.html#transformations">Transformations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cell.html#box">Box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cell.html#unit-cell">Unit cell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cell.html#unit-cell-reduction">Unit cell reduction</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="misc.html">Miscellaneous utils</a><input aria-label="Toggle navigation of Miscellaneous utils" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#fasta-and-pir-reader">FASTA and PIR reader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#logger">Logger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#copy-of-the-pdb-archive">Copy of the PDB archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#directory-walking">Directory walking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#input-abstractions-decompressing-on-the-fly">Input abstractions (decompressing on the fly)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Working with Molecules</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Chemistry</a><input aria-label="Toggle navigation of Chemistry" checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="#elements">Elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#small-molecules">Small Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#chemical-components">Chemical Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#chemical-normalization">Chemical normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#monomer-library">Monomer library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gemmi-drg-high-level-overview">gemmi drg: high-level overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="mol.html">Macromolecular models</a><input aria-label="Toggle navigation of Macromolecular models" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#coordinate-files">Coordinate files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#structure">Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#model">Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#chain">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#residue">Residue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#atom">Atom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#atomaddress-and-cra">AtomAddress and CRA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#flat-structure-representation">Flat Structure Representation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="analysis.html">Structure analysis</a><input aria-label="Toggle navigation of Structure analysis" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#neighbor-search">Neighbor search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#contact-search">Contact search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#matthews-coefficient">Matthews coefficient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#sequence-alignment">Sequence alignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#superposition">Superposition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#selections-cid">Selections (CID)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#selections-pymol-syntax">Selections (PyMOL syntax)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#graph-analysis">Graph analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#torsion-angles">Torsion angles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#topology">Topology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#modelling-b-factors">Modelling B-factors</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Working with Data</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="grid.html">Grids and maps</a><input aria-label="Toggle navigation of Grids and maps" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="grid.html#volumetric-grid">Volumetric grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid.html#mrc-ccp4-maps">MRC/CCP4 maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid.html#dsn6-brix-maps">DSN6/BRIX maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid.html#isosurface-extraction">Isosurface extraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="hkl.html">Reciprocal space</a><input aria-label="Toggle navigation of Reciprocal space" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#mtz-format">MTZ format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#sf-mmcif">SF mmCIF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#mtz-mmcif">MTZ ↔ mmCIF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#xds-ascii">XDS_ASCII</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#sx-hkl-cif">SX hkl CIF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#resolution-bins">Resolution bins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#intensities">Intensities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#asudata-merged-reflections">AsuData: merged reflections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#reciprocal-space-grid">Reciprocal-space grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#fft">FFT</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="scattering.html">Scattering</a><input aria-label="Toggle navigation of Scattering" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="scattering.html#x-ray-form-factors">X-ray form factors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scattering.html#anomalous-scattering">Anomalous scattering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scattering.html#electron-form-factors">Electron form factors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scattering.html#neutron-scattering">Neutron scattering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scattering.html#direct-summation">Direct summation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scattering.html#density-for-fft">Density for FFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scattering.html#mott-bethe-formula">Mott-Bethe formula</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scattering.html#scaling-and-bulk-solvent-correction">Scaling and bulk solvent correction</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/project-gemmi/gemmi/releases">ChangeLog</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://project-gemmi.github.io/python-api/">Python API reference</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api.html">C++ API Reference</a><input aria-label="Toggle navigation of C++ API Reference" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#core-data-structures">Core Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#cif-data-reading-and-writing">CIF Data Reading and Writing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#structure-i-o">Structure I/O</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#reflection-data">Reflection Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#map-and-grid-data">Map and Grid Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#calculations-and-analysis">Calculations and Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#structure-factor-calculations">Structure Factor Calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#chemistry-and-restraints">Chemistry and Restraints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#scattering-math-and-geometry">Scattering, Math, and Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#sequence-alignment-and-twinning">Sequence Alignment and Twinning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#density-analysis-and-numerical-methods">Density Analysis and Numerical Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#i-o-and-filesystem-utilities">I/O and Filesystem Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#low-level-primitives">Low-level Primitives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="https://github.com/project-gemmi/gemmi/blob/master/docs/chemistry.rst?plain=true" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div><div class="edit-this-page">
+  <a class="muted-link" href="https://github.com/project-gemmi/gemmi/edit/master/docs/chemistry.rst" rel="edit" title="Edit this page">
+    <svg><use href="#svg-pencil"></use></svg>
+    <span class="visually-hidden">Edit this page</span>
+  </a>
+</div><div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="chemistry">
+<h1>Chemistry<a class="headerlink" href="#chemistry" title="Link to this heading">¶</a></h1>
+<p>This section covers:</p>
+<ul class="simple">
+<li><p>working with small molecule models in structural chemistry</p></li>
+<li><p>and working with chemical components in structural biology
+(chemical components describe parts of macromolecular models).</p></li>
+</ul>
+<section id="elements">
+<span id="id1"></span><h2>Elements<a class="headerlink" href="#elements" title="Link to this heading">¶</a></h2>
+<p>When working with molecular structures, it is good to have basic data
+from the periodic table at hand.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio" /><label class="tab-label" for="tab-set--0-input--1">C++</label><div class="tab-content docutils container">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;gemmi/elem.hpp&gt;</span>
+
+<span class="n">gemmi</span><span class="o">::</span><span class="n">Element</span><span class="w"> </span><span class="n">el</span><span class="p">(</span><span class="s">&quot;Mg&quot;</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">its_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">el</span><span class="p">.</span><span class="n">atomic_number</span><span class="p">();</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">its_weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">el</span><span class="p">.</span><span class="n">weight</span><span class="p">();</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">its_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">el</span><span class="p">.</span><span class="n">name</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio" /><label class="tab-label" for="tab-set--0-input--2">Python</label><div class="tab-content docutils container">
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">gemmi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s1">&#39;Mg&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">weight</span>
+<span class="go">24.305</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="mi">118</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;Og&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s1">&#39;Mo&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">atomic_number</span>
+<span class="go">42</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p id="covalent-radius">We also included covalent radii of elements from a
+<a class="reference external" href="https://en.wikipedia.org/wiki/Covalent_radius">Wikipedia page</a>,
+which has data from
+Cordero <em>et al</em> (2008), <em>Covalent radii revisited</em>, Dalton Trans. 21, 2832.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s1">&#39;Zr&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">covalent_r</span>
+<span class="go">1.75</span>
+</pre></div>
+</div>
+<p>van der Waals radii taken from Wikipedia and cctbx:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s1">&#39;K&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">vdw_r</span>
+<span class="go">2.75</span>
+</pre></div>
+</div>
+<p>and a flag for metals:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s1">&#39;Mg&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">is_metal</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">is_metal</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>The classification into metals and non-metals is somewhat arbitrary.
+It can be adjusted using the function <code class="docutils literal notranslate"><span class="pre">set_is_metal</span></code>:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s1">&#39;Sb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">is_metal</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">set_is_metal</span><span class="p">(</span><span class="s1">&#39;Sb&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s1">&#39;Sb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">is_metal</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>The scattering properties of elements are covered
+in the <a class="reference internal" href="scattering.html#scattering"><span class="std std-ref">Scattering</span></a> section.</p>
+</section>
+<section id="small-molecules">
+<span id="id2"></span><h2>Small Molecules<a class="headerlink" href="#small-molecules" title="Link to this heading">¶</a></h2>
+<p>CIF files that describe small-molecule and inorganic structures
+can be read into a <code class="docutils literal notranslate"><span class="pre">SmallStructure</span></code> object.
+Unlike macromolecular <a class="reference internal" href="mol.html#structure"><span class="std std-ref">Structure</span></a>,
+<code class="docutils literal notranslate"><span class="pre">SmallStructure</span></code> has no hierarchy.
+It is a flat list of atomic sites (<code class="docutils literal notranslate"><span class="pre">SmallStructure::Site</span></code>)
+together with the unit cell and symmetry.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cassert&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;gemmi/cif.hpp&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;gemmi/smcif.hpp&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gemmi</span><span class="o">::</span><span class="n">cif</span><span class="o">::</span><span class="n">read_file</span><span class="p">(</span><span class="s">&quot;1011031.cif&quot;</span><span class="p">).</span><span class="n">sole_block</span><span class="p">();</span>
+<span class="w">  </span><span class="n">gemmi</span><span class="o">::</span><span class="n">SmallStructure</span><span class="w"> </span><span class="n">SiC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gemmi</span><span class="o">::</span><span class="n">make_small_structure_from_block</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+<span class="w">  </span><span class="n">assert</span><span class="p">(</span><span class="n">SiC</span><span class="p">.</span><span class="n">cell</span><span class="p">.</span><span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">4.358</span><span class="p">);</span>
+<span class="w">  </span><span class="n">assert</span><span class="p">(</span><span class="n">SiC</span><span class="p">.</span><span class="n">spacegroup_hm</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;F -4 3 m&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">assert</span><span class="p">(</span><span class="n">SiC</span><span class="p">.</span><span class="n">sites</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="w">  </span><span class="n">assert</span><span class="p">(</span><span class="n">SiC</span><span class="p">.</span><span class="n">get_all_unit_cell_sites</span><span class="p">().</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">gemmi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SiC</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">read_small_structure</span><span class="p">(</span><span class="s1">&#39;../tests/1011031.cif&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SiC</span><span class="o">.</span><span class="n">cell</span>
+<span class="go">&lt;gemmi.UnitCell(4.358, 4.358, 4.358, 90, 90, 90)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># content of _symmetry_space_group_name_H-M or _space_group_name_H-M_alt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SiC</span><span class="o">.</span><span class="n">spacegroup</span>
+<span class="go">&lt;gemmi.SpaceGroup(&quot;F -4 3 m&quot;)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">SiC</span><span class="o">.</span><span class="n">sites</span><span class="p">)</span>
+<span class="go">[&lt;gemmi.SmallStructure.Site Si1&gt;, &lt;gemmi.SmallStructure.Site C1&gt;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">SiC</span><span class="o">.</span><span class="n">get_all_unit_cell_sites</span><span class="p">())</span>
+<span class="go">8</span>
+</pre></div>
+</div>
+<p>Each atomic site has the following properties:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">site</span> <span class="o">=</span> <span class="n">SiC</span><span class="o">.</span><span class="n">sites</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">site</span><span class="o">.</span><span class="n">label</span>
+<span class="go">&#39;Si1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">site</span><span class="o">.</span><span class="n">type_symbol</span>
+<span class="go">&#39;Si4+&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">site</span><span class="o">.</span><span class="n">fract</span>
+<span class="go">&lt;gemmi.Fractional(0, 0, 0)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">site</span><span class="o">.</span><span class="n">occ</span>
+<span class="go">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">site</span><span class="o">.</span><span class="n">u_iso</span>  <span class="c1"># not specified here</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">site</span><span class="o">.</span><span class="n">element</span>  <span class="c1"># obtained from type_symbol &#39;Si4+&#39;</span>
+<span class="go">gemmi.Element(&#39;Si&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">site</span><span class="o">.</span><span class="n">charge</span>   <span class="c1"># obtained from type_symbol &#39;Si4+&#39;</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+<p>The occupancies in small molecules normally represent the actual chemical
+occupancy.
+This differs from macromolecular crystallography, where models normally store
+“crystallographic” occupancy – atoms on special positions have their occupancy
+divided by the number of symmetry images in the same place.
+This reduction of occupancy simplifies the calculation of structure factors.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="o">/</span> <span class="n">site</span><span class="o">.</span><span class="n">occ</span>
+<span class="go">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SiC</span><span class="o">.</span><span class="n">change_occupancies_to_crystallographic</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="o">/</span> <span class="n">site</span><span class="o">.</span><span class="n">occ</span>
+<span class="go">24.0</span>
+</pre></div>
+</div>
+<p>We will need another cif file to show anisotropic ADPs and disorder_group:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">perovskite</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">read_small_structure</span><span class="p">(</span><span class="s1">&#39;../tests/4003024.cif&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">site</span> <span class="ow">in</span> <span class="n">perovskite</span><span class="o">.</span><span class="n">sites</span><span class="p">:</span>
+<span class="gp">... </span>  <span class="nb">print</span><span class="p">(</span><span class="n">site</span><span class="o">.</span><span class="n">label</span><span class="p">,</span> <span class="n">site</span><span class="o">.</span><span class="n">aniso</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(),</span> <span class="n">site</span><span class="o">.</span><span class="n">disorder_group</span> <span class="ow">or</span> <span class="s1">&#39;n/a&#39;</span><span class="p">)</span>
+<span class="go">Cs1 True n/a</span>
+<span class="go">Sn2 False 1</span>
+<span class="go">Cl1 True n/a</span>
+<span class="go">In False 2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">perovskite</span><span class="o">.</span><span class="n">sites</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">aniso</span><span class="o">.</span><span class="n">u11</span>
+<span class="go">0.103</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">perovskite</span><span class="o">.</span><span class="n">sites</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">aniso</span><span class="o">.</span><span class="n">u22</span>
+<span class="go">0.156</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">perovskite</span><span class="o">.</span><span class="n">sites</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">aniso</span><span class="o">.</span><span class="n">u33</span>
+<span class="go">0.156</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">perovskite</span><span class="o">.</span><span class="n">sites</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">aniso</span><span class="o">.</span><span class="n">u12</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">perovskite</span><span class="o">.</span><span class="n">sites</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">aniso</span><span class="o">.</span><span class="n">u13</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">perovskite</span><span class="o">.</span><span class="n">sites</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">aniso</span><span class="o">.</span><span class="n">u23</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>The Python examples above read CIF files using <code class="docutils literal notranslate"><span class="pre">read_small_structure()</span></code>.
+Alternatively, the same can be done in two steps:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cif_doc</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">cif</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;../tests/1011031.cif&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SiC</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">make_small_structure_from_block</span><span class="p">(</span><span class="n">cif_doc</span><span class="o">.</span><span class="n">sole_block</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Now you also have access to the CIF document.</p>
+<section id="smallstructure-spacegroup">
+<span id="small-spacegroup"></span><h3>SmallStructure::spacegroup<a class="headerlink" href="#smallstructure-spacegroup" title="Link to this heading">¶</a></h3>
+<p>When reading a small-molecule CIF file, a few CIF items that describe
+the space group are read and stored in member variables:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">st</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">read_small_structure</span><span class="p">(</span><span class="s1">&#39;../tests/2013551.cif&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">st</span><span class="o">.</span><span class="n">symops</span>
+<span class="go">[&#39;x, y, z&#39;, &#39;-y, x-y, z&#39;, &#39;y, x, -z&#39;, &#39;-x+y, -x, z&#39;, &#39;-x, -x+y, -z&#39;, &#39;x-y, -y, -z&#39;, &#39;-x, -y, -z&#39;, &#39;y, -x+y, -z&#39;, &#39;-y, -x, z&#39;, &#39;x-y, x, -z&#39;, &#39;x, x-y, z&#39;, &#39;-x+y, y, z&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">st</span><span class="o">.</span><span class="n">spacegroup_hall</span>
+<span class="go">&#39;-P 3 2&quot;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">st</span><span class="o">.</span><span class="n">spacegroup_hm</span>
+<span class="go">&#39;P -3 m 1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">st</span><span class="o">.</span><span class="n">spacegroup_number</span>
+<span class="go">164</span>
+</pre></div>
+</div>
+<p>and the function <code class="docutils literal notranslate"><span class="pre">determine_and_set_spacegroup(&quot;S.H2&quot;)</span></code> is automatically
+run to set <code class="docutils literal notranslate"><span class="pre">spacegroup</span></code>:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">st</span><span class="o">.</span><span class="n">spacegroup</span>
+<span class="go">&lt;gemmi.SpaceGroup(&quot;P -3 m 1&quot;)&gt;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">determine_and_set_spacegroup()</span></code> takes one argument, a string in which characters
+specify what to use, and in what order, for space group determination:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">S</span></code> = symmetry operations stored in <code class="docutils literal notranslate"><span class="pre">symops</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">H</span></code> = Hall symbol from <code class="docutils literal notranslate"><span class="pre">spacegroup_hall</span></code> (we compare symmetry operations
+encoded in the Hall symbol, not the strings),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> = H-M symbol; for space groups such as “P n n n” that have two origin
+choices listed in the International Tables, use <em>Origin Choice 1</em>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code> = H-M symbol, with <em>Origin Choice 2</em> where applicable,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">N</span></code> = the space group number,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.</span></code> (after S or H) = if the symmetry operations pass sanity checks,
+stop and use them regardless of whether they correspond to one of
+the settings tabulated in Gemmi.</p></li>
+</ul>
+<p>If a symbol or operations match one of the 560+ space group settings tabulated
+in Gemmi, <code class="docutils literal notranslate"><span class="pre">spacegroup</span></code> is set to this setting. Otherwise, if <code class="docutils literal notranslate"><span class="pre">.</span></code> is encountered
+and the previous character (<code class="docutils literal notranslate"><span class="pre">S</span></code> or <code class="docutils literal notranslate"><span class="pre">H</span></code>) was evaluated to a valid set of symops,
+it is assumed that these operations were correct: <code class="docutils literal notranslate"><span class="pre">spacegroup</span></code> is left null
+and <code class="docutils literal notranslate"><span class="pre">cell.images</span></code> are set from the list of operations.
+About 350 (out of 500,000+) entries in the COD use such settings.
+Most of them have an unconventional choice of the origin
+(e.g. “P 1 21 1 (a,b,c-1/4)”).</p>
+<p>To use a different order of items than “S.H2”,
+call determine_and_set_spacegroup() again:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">st</span><span class="o">.</span><span class="n">determine_and_set_spacegroup</span><span class="p">(</span><span class="s1">&#39;H.1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Errors such as an incorrect format of the symop triplets or of the Hall
+symbol are silently ignored, and the consistency between different items
+is not checked. That’s because this function is run when reading a file;
+throwing an exception at that stage would prevent reading a file.
+We have a separate function to check for errors and inconsistencies.
+It returns a string, one line – one error:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">st</span><span class="o">.</span><span class="n">check_spacegroup</span><span class="p">()</span>
+<span class="go">&#39;&#39;</span>
+</pre></div>
+</div>
+<p>If the spacegroup setting used in a file is not tabulated in Gemmi,
+you can still create a GroupOps object with symmetry operations:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">GroupOps</span><span class="p">([</span><span class="n">gemmi</span><span class="o">.</span><span class="n">Op</span><span class="p">(</span><span class="n">o</span><span class="p">)</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">st</span><span class="o">.</span><span class="n">symops</span><span class="p">])</span>  
+<span class="go">&lt;gemmi.GroupOps object at 0x...&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># or</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">symops_from_hall</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">spacegroup_hall</span><span class="p">)</span>  
+<span class="go">&lt;gemmi.GroupOps object at 0x...&gt;</span>
+</pre></div>
+</div>
+<p>In C++ it would be similar, except that the following function
+would be used to make gemmi::GroupOps from symops:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">GroupOps</span><span class="w"> </span><span class="n">split_centering_vectors</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Op</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">ops</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="without-cif-file">
+<h3>without CIF file<a class="headerlink" href="#without-cif-file" title="Link to this heading">¶</a></h3>
+<p>If your structure is stored in a macromolecular format (PDB, mmCIF)
+you can read it first as macromolecular <a class="reference internal" href="mol.html#structure"><span class="std std-ref">Structure</span></a>
+and convert it to <code class="docutils literal notranslate"><span class="pre">SmallStructure</span></code>:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">mx_to_sx_structure</span><span class="p">(</span><span class="n">gemmi</span><span class="o">.</span><span class="n">read_structure</span><span class="p">(</span><span class="s1">&#39;../tests/HEM.pdb&#39;</span><span class="p">))</span>
+<span class="go">&lt;gemmi.SmallStructure: HEM&gt;</span>
+</pre></div>
+</div>
+<p>You could also create <code class="docutils literal notranslate"><span class="pre">SmallStructure</span></code> from scratch:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">small</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">SmallStructure</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">small</span><span class="o">.</span><span class="n">spacegroup_hm</span> <span class="o">=</span> <span class="s1">&#39;F -4 3 m&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">small</span><span class="o">.</span><span class="n">cell</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">UnitCell</span><span class="p">(</span><span class="mf">4.358</span><span class="p">,</span> <span class="mf">4.358</span><span class="p">,</span> <span class="mf">4.358</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">small</span><span class="o">.</span><span class="n">determine_and_set_spacegroup</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># add a single atom</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">site</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">SmallStructure</span><span class="o">.</span><span class="n">Site</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">site</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;C1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">site</span><span class="o">.</span><span class="n">element</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">site</span><span class="o">.</span><span class="n">fract</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">Fractional</span><span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">site</span><span class="o">.</span><span class="n">occ</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">small</span><span class="o">.</span><span class="n">add_site</span><span class="p">(</span><span class="n">site</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="chemical-components">
+<span id="chemcomp"></span><h2>Chemical Components<a class="headerlink" href="#chemical-components" title="Link to this heading">¶</a></h2>
+<p>Residues (monomers) and small molecule components of macromolecular models
+are called <em>chemical components</em>.
+Gemmi can use three sources of knowledge about chemical components:</p>
+<ul class="simple">
+<li><p>built-in basic data about 350+ popular components,</p></li>
+<li><p>the Chemical Component Dictionary (CCD) maintained by the PDB
+(25,000+ components),</p></li>
+<li><p>so-called CIF files compatible with the format of the CCP4 Monomer Library
+(more about monomer libraries in the <a class="reference internal" href="#monlib"><span class="std std-ref">next section</span></a>).</p></li>
+</ul>
+<section id="built-in-data">
+<span id="find-tabulated-residue"></span><h3>Built-in data<a class="headerlink" href="#built-in-data" title="Link to this heading">¶</a></h3>
+<p>The built-in data is accessed through the function <code class="docutils literal notranslate"><span class="pre">find_tabulated_residue</span></code>.
+It contains only minimal information about each residue:
+assigned category, the “standard” flag (non-standard residues are marked
+as HETATM in the PDB, even in polymer), one-letter code,
+the number of hydrogens and molecular weight:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;gemmi/resinfo.hpp&gt;</span>
+
+<span class="n">gemmi</span><span class="o">::</span><span class="n">ResidueInfo</span><span class="w"> </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gemmi</span><span class="o">::</span><span class="n">find_tabulated_residue</span><span class="p">(</span><span class="s">&quot;ALA&quot;</span><span class="p">);</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">is_it_aminoacid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">info</span><span class="p">.</span><span class="n">is_amino_acid</span><span class="p">();</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">approximate_number_of_h_atoms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">info</span><span class="p">.</span><span class="n">hydrogen_count</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gln</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">find_tabulated_residue</span><span class="p">(</span><span class="s1">&#39;GLN&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gln</span><span class="o">.</span><span class="n">is_amino_acid</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gln</span><span class="o">.</span><span class="n">one_letter_code</span>
+<span class="go">&#39;Q&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">gln</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">146.144</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gln</span><span class="o">.</span><span class="n">hydrogen_count</span>
+<span class="go">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">find_tabulated_residue</span><span class="p">(</span><span class="s1">&#39;DOD&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">is_water</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># PDB marks &quot;non-standard&quot; residues as HETATM.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Pyrrolysine is standard - some microbes have it.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">find_tabulated_residue</span><span class="p">(</span><span class="s1">&#39;PYL&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">is_standard</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">find_tabulated_residue</span><span class="p">(</span><span class="s1">&#39;MSE&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">is_standard</span><span class="p">()</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>One-letter code is an upper case letter if it is a standard residue.
+Otherwise, it can be the letter for the parent residue in lower case,
+or a space. It is common to use <code class="docutils literal notranslate"><span class="pre">X</span></code> for non-standard residue –
+for this we have helper function <code class="docutils literal notranslate"><span class="pre">fasta_code()</span></code>:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">find_tabulated_residue</span><span class="p">(</span><span class="s1">&#39;MET&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">one_letter_code</span>
+<span class="go">&#39;M&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">find_tabulated_residue</span><span class="p">(</span><span class="s1">&#39;MSE&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">one_letter_code</span>
+<span class="go">&#39;m&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">find_tabulated_residue</span><span class="p">(</span><span class="s1">&#39;HOH&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">one_letter_code</span>
+<span class="go">&#39; &#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">find_tabulated_residue</span><span class="p">(</span><span class="s1">&#39;MET&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fasta_code</span><span class="p">()</span>
+<span class="go">&#39;M&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">find_tabulated_residue</span><span class="p">(</span><span class="s1">&#39;MSE&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fasta_code</span><span class="p">()</span>
+<span class="go">&#39;X&#39;</span>
+</pre></div>
+</div>
+<p>The table includes only 362 entries, selected from the most popular residues in the PDB.
+Residue kind is sometimes debatable, the user may change it.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pst</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">find_tabulated_residue</span><span class="p">(</span><span class="s1">&#39;PST&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pst</span><span class="o">.</span><span class="n">kind</span>
+<span class="go">ResidueKind.UNKNOWN</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pst</span><span class="o">.</span><span class="n">kind</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">ResidueKind</span><span class="o">.</span><span class="n">DNA</span>
+</pre></div>
+</div>
+</section>
+<section id="ccd-and-monomer-cif-files">
+<span id="ccd-etc"></span><h3>CCD and monomer CIF files<a class="headerlink" href="#ccd-and-monomer-cif-files" title="Link to this heading">¶</a></h3>
+<p>To get more complete information, including atoms and bonds in the monomer,
+we need to first read either the <a class="reference external" href="https://www.wwpdb.org/data/ccd">CCD</a>
+or a <a class="reference internal" href="#monlib"><span class="std std-ref">monomer library</span></a>.</p>
+<p>The CCD <code class="file docutils literal notranslate"><span class="pre">components.cif</span></code> file describes all the monomers
+(residues, ligands, solvent molecules) from the PDB entries.
+Importantly, it contains information about bonds.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The absence of bond information in mmCIF files from wwPDB is a
+<a class="reference external" href="https://www.cgl.ucsf.edu/chimera/data/mmcif-oct2013/mmcif.html">well-known problem</a>.
+This information is included in so-called
+<a class="reference external" href="https://doi.org/10.1093/nar/gkv1047">updated mmCIF</a> files from PDBe,
+as well as in BinaryCIF and mmJSON files.</p>
+</div>
+<p>Macromolecular refinement programs need to know more about monomers
+than the CCD can tell: they need to know how to restrain the structure.
+Therefore, they have their own dictionaries of monomers (a.k.a monomer
+libraries), such as the CCP4 Monomer Library (for Refmac),
+where each monomer is described by one cif file.
+These libraries are often complemented by user’s own cif files.</p>
+<p>Gemmi provides a <code class="docutils literal notranslate"><span class="pre">ChemComp</span></code> class that corresponds to a monomer
+from either the CCD or a cif file.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;gemmi/read_cif.hpp&gt;</span><span class="c1">        // for read_cif_gz</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;gemmi/chemcomp.hpp&gt;</span><span class="c1">        // for ChemComp, make_chemcomp_from_block</span>
+
+<span class="n">gemmi</span><span class="o">::</span><span class="n">ChemComp</span><span class="w"> </span><span class="nf">make_chemcomp</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">path</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">gemmi</span><span class="o">::</span><span class="n">cif</span><span class="o">::</span><span class="n">Document</span><span class="w"> </span><span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gemmi</span><span class="o">::</span><span class="n">read_cif_gz</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// assuming the component description is in the last block of the file</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">gemmi</span><span class="o">::</span><span class="n">make_chemcomp_from_block</span><span class="p">(</span><span class="n">doc</span><span class="p">.</span><span class="n">blocks</span><span class="p">.</span><span class="n">back</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># SO3.cif -&gt; gemmi.ChemComp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">cif</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;../tests/SO3.cif&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">so3</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">make_chemcomp_from_block</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This class is not fully documented yet.</p>
+<p>The examples in <a class="reference internal" href="analysis.html#graph-analysis"><span class="std std-ref">Graph analysis</span></a>
+show how to access <code class="docutils literal notranslate"><span class="pre">ChemComp</span></code>’s atoms and bonds.</p>
+</section>
+<section id="smarts-matching">
+<span id="chemcomp-smarts"></span><h3>SMARTS Matching<a class="headerlink" href="#smarts-matching" title="Link to this heading">¶</a></h3>
+<p>Gemmi includes a lightweight SMARTS-subset matcher that can be used to find
+functional groups or specific motifs within a <code class="docutils literal notranslate"><span class="pre">ChemComp</span></code>.</p>
+<p>It supports:</p>
+<ul class="simple">
+<li><p>Atomic symbols (e.g. <code class="docutils literal notranslate"><span class="pre">C</span></code>, <code class="docutils literal notranslate"><span class="pre">[N]</span></code>, <code class="docutils literal notranslate"><span class="pre">[Fe]</span></code>) and wildcards (<code class="docutils literal notranslate"><span class="pre">*</span></code>).</p></li>
+<li><p>Aromaticity (<code class="docutils literal notranslate"><span class="pre">[c]</span></code>, <code class="docutils literal notranslate"><span class="pre">[n]</span></code>, etc.).</p></li>
+<li><p>Bond types: single (<code class="docutils literal notranslate"><span class="pre">-</span></code>), double (<code class="docutils literal notranslate"><span class="pre">=</span></code>), and any (<code class="docutils literal notranslate"><span class="pre">~</span></code>).</p></li>
+<li><p>Connectivity and H-count constraints (e.g. <code class="docutils literal notranslate"><span class="pre">[CX4]</span></code>, <code class="docutils literal notranslate"><span class="pre">[OH1]</span></code>).</p></li>
+<li><p>Branching using parentheses.</p></li>
+</ul>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Match aromatic carbons in benzene</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">benzene_cif</span> <span class="o">=</span> <span class="s2">&quot;data_comp_BEN</span><span class="se">\n</span><span class="s2">loop_</span><span class="se">\n</span><span class="s2">_chem_comp_atom.atom_id</span><span class="se">\n</span><span class="s2">_chem_comp_atom.type_symbol</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> \
+<span class="gp">... </span>              <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;C</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> C&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span> <span class="o">+</span> \
+<span class="gp">... </span>              <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">loop_</span><span class="se">\n</span><span class="s2">_chem_comp_bond.atom_id_1</span><span class="se">\n</span><span class="s2">_chem_comp_bond.atom_id_2</span><span class="se">\n</span><span class="s2">_chem_comp_bond.value_order</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> \
+<span class="gp">... </span>              <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;C</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> C</span><span class="si">{</span><span class="n">i</span><span class="o">%</span><span class="mi">6</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> arom&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cc</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">make_chemcomp_from_block</span><span class="p">(</span><span class="n">gemmi</span><span class="o">.</span><span class="n">cif</span><span class="o">.</span><span class="n">read_string</span><span class="p">(</span><span class="n">benzene_cif</span><span class="p">)</span><span class="o">.</span><span class="n">sole_block</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matches</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">match_smarts</span><span class="p">(</span><span class="s2">&quot;[c]&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">matches</span><span class="p">)</span>
+<span class="go">6</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="chemical-normalization">
+<span id="chemcomp-chemical-normalization"></span><h2>Chemical normalization<a class="headerlink" href="#chemical-normalization" title="Link to this heading">¶</a></h2>
+<p>Gemmi’s <code class="docutils literal notranslate"><span class="pre">ChemComp</span></code> normalization is performed by
+<code class="docutils literal notranslate"><span class="pre">apply_chemical_adjustments()</span></code> (declared in <code class="docutils literal notranslate"><span class="pre">gemmi/cc_adj.hpp</span></code>,
+implemented in <code class="docutils literal notranslate"><span class="pre">src/cc_adj.cpp</span></code>).</p>
+<p>This is a deterministic local-graph normalization stage that can change:</p>
+<ul class="simple">
+<li><p>formal charges,</p></li>
+<li><p>protonation state (add/remove hydrogens),</p></li>
+<li><p>selected bond orders (for resonance-style normalization),</p></li>
+<li><p>affected restraints around edited atoms (bonds/angles tied to added or
+removed hydrogens).</p></li>
+</ul>
+<p>It is intentionally rule-based and motif-driven; it is not a general pKa
+predictor or tautomer enumerator.</p>
+<section id="apply-chemical-adjustments">
+<h3>apply_chemical_adjustments()<a class="headerlink" href="#apply-chemical-adjustments" title="Link to this heading">¶</a></h3>
+<p>Rules are applied in a fixed order (inside of <code class="docutils literal notranslate"><span class="pre">apply_chemical_adjustments()</span></code>):
+examples below show representative components.</p>
+<section id="acid-oxoacid-deprotonation">
+<h4>Acid/oxoacid deprotonation<a class="headerlink" href="#acid-oxoacid-deprotonation" title="Link to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">oxoacid_phosphate</span></code> (step 1, SMARTS: <code class="docutils literal notranslate"><span class="pre">OP(=O)(O)(*)</span></code> / <code class="docutils literal notranslate"><span class="pre">O=P(O)(O)O</span></code>)</p>
+<blockquote>
+<div><div class="table-wrapper colwidths-given borderless docutils container">
+<table class="borderless docutils align-default">
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 10.0%" />
+<col style="width: 45.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_oxoacid_phosphate_before.svg"><img alt="oxoacid_phosphate before" src="_images/adj_oxoacid_phosphate_before.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+<td><p>➡</p></td>
+<td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_oxoacid_phosphate_after.svg"><img alt="oxoacid_phosphate after" src="_images/adj_oxoacid_phosphate_after.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Example: <a class="reference external" href="https://www.rcsb.org/ligand/ATP">ATP</a>
+For phosphate motifs of the form R-O-PO3, this rule deprotonates
+phosphoryl oxygens (AceDRG-style doubly deprotonated representation).
+The alkoxy R-O part is not deprotonated by this rule.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">oxoacid_sulfate</span></code> (step 2, SMARTS: <code class="docutils literal notranslate"><span class="pre">O=S(=O)(O)O</span></code>)</p>
+<blockquote>
+<div><div class="table-wrapper colwidths-given borderless docutils container">
+<table class="borderless docutils align-default">
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 10.0%" />
+<col style="width: 45.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_oxoacid_sulfate_before.svg"><img alt="oxoacid_sulfate before" src="_images/adj_oxoacid_sulfate_before.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+<td><p>➡</p></td>
+<td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_oxoacid_sulfate_after.svg"><img alt="oxoacid_sulfate after" src="_images/adj_oxoacid_sulfate_after.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Example: <a class="reference external" href="https://www.rcsb.org/ligand/0SG">0SG</a></p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">oxoacid_sulfite</span></code> (step 3, SMARTS: <code class="docutils literal notranslate"><span class="pre">OS(=O)O</span></code>)</p>
+<blockquote>
+<div><div class="table-wrapper colwidths-given borderless docutils container">
+<table class="borderless docutils align-default">
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 10.0%" />
+<col style="width: 45.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_oxoacid_sulfite_before.svg"><img alt="oxoacid_sulfite before" src="_images/adj_oxoacid_sulfite_before.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+<td><p>➡</p></td>
+<td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_oxoacid_sulfite_after.svg"><img alt="oxoacid_sulfite after" src="_images/adj_oxoacid_sulfite_after.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This rule currently follows AceDRG-style sulfite handling by deprotonating
+one hydroxyl oxygen in matching sulfate-like tri-oxygen sulfur motifs.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">single_bond_oxide</span></code> (step 5, SMARTS: <code class="docutils literal notranslate"><span class="pre">[O]-[*]</span></code> + internal constraints)</p>
+<blockquote>
+<div><div class="table-wrapper colwidths-given borderless docutils container">
+<table class="borderless docutils align-default">
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 10.0%" />
+<col style="width: 45.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_single_bond_oxide_before.svg"><img alt="single_bond_oxide before" src="_images/adj_single_bond_oxide_before.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+<td><p>➡</p></td>
+<td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_single_bond_oxide_after.svg"><img alt="single_bond_oxide after" src="_images/adj_single_bond_oxide_after.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Example: <a class="reference external" href="https://www.rcsb.org/ligand/H1T">H1T</a>
+Oxygen must be neutral, have no hydrogen neighbors, and have exactly one
+heavy single-bond neighbor.
+This is not general alcohol deprotonation. It normalizes pre-existing
+single-bond oxide-like oxygens that are already non-protonated in the graph.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">carboxy_asp</span></code> (step 7, SMARTS: <code class="docutils literal notranslate"><span class="pre">O=C(O)C(*)</span></code> / <code class="docutils literal notranslate"><span class="pre">O=C(O)c(*)</span></code> / <code class="docutils literal notranslate"><span class="pre">O=C(O)CN(*)</span></code> / <code class="docutils literal notranslate"><span class="pre">O=C(O)C(N)(*)</span></code> / <code class="docutils literal notranslate"><span class="pre">O=C(O)CN</span></code>)</p>
+<blockquote>
+<div><div class="table-wrapper colwidths-given borderless docutils container">
+<table class="borderless docutils align-default">
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 10.0%" />
+<col style="width: 45.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_carboxy_asp_before.svg"><img alt="carboxy_asp before" src="_images/adj_carboxy_asp_before.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+<td><p>➡</p></td>
+<td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_carboxy_asp_after.svg"><img alt="carboxy_asp after" src="_images/adj_carboxy_asp_after.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Example: <a class="reference external" href="https://www.rcsb.org/ligand/ASP">ASP</a></p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">terminal_carboxylate</span></code> (step 8, SMARTS: <code class="docutils literal notranslate"><span class="pre">O=C(O)CN(*)</span></code> with <code class="docutils literal notranslate"><span class="pre">OXT</span></code>/<code class="docutils literal notranslate"><span class="pre">HXT</span></code> naming context)</p>
+<blockquote>
+<div><div class="table-wrapper colwidths-given borderless docutils container">
+<table class="borderless docutils align-default">
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 10.0%" />
+<col style="width: 45.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_terminal_carboxylate_before.svg"><img alt="terminal_carboxylate before" src="_images/adj_terminal_carboxylate_before.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+<td><p>➡</p></td>
+<td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_terminal_carboxylate_after.svg"><img alt="terminal_carboxylate after" src="_images/adj_terminal_carboxylate_after.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Example: <a class="reference external" href="https://www.rcsb.org/ligand/A0G">A0G</a>
+Unlike <code class="docutils literal notranslate"><span class="pre">carboxy_asp</span></code>, this rule targets the terminal carboxylate motif
+identified via <code class="docutils literal notranslate"><span class="pre">OXT</span></code>/<code class="docutils literal notranslate"><span class="pre">HXT</span></code> context.</p>
+</div></blockquote>
+</section>
+<section id="resonance-normalization">
+<h4>Resonance normalization<a class="headerlink" href="#resonance-normalization" title="Link to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">nitro_group</span></code> (step 4, SMARTS: <code class="docutils literal notranslate"><span class="pre">[N+](=O)(O)C</span></code>)</p>
+<blockquote>
+<div><div class="table-wrapper colwidths-given borderless docutils container">
+<table class="borderless docutils align-default">
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 10.0%" />
+<col style="width: 45.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_nitro_group_before.svg"><img alt="nitro_group before" src="_images/adj_nitro_group_before.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+<td><p>➡</p></td>
+<td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_nitro_group_after.svg"><img alt="nitro_group after" src="_images/adj_nitro_group_after.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Example: <a class="reference external" href="https://www.rcsb.org/ligand/NE5">NE5</a>
+Shown as charge-separated nitro resonance (<code class="docutils literal notranslate"><span class="pre">R-N+(=O)-O-</span></code>).
+The exact AceDRG representation (formal charges vs valence-only
+representation) is under review.</p>
+</div></blockquote>
+</section>
+<section id="targeted-handling">
+<h4>Targeted handling<a class="headerlink" href="#targeted-handling" title="Link to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">hexafluorophosphate</span></code> (step 6, SMARTS: <code class="docutils literal notranslate"><span class="pre">F[P](F)(F)(F)(F)F</span></code>)</p>
+<blockquote>
+<div><div class="table-wrapper colwidths-given borderless docutils container">
+<table class="borderless docutils align-default">
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 10.0%" />
+<col style="width: 45.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_hexafluorophosphate_before.svg"><img alt="hexafluorophosphate before" src="_images/adj_hexafluorophosphate_before.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+<td><p>➡</p></td>
+<td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_hexafluorophosphate_after.svg"><img alt="hexafluorophosphate after" src="_images/adj_hexafluorophosphate_after.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Example: <a class="reference external" href="https://www.rcsb.org/ligand/A9J">A9J</a></p>
+</div></blockquote>
+</section>
+<section id="cationic-nitrogen-completion-protonation">
+<h4>Cationic nitrogen completion/protonation<a class="headerlink" href="#cationic-nitrogen-completion-protonation" title="Link to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">guanidinium</span></code> (step 9, SMARTS: <code class="docutils literal notranslate"><span class="pre">CNC(=N)N</span></code>)</p>
+<blockquote>
+<div><div class="table-wrapper colwidths-given borderless docutils container">
+<table class="borderless docutils align-default">
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 10.0%" />
+<col style="width: 45.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_guanidinium_before.svg"><img alt="guanidinium before" src="_images/adj_guanidinium_before.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+<td><p>➡</p></td>
+<td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_guanidinium_after.svg"><img alt="guanidinium after" src="_images/adj_guanidinium_after.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Example: <a class="reference external" href="https://www.rcsb.org/ligand/00L">00L</a></p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">amino_ter_amine</span></code> (step 10, SMARTS: <code class="docutils literal notranslate"><span class="pre">NCC(=O)N(*)</span></code>)</p>
+<blockquote>
+<div><div class="table-wrapper colwidths-given borderless docutils container">
+<table class="borderless docutils align-default">
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 10.0%" />
+<col style="width: 45.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_amino_ter_amine_before.svg"><img alt="amino_ter_amine before" src="_images/adj_amino_ter_amine_before.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+<td><p>➡</p></td>
+<td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_amino_ter_amine_after.svg"><img alt="amino_ter_amine after" src="_images/adj_amino_ter_amine_after.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Example: <a class="reference external" href="https://www.rcsb.org/ligand/00K">00K</a></p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">terminal_amine</span></code> (step 11, SMARTS: <code class="docutils literal notranslate"><span class="pre">[*]C[NH2]</span></code>)</p>
+<blockquote>
+<div><blockquote>
+<div><div class="table-wrapper colwidths-given borderless docutils container">
+<table class="borderless docutils align-default">
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 10.0%" />
+<col style="width: 45.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_terminal_amine_before.svg"><img alt="terminal_amine before" src="_images/adj_terminal_amine_before.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+<td><p>➡</p></td>
+<td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_terminal_amine_after.svg"><img alt="terminal_amine after" src="_images/adj_terminal_amine_after.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></blockquote>
+<p>Example: <a class="reference external" href="https://www.rcsb.org/ligand/LYS">LYS</a>
+Current implementation applies context-dependent protonation of terminal
+amine-like motifs.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">protonated_amide_n</span></code> (step 12, SMARTS: <code class="docutils literal notranslate"><span class="pre">CCC(=O)N</span></code>)</p>
+<blockquote>
+<div><div class="table-wrapper colwidths-given borderless docutils container">
+<table class="borderless docutils align-default">
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 10.0%" />
+<col style="width: 45.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_protonated_amide_n_before.svg"><img alt="protonated_amide_n before" src="_images/adj_protonated_amide_n_before.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+<td><p>➡</p></td>
+<td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_protonated_amide_n_after.svg"><img alt="protonated_amide_n after" src="_images/adj_protonated_amide_n_after.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Example: <a class="reference external" href="https://www.rcsb.org/ligand/BJS">BJS</a></p>
+</div></blockquote>
+<p>The order is part of behavior: earlier edits can affect pattern matching in
+later steps.</p>
+</section>
+</section>
+<section id="prepare-chemcomp">
+<h3>prepare_chemcomp()<a class="headerlink" href="#prepare-chemcomp" title="Link to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">prepare_chemcomp()</span></code> is the full restraint-preparation pipeline. The order
+below is important because later stages depend on graph/charge edits made
+earlier.</p>
+<p>The function now also has an explicit options object,
+<code class="docutils literal notranslate"><span class="pre">PrepareChemcompOptions</span></code>, which makes the runtime controls part of the API
+instead of relying only on environment variables. The legacy overload is still
+available.</p>
+<section id="execution-order">
+<h4>Execution order<a class="headerlink" href="#execution-order" title="Link to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">prepare_chemcomp()</span></code> follows this control flow:</p>
+<ol class="arabic" start="0">
+<li><p>detect carborane branches before the standard path:</p>
+<ul class="simple">
+<li><p>full carborane mode (early return): enabled when the component has at
+least one non-hydrogen atom with 4+ boron neighbors, and all
+non-hydrogen atoms are only B/C/metal. In this case,
+<code class="docutils literal notranslate"><span class="pre">apply_carborane_mode()</span></code> is used, CCP4 types are assigned, and the
+function returns immediately.
+Example: <a class="reference external" href="https://www.rcsb.org/ligand/1KW">1KW</a>.</p></li>
+<li><p>otherwise continue with the standard path, but keep a carborane-seed flag
+for possible mixed-mode post-processing.
+Example: <a class="reference external" href="https://www.rcsb.org/ligand/9UK">9UK</a>.</p></li>
+</ul>
+</li>
+<li><p>seed missing angles from existing bonds (unless <code class="docutils literal notranslate"><span class="pre">no_angles=false</span></code>);</p></li>
+<li><p>run <code class="docutils literal notranslate"><span class="pre">apply_chemical_adjustments()</span></code>;</p></li>
+<li><p>run <code class="docutils literal notranslate"><span class="pre">add_n_terminal_h3()</span></code> (may add <code class="docutils literal notranslate"><span class="pre">H3</span></code> and corresponding N-centered angles);</p>
+<p><code class="docutils literal notranslate"><span class="pre">add_n_terminal_h3()</span></code> adds the third proton only for matching
+N-terminus-like motifs. <code class="docutils literal notranslate"><span class="pre">sync_n_terminal_h3_angles()</span></code> is run later (after
+table fill) to keep the newly added H3 angles consistent with sibling
+N-H/N-H2 restraints.</p>
+<div class="table-wrapper colwidths-given borderless docutils container">
+<table class="borderless docutils align-default">
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 10.0%" />
+<col style="width: 45.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_add_n_terminal_h3_before.svg"><img alt="_images/adj_add_n_terminal_h3_before.svg" src="_images/adj_add_n_terminal_h3_before.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+<td><p>➡</p></td>
+<td><figure class="align-default">
+<a class="reference internal image-reference" href="_images/adj_add_n_terminal_h3_after.svg"><img alt="add_n_terminal_h3 after" src="_images/adj_add_n_terminal_h3_after.svg" style="width: 100%;" />
+</a>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Example: <a class="reference external" href="https://www.rcsb.org/ligand/ALA">ALA</a></p>
+</li>
+<li><p>run charge corrections;</p></li>
+<li><p>fill missing bond/angle values from AceDRG tables;</p></li>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">H3</span></code> was added, run <code class="docutils literal notranslate"><span class="pre">sync_n_terminal_h3_angles()</span></code> to align H3-angle
+values with existing N-H/N-H2 geometry;</p></li>
+<li><p>add missing chirality, torsion and plane restraints;</p></li>
+<li><p>if the carborane-seed flag is set, apply mixed carborane post-processing:
+cluster-local part.
+Example: <a class="reference external" href="https://www.rcsb.org/ligand/9UK">9UK</a>.</p></li>
+<li><p>assign CCP4 atom types.</p></li>
+</ol>
+<p>Python example:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="go">  &gt;&gt;&gt; import os</span>
+<span class="go">  &gt;&gt;&gt; path = &#39;../tests/ccd/ASP.cif&#39;</span>
+<span class="go">  &gt;&gt;&gt; block = gemmi.cif.read(path).sole_block()</span>
+<span class="go">  &gt;&gt;&gt; cc = gemmi.make_chemcomp_from_block(block)</span>
+<span class="go">  &gt;&gt;&gt; tables = gemmi.AcedrgTables()</span>
+<span class="go">  &gt;&gt;&gt; tables.load_tables(ccp4_path + &#39;/share/acedrg/tables&#39;)</span>
+<span class="go">  &gt;&gt;&gt; before = {a.id for a in cc.atoms}</span>
+<span class="go">  &gt;&gt;&gt; gemmi.prepare_chemcomp(cc, tables)</span>
+<span class="go">  &gt;&gt;&gt; after = {a.id for a in cc.atoms}</span>
+<span class="go">  &gt;&gt;&gt; removed = sorted(before - after)</span>
+<span class="go">  &gt;&gt;&gt; added = sorted(after - before)</span>
+<span class="go">  &gt;&gt;&gt; atoms = {a.id: a for a in cc.atoms}</span>
+<span class="go">  &gt;&gt;&gt; removed</span>
+<span class="go">  [&#39;HD2&#39;, &#39;HXT&#39;]</span>
+<span class="go">  &gt;&gt;&gt; added</span>
+<span class="go">  [&#39;H3&#39;]</span>
+<span class="go">  &gt;&gt;&gt; atoms[&#39;N&#39;].charge</span>
+<span class="go">  1.0</span>
+<span class="go">  &gt;&gt;&gt; atoms[&#39;OD2&#39;].charge</span>
+<span class="go">  -1.0</span>
+<span class="go">  &gt;&gt;&gt; atoms[&#39;OXT&#39;].charge</span>
+<span class="go">  -1.0</span>
+</pre></div>
+</div>
+</section>
+<section id="explicit-options">
+<h4>Explicit options<a class="headerlink" href="#explicit-options" title="Link to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">PrepareChemcompOptions</span></code> currently exposes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">atom_stereo</span></code> – maps atom names to <code class="docutils literal notranslate"><span class="pre">pdbx_stereo_config</span></code> strings used by
+chirality generation,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_angles</span></code> – skips the initial angle-seeding pass,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">strict_mode</span></code>, <code class="docutils literal notranslate"><span class="pre">compat_mode</span></code>, <code class="docutils literal notranslate"><span class="pre">trace_mode</span></code> – tri-state overrides with
+values <code class="docutils literal notranslate"><span class="pre">PrepareOverride.Auto</span></code>, <code class="docutils literal notranslate"><span class="pre">PrepareOverride.Disable</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">PrepareOverride.Enable</span></code>.</p></li>
+</ul>
+<p>In <code class="docutils literal notranslate"><span class="pre">Auto</span></code> mode, the corresponding environment variable is still consulted
+(<code class="docutils literal notranslate"><span class="pre">GEMMI_ACE_STRICT</span></code>, <code class="docutils literal notranslate"><span class="pre">GEMMI_ACE_COMPAT</span></code>, <code class="docutils literal notranslate"><span class="pre">GEMMI_ACE_TRACE</span></code>). <code class="docutils literal notranslate"><span class="pre">Enable</span></code> and
+<code class="docutils literal notranslate"><span class="pre">Disable</span></code> override the environment explicitly for that call.</p>
+<section id="mode-semantics">
+<h5>Mode semantics<a class="headerlink" href="#mode-semantics" title="Link to this heading">¶</a></h5>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">strict_mode</span></code></dt><dd><p>Enables extra validation checks during the pipeline. At present, this
+mainly checks for invalid restraint references, duplicate atom ids in
+planes, and NaN bond/angle targets at the final stage. In strict mode,
+such conditions raise an exception instead of being tolerated or silently
+cleaned up.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">compat_mode</span></code></dt><dd><p>Enables AceDRG-like behavior in places where Gemmi now has a more
+chemistry-first default.</p>
+<p>Current effects:</p>
+<ul class="simple">
+<li><p>peptide mode is gated by the canonical-AA-backbone test
+(<code class="docutils literal notranslate"><span class="pre">N</span></code>, <code class="docutils literal notranslate"><span class="pre">CA</span></code>, <code class="docutils literal notranslate"><span class="pre">C</span></code>, <code class="docutils literal notranslate"><span class="pre">O</span></code>, <code class="docutils literal notranslate"><span class="pre">OXT</span></code> and associated bonding / H naming),</p></li>
+<li><p>torsion candidate selection uses the older AceDRG-like selector instead
+of Gemmi’s scored selector,</p></li>
+<li><p>pyranose chair torsion rewriting is always applied, instead of only when
+coordinates are incomplete.</p></li>
+</ul>
+<p>With <code class="docutils literal notranslate"><span class="pre">compat_mode</span></code> disabled, Gemmi prefers chemically reasonable defaults
+over matching AceDRG quirks.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">trace_mode</span></code></dt><dd><p>Emits phase-by-phase summaries to stderr. The trace reports how many atoms,
+bonds, angles, torsions, chiralities and planes were added or removed in
+each pipeline phase, plus net charge changes. This is intended for
+debugging and regression analysis rather than normal use.</p>
+</dd>
+</dl>
+<p>Python example:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="go">  &gt;&gt;&gt; import gemmi</span>
+<span class="go">  &gt;&gt;&gt; path = &#39;../tests/ccd/ASP.cif&#39;</span>
+<span class="go">  &gt;&gt;&gt; block = gemmi.cif.read(path).sole_block()</span>
+<span class="go">  &gt;&gt;&gt; cc = gemmi.make_chemcomp_from_block(block)</span>
+<span class="go">  &gt;&gt;&gt; tables = gemmi.AcedrgTables()</span>
+<span class="go">  &gt;&gt;&gt; tables.load_tables(ccp4_path + &#39;/share/acedrg/tables&#39;)</span>
+<span class="go">  &gt;&gt;&gt; options = gemmi.PrepareChemcompOptions()</span>
+<span class="go">  &gt;&gt;&gt; options.compat_mode = gemmi.PrepareOverride.Disable</span>
+<span class="go">  &gt;&gt;&gt; options.strict_mode = gemmi.PrepareOverride.Disable</span>
+<span class="go">  &gt;&gt;&gt; gemmi.prepare_chemcomp(cc, tables, options)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+<section id="monomer-library">
+<span id="monlib"></span><h2>Monomer library<a class="headerlink" href="#monomer-library" title="Link to this heading">¶</a></h2>
+<p>Structural biologists routinely use prior knowledge about biomolecules
+to augment the data obtained in an experiment.
+This prior knowledge is what we know about preferred geometries in molecules
+(distances between atoms, etc.). This knowledge is extracted primarily from
+experimental small molecule databases (COD and CSD) and QM calculations.
+One way to store that prior knowledge is in a so-called <em>monomer library</em>.
+In addition to describing monomers (chemical components
+from the previous section), the monomer library also describes links
+between monomers and may contain various other data useful in
+macromolecular refinement.</p>
+<p>In Gemmi, data from a monomer library is stored in the class <code class="docutils literal notranslate"><span class="pre">MonLib</span></code>.
+Currently, <code class="docutils literal notranslate"><span class="pre">MonLib</span></code> is modeled after and works only with
+the <a class="reference external" href="https://github.com/MonomerLibrary/monomers">CCP4 monomer library</a>.
+This library was introduced in the
+<a class="reference external" href="https://doi.org/10.1107/S0907444904023510">early 2000s</a>
+to provide restraint templates for Refmac.
+There are only two other popular MX refinement programs: PHENIX and BUSTER.
+PHENIX provides <a class="reference external" href="https://github.com/MonomerLibrary/monomers">geostd</a>,
+which was forked from CCP4 ML and is still quite similar.
+In <a class="reference external" href="https://www.globalphasing.com/buster/">BUSTER</a> the prior knowledge
+is organized differently.</p>
+<p>The restraints we use are similar to those used in molecular dynamics
+(bond, angle, dihedral, improper dihedral and planarity restraints).
+Originally, the monomer library was created because MD potentials
+were deemed inadequate for refinement. Since then,
+both the restraints in experimental structural biology and MD potentials
+have improved, independently of each other. In recent years there have been
+a few examples of using AMBER and OpenMM potentials for MX refinement.
+Currently, there is no clear advantage to one approach over the other.</p>
+<p><code class="docutils literal notranslate"><span class="pre">MonLib</span></code> has the following member variables (<code class="docutils literal notranslate"><span class="pre">std::</span></code> omitted for readability):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">monomer_dir</span></code> – the top-level directory, in CCP4 it’s <code class="docutils literal notranslate"><span class="pre">$CLIBD_MON</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">map&lt;string,</span> <span class="pre">ChemComp&gt;</span> <span class="pre">monomers</span></code> – chemical components read from
+the monomer library. Usually, we read only the components present in a model.
+Chemical components contains restraint templates</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">map&lt;string,</span> <span class="pre">ChemLink&gt;</span> <span class="pre">links</span></code> –  link descriptions. Each ChemLink
+contains rules for determining to what links it is applicable,
+restrain templates for restraining a link, and the names of modifications
+to be applied to linked monomers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">map&lt;string,</span> <span class="pre">ChemMod&gt;</span> <span class="pre">modifications</span></code> – each modification is a set of rules
+for changing <code class="docutils literal notranslate"><span class="pre">ChemComp</span></code>. The rules can add, remove or modify
+atoms (they often remove a hydrogen atom) and restraints.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">map&lt;string,</span> <span class="pre">ChemComp::Group&gt;</span> <span class="pre">cc_groups</span></code> – groups defined in the library
+to classify monomers. Each monomer is assigned a group (such as <code class="docutils literal notranslate"><span class="pre">peptide</span></code>
+or <code class="docutils literal notranslate"><span class="pre">non-polymer</span></code>). The groups are then used to match link templates against
+the links between monomers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EnerLib</span> <span class="pre">ener_lib</span></code> – data from <code class="docutils literal notranslate"><span class="pre">$CLIBD_MON/ener_lib.cif</span></code>.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">read_monomer_lib()</span></code> takes a monomer directory path, a list of residue names,
+and an optional <a class="reference internal" href="misc.html#logger"><span class="std std-ref">Logger</span></a> argument.
+Example – reading the CCP4 monomer library (Refmac dictionary):</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">monlib_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CCP4&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;/lib/data/monomers&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Usually, residue names from a model are obtained by calling:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#resnames = gemmi.Model.get_all_residue_names()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">resnames</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;LEU&#39;</span><span class="p">,</span> <span class="s1">&#39;VAL&#39;</span><span class="p">,</span> <span class="s1">&#39;HIS&#39;</span><span class="p">,</span> <span class="s1">&#39;SER&#39;</span><span class="p">,</span> <span class="s1">&#39;ASN&#39;</span><span class="p">,</span> <span class="s1">&#39;HOH&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">monlib</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">MonLib</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">monlib</span><span class="o">.</span><span class="n">read_monomer_lib</span><span class="p">(</span><span class="n">monlib_path</span><span class="p">,</span> <span class="n">resnames</span><span class="p">,</span> <span class="n">logging</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<section id="enerlib">
+<h3>EnerLib<a class="headerlink" href="#enerlib" title="Link to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">EnerLib</span></code> is the in-memory representation of selected data from
+<code class="docutils literal notranslate"><span class="pre">ener_lib.cif</span></code> (the same schema used in CCP4 monomer-library and
+AceDRG-tables layouts).
+It is attached to <code class="docutils literal notranslate"><span class="pre">MonLib</span></code> as <code class="docutils literal notranslate"><span class="pre">MonLib.ener_lib</span></code>.</p>
+<p>The atom types here are <a class="reference internal" href="#energy-types"><span class="std std-ref">CCP4 energy types</span></a>
+described further below.</p>
+<p>Loaded categories:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">_lib_atom</span></code> -&gt; atom-type properties (<code class="docutils literal notranslate"><span class="pre">element</span></code>, <code class="docutils literal notranslate"><span class="pre">hb_type</span></code>, <code class="docutils literal notranslate"><span class="pre">vdw_radius</span></code>,
+<code class="docutils literal notranslate"><span class="pre">vdwh_radius</span></code>, <code class="docutils literal notranslate"><span class="pre">ion_radius</span></code>, <code class="docutils literal notranslate"><span class="pre">valency</span></code>, <code class="docutils literal notranslate"><span class="pre">sp</span></code>),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_lib_bond</span></code> -&gt; bond-type entries (<code class="docutils literal notranslate"><span class="pre">atom_type_1</span></code>, <code class="docutils literal notranslate"><span class="pre">atom_type_2</span></code>, bond order,
+length, esd).</p></li>
+</ul>
+<p>How it is used:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">MonLib.read_monomer_lib()</span></code> reads <code class="docutils literal notranslate"><span class="pre">ener_lib.cif</span></code> and populates <code class="docutils literal notranslate"><span class="pre">ener_lib</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MonLib.find_ideal_distance()</span></code> consults it to estimate ideal distances
+between atoms, including metal-aware radius handling and fallback tiers
+when exact type-pair entries are missing.</p></li>
+</ul>
+<p>Reading only <code class="docutils literal notranslate"><span class="pre">ener_lib.cif</span></code> into <code class="docutils literal notranslate"><span class="pre">EnerLib</span></code> (Python):</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ener</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">EnerLib</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ener</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">monlib_path</span><span class="p">,</span> <span class="s1">&#39;ener_lib.cif&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">ener</span><span class="o">.</span><span class="n">atoms</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">MonLib</span></code> can be used to prepare <a class="reference internal" href="analysis.html#topology"><span class="std std-ref">Topology</span></a>.</p>
+</section>
+</section>
+<section id="gemmi-drg-high-level-overview">
+<span id="chemistry-gemmi-drg-overview"></span><h2>gemmi drg: high-level overview<a class="headerlink" href="#gemmi-drg-high-level-overview" title="Link to this heading">¶</a></h2>
+<p>This section is a conceptual overview of <code class="docutils literal notranslate"><span class="pre">gemmi</span> <span class="pre">drg</span></code> capabilities.
+API-level documentation will be added separately.</p>
+<p><code class="docutils literal notranslate"><span class="pre">gemmi</span> <span class="pre">drg</span></code> generates monomer restraint dictionaries by combining
+chemical rules with statistical knowledge derived from AceDRG tables.</p>
+<section id="workflow-and-data-sources">
+<h3>Workflow and data sources<a class="headerlink" href="#workflow-and-data-sources" title="Link to this heading">¶</a></h3>
+<p>At a high level, <code class="docutils literal notranslate"><span class="pre">gemmi</span> <span class="pre">drg</span></code>:</p>
+<ul class="simple">
+<li><p>reads a monomer definition (typically a CCD-like CIF),</p></li>
+<li><p>builds a molecular graph (atoms, bonds, valence context),</p></li>
+<li><p>consults AceDRG-derived tables for bond/angle targets and sigmas,</p></li>
+<li><p>emits restraint categories suitable for refinement workflows.</p></li>
+</ul>
+</section>
+<section id="input-expectations-and-normalization">
+<h3>Input expectations and normalization<a class="headerlink" href="#input-expectations-and-normalization" title="Link to this heading">¶</a></h3>
+<p>Input is typically a CCD-style component definition with atom and bond
+information. In practice, <code class="docutils literal notranslate"><span class="pre">gemmi</span> <span class="pre">drg</span></code> must also normalize chemistry before
+table lookup, because small differences in protonation state or local bond
+annotation can move an atom into a different type bucket.</p>
+<p>For details on the ChemComp-level rule set, see
+<a class="reference internal" href="#chemcomp-chemical-normalization"><span class="std std-ref">Chemical normalization</span></a>.</p>
+<p>Normalization includes:</p>
+<ul class="simple">
+<li><p>protonation/deprotonation rules aligned with AceDRG behavior where
+feasible,</p></li>
+<li><p>selected functional-group corrections used to stabilize atom typing and
+avoid type drift from equivalent input representations,</p></li>
+<li><p>graph cleanup steps that make downstream typing and fallback selection
+deterministic.</p></li>
+</ul>
+<p>These functional-group corrections are intentionally pragmatic rather than
+fully general pKa modeling. Current examples include:</p>
+<ul class="simple">
+<li><p>oxoacid normalization (for phosphate/sulfate-like motifs), including
+deterministic O-H deprotonation in qualifying local patterns,</p></li>
+<li><p>carboxylate normalization (side-chain and terminal forms), including
+removal of acidic hydrogens where AceDRG would represent a deprotonated
+carboxylate,</p></li>
+<li><p>amine/guanidinium normalization, including AceDRG-style protonation and
+hydrogen completion for selected terminal or resonance-stabilized motifs,</p></li>
+<li><p>selected special cases such as PF6-like phosphorus environments and
+metal-adjacent non-metal charge correction used by downstream typing.</p></li>
+</ul>
+</section>
+<section id="core-pipeline">
+<h3>Core pipeline<a class="headerlink" href="#core-pipeline" title="Link to this heading">¶</a></h3>
+<p>Given a monomer CIF, the current implementation performs these stages:</p>
+<ul class="simple">
+<li><p>chemistry normalization, including protonation/deprotonation handling
+and selected functional-group corrections,</p></li>
+<li><p>atom-environment derivation and atom typing (both AceDRG-style
+signatures and CCP4-compatible energy types),</p></li>
+<li><p>bond and angle assignment from AceDRG-style reference statistics,
+with progressively broader fallback levels,</p></li>
+<li><p>inference of missing stereochemical categories from topology, including
+torsions, chiral centers and planarity restraints.</p></li>
+</ul>
+</section>
+<section id="restraint-assignment-strategy">
+<h3>Restraint assignment strategy<a class="headerlink" href="#restraint-assignment-strategy" title="Link to this heading">¶</a></h3>
+<p>Bond/angle assignment is driven by hierarchical matching. Conceptually, it
+tries the most specific local environment first, then relaxes constraints
+in controlled steps until a statistically supported target is found.</p>
+<section id="bond-table-matching-levels">
+<h4>Bond-table matching levels<a class="headerlink" href="#bond-table-matching-levels" title="Link to this heading">¶</a></h4>
+<p>For bonds, matching is keyed by progressively simpler context:</p>
+<ul class="simple">
+<li><p>atom hashes, hybridization pair and same-ring flag,</p></li>
+<li><p>neighbor descriptors (<code class="docutils literal notranslate"><span class="pre">nb2</span></code> and <code class="docutils literal notranslate"><span class="pre">nb1nb2</span></code>-style summaries),</p></li>
+<li><p>atom-type descriptors (<code class="docutils literal notranslate"><span class="pre">cod_main</span></code>) and full COD class for exact matching.</p></li>
+</ul>
+<p>The level sequence mirrors AceDRG-style logic:</p>
+<ul class="simple">
+<li><p>level 0: exact full COD-class match (most specific),</p></li>
+<li><p>levels 1-2: type-relaxed matches/aggregates,</p></li>
+<li><p>levels 3-6: neighborhood-relaxed matches/aggregates,</p></li>
+<li><p>levels 7-8: broader <code class="docutils literal notranslate"><span class="pre">nb2</span></code>-level aggregation,</p></li>
+<li><p>levels 9-11: hash/hybrid/ring summaries from HRS-style hierarchy.</p></li>
+</ul>
+<p>The search does not always start at level 0. It computes a dynamic start
+level from key availability, skipping levels that cannot match for the
+current atom pair.</p>
+</section>
+<section id="angle-table-matching-levels">
+<h4>Angle-table matching levels<a class="headerlink" href="#angle-table-matching-levels" title="Link to this heading">¶</a></h4>
+<p>For angles, keys are centered on the middle atom hash plus sorted flank
+hashes, ring-size/hybridization value key, and then progressively reduced
+context (roots, neighbor summaries, atom types).</p>
+<p>The lookup ladder is:</p>
+<ul class="simple">
+<li><p>1D: full key including types (approx level 0),</p></li>
+<li><p>2D: no type component (approx 1),</p></li>
+<li><p>3D: no <code class="docutils literal notranslate"><span class="pre">nb</span></code> component (approx 2),</p></li>
+<li><p>4D: roots-only beyond hash/value key (approx 3),</p></li>
+<li><p>5D: hash + value key (approx 4),</p></li>
+<li><p>6D: hash-only summary (approx 6).</p></li>
+</ul>
+<p>When center/flank hashes are equal, an additional swapped-center pass is
+used to reproduce AceDRG table-orientation behavior. There is also a
+wildcard partial-hash fallback used only when the exact hash triple has
+no loaded table entries.</p>
+</section>
+<section id="thresholding-and-final-fallbacks">
+<h4>Thresholding and final fallbacks<a class="headerlink" href="#thresholding-and-final-fallbacks" title="Link to this heading">¶</a></h4>
+<p>Acceptance is thresholded by observation support (defaults are AceDRG-like;
+for many paths the default minimum is 3 observations).</p>
+<p>In particular:</p>
+<ul class="simple">
+<li><p>bond level 0 uses observation count from the matched record,</p></li>
+<li><p>bond levels 1-8 use the number of contributing entries in the aggregate,</p></li>
+<li><p>bond levels 9-11 (HRS hierarchy) accept presence of compatible entries,</p></li>
+<li><p>angle 1D-5D paths are accepted only when count threshold is met,</p></li>
+<li><p>angle wildcard/HRS paths are used only after specific keyed paths fail.</p></li>
+</ul>
+<p>If type-specific statistical matching fails:</p>
+<ul class="simple">
+<li><p>bonds fall back through HRS/element-hybrid routes, then CCP4 <code class="docutils literal notranslate"><span class="pre">ener_lib</span></code>
+compatibility lookup,</p></li>
+<li><p>angles fall back through HRS and then geometry defaults based on center
+hybridization/coordination (with dedicated metal and high-coordination
+handling).</p></li>
+</ul>
+<p>This ordering keeps as much chemistry context as possible before using broad
+fallbacks. It improves robustness on unusual ligands while still favoring
+AceDRG-like targets whenever data are available.</p>
+</section>
+</section>
+<section id="ring-aromaticity-and-fused-ring-context">
+<h3>Ring aromaticity and fused-ring context<a class="headerlink" href="#ring-aromaticity-and-fused-ring-context" title="Link to this heading">¶</a></h3>
+<p>Ring handling is central to output quality and compatibility. It affects
+both atom typing and the final restraint lookup.</p>
+<p>This area received substantial tuning to match AceDRG conventions:</p>
+<ul class="simple">
+<li><p>ring membership and aromaticity are propagated into environment labels,</p></li>
+<li><p>fused systems are treated as connected ring networks, not isolated
+independent rings,</p></li>
+<li><p>shared atoms in fused systems can keep mixed labels such as <code class="docutils literal notranslate"><span class="pre">[5a,6a]</span></code>,</p></li>
+<li><p>these labels are used directly in AceDRG signatures and therefore
+influence which bond/angle statistics are selected.</p></li>
+</ul>
+<p>The current implementation follows the AceDRG workflow quite closely.
+Ring membership is first detected from the molecular graph and then folded
+back into per-atom labels:</p>
+<ul class="simple">
+<li><p>the ring search is AceDRG-style and currently enumerates rings up to
+6 atoms,</p></li>
+<li><p>each detected ring contributes a size marker such as <code class="docutils literal notranslate"><span class="pre">5</span></code>, <code class="docutils literal notranslate"><span class="pre">6</span></code>,
+<code class="docutils literal notranslate"><span class="pre">5a</span></code> or <code class="docutils literal notranslate"><span class="pre">6a</span></code> to every atom that belongs to it,</p></li>
+<li><p>if an atom belongs to multiple rings, the markers are combined and
+sorted into a bracketed annotation such as <code class="docutils literal notranslate"><span class="pre">[5a,6a]</span></code>,</p></li>
+<li><p>repeated memberships of the same size are preserved, so a fused atom can
+also end up with forms such as <code class="docutils literal notranslate"><span class="pre">[5a,5a]</span></code> or <code class="docutils literal notranslate"><span class="pre">3x6a</span></code>.</p></li>
+</ul>
+<p>These annotations are not cosmetic. They are injected directly into AceDRG
+environment signatures for both the center atom and its neighbors. For
+example, a plain <code class="docutils literal notranslate"><span class="pre">C</span></code> can become <code class="docutils literal notranslate"><span class="pre">C[6a]</span></code>, and a neighboring atom description
+inside a larger signature can likewise carry <code class="docutils literal notranslate"><span class="pre">[5a,6a]</span></code>. This means that
+fused-ring context changes the COD class, which in turn changes which
+statistical bond and angle records are considered compatible.</p>
+<p>This is what is meant by treating fused systems as connected ring networks
+rather than isolated rings. The code still detects individual rings, but it
+does not stop there and type each atom as if it belonged to only one of them.
+Instead, every atom accumulates the full set of ring memberships coming from
+all rings that pass through it:</p>
+<ul class="simple">
+<li><p>an atom on a simple monocycle typically gets a single label such as <code class="docutils literal notranslate"><span class="pre">[6]</span></code>
+or <code class="docutils literal notranslate"><span class="pre">[6a]</span></code>,</p></li>
+<li><p>an atom shared by two fused aromatic 6-rings can carry <code class="docutils literal notranslate"><span class="pre">[6a,6a]</span></code>,</p></li>
+<li><p>an atom at a 5/6 fusion can carry <code class="docutils literal notranslate"><span class="pre">[5a,6a]</span></code>,</p></li>
+<li><p>if the same size occurs three times, the display is compacted to forms such
+as <code class="docutils literal notranslate"><span class="pre">3x6a</span></code>.</p></li>
+</ul>
+<p>So for a fused bicyclic or polycyclic system, the shared atoms explicitly
+remember that they sit at a junction, and the adjacent atoms “see” that
+junction when their neighborhood signatures are built. In practice this means:</p>
+<ul class="simple">
+<li><p>the center atom type is influenced by the whole local fused network,
+not just by one arbitrarily chosen ring,</p></li>
+<li><p>neighbor descriptors also retain the mixed fused annotation,</p></li>
+<li><p>two atoms that are both formally aromatic carbons may still get different
+AceDRG signatures if one sits in a simple phenyl-like ring and the other
+sits at a fused 5/6 or 6/6 junction.</p></li>
+</ul>
+<p>This is important because restraint lookup is keyed by these signatures.
+Treating fused systems as disconnected monocycles would collapse distinct
+environments together and would tend to select less specific bond and angle
+statistics for bridge and fusion atoms.</p>
+<p>From Python, ring aromaticity can be inspected directly:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">benzene_cif</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span><span class="se">\</span>
+<span class="gp">... </span><span class="s1">data_comp_BEN</span>
+<span class="gp">... </span><span class="s1">loop_</span>
+<span class="gp">... </span><span class="s1">_chem_comp_atom.atom_id</span>
+<span class="gp">... </span><span class="s1">_chem_comp_atom.type_symbol</span>
+<span class="gp">... </span><span class="s1">C1 C</span>
+<span class="gp">... </span><span class="s1">C2 C</span>
+<span class="gp">... </span><span class="s1">C3 C</span>
+<span class="gp">... </span><span class="s1">C4 C</span>
+<span class="gp">... </span><span class="s1">C5 C</span>
+<span class="gp">... </span><span class="s1">C6 C</span>
+<span class="gp">... </span><span class="s1">H1 H</span>
+<span class="gp">... </span><span class="s1">H2 H</span>
+<span class="gp">... </span><span class="s1">H3 H</span>
+<span class="gp">... </span><span class="s1">H4 H</span>
+<span class="gp">... </span><span class="s1">H5 H</span>
+<span class="gp">... </span><span class="s1">H6 H</span>
+<span class="gp">... </span><span class="s1">loop_</span>
+<span class="gp">... </span><span class="s1">_chem_comp_bond.atom_id_1</span>
+<span class="gp">... </span><span class="s1">_chem_comp_bond.atom_id_2</span>
+<span class="gp">... </span><span class="s1">_chem_comp_bond.value_order</span>
+<span class="gp">... </span><span class="s1">C1 C2 arom</span>
+<span class="gp">... </span><span class="s1">C2 C3 arom</span>
+<span class="gp">... </span><span class="s1">C3 C4 arom</span>
+<span class="gp">... </span><span class="s1">C4 C5 arom</span>
+<span class="gp">... </span><span class="s1">C5 C6 arom</span>
+<span class="gp">... </span><span class="s1">C6 C1 arom</span>
+<span class="gp">... </span><span class="s1">C1 H1 sing</span>
+<span class="gp">... </span><span class="s1">C2 H2 sing</span>
+<span class="gp">... </span><span class="s1">C3 H3 sing</span>
+<span class="gp">... </span><span class="s1">C4 H4 sing</span>
+<span class="gp">... </span><span class="s1">C5 H5 sing</span>
+<span class="gp">... </span><span class="s1">C6 H6 sing</span>
+<span class="gp">... </span><span class="s1">&#39;&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cc</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">make_chemcomp_from_block</span><span class="p">(</span><span class="n">gemmi</span><span class="o">.</span><span class="n">cif</span><span class="o">.</span><span class="n">read_string</span><span class="p">(</span><span class="n">benzene_cif</span><span class="p">)</span><span class="o">.</span><span class="n">sole_block</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rings</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">find_ace_rings</span><span class="p">(</span><span class="n">cc</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[(</span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">atoms</span><span class="p">),</span> <span class="n">r</span><span class="o">.</span><span class="n">is_aromatic</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rings</span><span class="p">]</span>
+<span class="go">[(6, True)]</span>
+</pre></div>
+</div>
+<p>For aromaticity assignment, the implementation uses AceDRG-style
+electron counting with a <a class="reference external" href="https://goldbook.iupac.org/terms/view/H02867">Huckel (4n+2) rule</a> like criterion on ring
+pi-electron totals, but with several important details:</p>
+<ul class="simple">
+<li><p>aromaticity annotations present in the input dictionary are not used for
+this step; AceDRG-style ring aromaticity is recomputed from the molecular
+graph and local atom properties,</p></li>
+<li><p>a ring is only eligible if all of its atoms pass the AceDRG planarity
+gate, which in practice means <code class="docutils literal notranslate"><span class="pre">bonding_idx</span> <span class="pre">==</span> <span class="pre">2</span></code> for every atom in the
+ring,</p></li>
+<li><p>this “planarity” is not taken from Cartesian coordinates; it is the
+AceDRG internal sp2-like classification derived from bond orders, charges,
+and local graph environment,</p></li>
+<li><p>the strict phase counts pi electrons using the AceDRG non-metal view of
+the local environment,</p></li>
+<li><p>the permissive phase retries with AceDRG’s broader bookkeeping used for
+edge cases, while still preserving the same ring list and fused context,</p></li>
+<li><p>there is also an AceDRG special case for porphyrin-like systems:
+when exactly four planar 5-member rings each contain 4 C and 1 N,
+they are marked aromatic even if the initial strict pi count fails.</p></li>
+</ul>
+<p>The distinction between the two phases matters:</p>
+<ul class="simple">
+<li><p>strict aromaticity is used while building the primary COD classes for
+statistical lookup,</p></li>
+<li><p>if the permissive pass changes any ring labels, the COD classes are
+rebuilt for output typing,</p></li>
+<li><p>however, the strict classification is still retained for the table-lookup
+path so that statistics are matched in the same way as AceDRG.</p></li>
+</ul>
+<p>Fallback selection also tries to preserve ring and aromatic context as long
+as possible before dropping to broader generic classes. Small differences in
+labels such as <code class="docutils literal notranslate"><span class="pre">[6]</span></code> vs <code class="docutils literal notranslate"><span class="pre">[6a]</span></code>, or <code class="docutils literal notranslate"><span class="pre">[5a]</span></code> vs <code class="docutils literal notranslate"><span class="pre">[5a,6a]</span></code>, can cascade into
+different atom types and therefore different restraints, so matching
+AceDRG behavior here is important for practical parity.</p>
+</section>
+<section id="special-chemistry-handling">
+<h3>Special chemistry handling<a class="headerlink" href="#special-chemistry-handling" title="Link to this heading">¶</a></h3>
+<p>Some chemistries need dedicated logic beyond generic rules. For example,
+carborane-like systems have specialized handling aimed at reproducing
+AceDRG-like typing and restraint targets more closely.</p>
+</section>
+<section id="output-restraint-categories">
+<h3>Output restraint categories<a class="headerlink" href="#output-restraint-categories" title="Link to this heading">¶</a></h3>
+<p>The generated dictionary includes standard geometric restraint families used
+in crystallographic refinement:</p>
+<ul class="simple">
+<li><p>bond restraints (target distances + sigmas),</p></li>
+<li><p>angle restraints (target angles + sigmas),</p></li>
+<li><p>torsion restraints (including automatically inferred torsions),</p></li>
+<li><p>chirality restraints,</p></li>
+<li><p>planarity restraints.</p></li>
+</ul>
+<p>These categories are generated from the molecular graph and assigned types,
+not from a single hard-coded template per residue.</p>
+</section>
+<section id="compatibility-focus-and-scope">
+<h3>Compatibility focus and scope<a class="headerlink" href="#compatibility-focus-and-scope" title="Link to this heading">¶</a></h3>
+<p>A major goal of this implementation is practical compatibility with
+AceDRG output and conventions (not only broad chemical plausibility).
+In particular, substantial effort has been invested in matching
+AceDRG-like behavior for atom typing, protonation logic, and restraint
+selection in edge-case chemistries.</p>
+<p>The produced restraint values are refinement targets (ideal values and
+sigmas/esds). They are empirical/statistical restraints, not a QM
+geometry optimization.</p>
+<p>For background on AceDRG algorithms, see:
+<a class="reference external" href="https://doi.org/10.1107/S2059798317000067">Long et al. (2017), Acta Cryst. D73, 112-122</a>.
+For the project rationale and compatibility goals, see
+<a class="reference external" href="https://github.com/project-gemmi/gemmi/discussions/401">Gemmi discussion #401</a>.</p>
+</section>
+<section id="atom-typing-ccp4-energy-types">
+<span id="energy-types"></span><h3>Atom typing: CCP4 energy types<a class="headerlink" href="#atom-typing-ccp4-energy-types" title="Link to this heading">¶</a></h3>
+<p>One key concept in restraint generation is the CCP4 “energy type”
+(<code class="docutils literal notranslate"><span class="pre">_chem_comp_atom.type_energy</span></code>). This is a chemistry-aware atom class
+used by monomer-library restraint tables.</p>
+<p>Gemmi can assign these types directly, without loading AceDRG tables:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;../tests/ccd/ALA.cif&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cc</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">make_chemcomp_from_block</span><span class="p">(</span><span class="n">gemmi</span><span class="o">.</span><span class="n">cif</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">sole_block</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">assign_chemcomp_ccp4_types</span><span class="p">(</span><span class="n">cc</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="n">a</span><span class="o">.</span><span class="n">id</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">chem_type</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">cc</span><span class="o">.</span><span class="n">atoms</span> <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">id</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;CA&#39;</span><span class="p">,</span> <span class="s1">&#39;CB&#39;</span><span class="p">)}</span>
+<span class="go">{&#39;N&#39;: &#39;N32&#39;, &#39;CA&#39;: &#39;CH1&#39;, &#39;CB&#39;: &#39;CH3&#39;}</span>
+</pre></div>
+</div>
+<p>The assignment uses the current <code class="docutils literal notranslate"><span class="pre">ChemComp</span></code> graph as-is. If you want
+normalization, hydrogen completion or peptide-specific adjustments first,
+run <a class="reference internal" href="#chemistry-gemmi-drg-overview"><span class="std std-ref">prepare_chemcomp()</span></a> instead.</p>
+<p>These types are not elements. They encode local environment features
+such as hydrogen count, local bonding pattern and ring/aromatic context.
+The full list of non-element types from <code class="docutils literal notranslate"><span class="pre">ener_lib.cif</span></code>
+(metals and other elements use their element symbol directly):</p>
+<p><strong>Carbon sp</strong> –
+<code class="docutils literal notranslate"><span class="pre">CSP</span></code> (triple bond or two double bonds),
+<code class="docutils literal notranslate"><span class="pre">CSP1</span></code> (triple bond + 1H).</p>
+<p><strong>Carbon sp2</strong> –
+<code class="docutils literal notranslate"><span class="pre">C</span></code> (no H, carbonyl C),
+<code class="docutils literal notranslate"><span class="pre">C1</span></code> (1H),
+<code class="docutils literal notranslate"><span class="pre">C2</span></code> (2H),
+<code class="docutils literal notranslate"><span class="pre">CR15</span></code> (1H in 5-ring),
+<code class="docutils literal notranslate"><span class="pre">CR16</span></code> (1H in 6-ring),
+<code class="docutils literal notranslate"><span class="pre">CR5</span></code> (no H in 5-ring),
+<code class="docutils literal notranslate"><span class="pre">CR6</span></code> (no H in 6-ring),
+<code class="docutils literal notranslate"><span class="pre">CR1</span></code> (between two pyrrole units),
+<code class="docutils literal notranslate"><span class="pre">CR1H</span></code> (CR1 + 1H),
+<code class="docutils literal notranslate"><span class="pre">CR55</span></code> (between 5-5 rings),
+<code class="docutils literal notranslate"><span class="pre">CR56</span></code> (between 5-6 rings),
+<code class="docutils literal notranslate"><span class="pre">CR66</span></code> (between 6-6 rings).</p>
+<p><strong>Carbon sp3</strong> –
+<code class="docutils literal notranslate"><span class="pre">CH1</span></code> (1H),
+<code class="docutils literal notranslate"><span class="pre">CH2</span></code> (2H),
+<code class="docutils literal notranslate"><span class="pre">CH3</span></code> (3H),
+<code class="docutils literal notranslate"><span class="pre">CT</span></code> (no H).</p>
+<p><strong>Nitrogen sp</strong> –
+<code class="docutils literal notranslate"><span class="pre">NSP</span></code>/<code class="docutils literal notranslate"><span class="pre">NS</span></code> (no H, triple bond),
+<code class="docutils literal notranslate"><span class="pre">NSP1</span></code>/<code class="docutils literal notranslate"><span class="pre">NS1</span></code> (1H, triple bond).</p>
+<p><strong>Nitrogen sp2, 3 bonds</strong> –
+<code class="docutils literal notranslate"><span class="pre">NH0</span></code> (no H),
+<code class="docutils literal notranslate"><span class="pre">NH1</span></code> (1H, main-chain N),
+<code class="docutils literal notranslate"><span class="pre">NH2</span></code> (2H),
+<code class="docutils literal notranslate"><span class="pre">NC1</span></code> (1H, charged),
+<code class="docutils literal notranslate"><span class="pre">NC2</span></code> (2H, charged),
+<code class="docutils literal notranslate"><span class="pre">NPA</span></code>/<code class="docutils literal notranslate"><span class="pre">NPB</span></code> (no H, heme).
+<strong>Nitrogen sp2, 2 bonds</strong> –
+<code class="docutils literal notranslate"><span class="pre">N20</span></code> (no H),
+<code class="docutils literal notranslate"><span class="pre">N21</span></code> (1H).
+<strong>Nitrogen sp2, ring</strong> –
+<code class="docutils literal notranslate"><span class="pre">NRD5</span></code> (lone pair, 5-ring),
+<code class="docutils literal notranslate"><span class="pre">NRD6</span></code> (lone pair, 6-ring),
+<code class="docutils literal notranslate"><span class="pre">NR15</span></code> (1H, 5-ring),
+<code class="docutils literal notranslate"><span class="pre">NR16</span></code> (1H, 6-ring),
+<code class="docutils literal notranslate"><span class="pre">NR5</span></code> (3 non-H bonds, 5-ring),
+<code class="docutils literal notranslate"><span class="pre">NR6</span></code> (3 non-H bonds, 6-ring),
+<code class="docutils literal notranslate"><span class="pre">NR55</span></code> (between 5-5 rings),
+<code class="docutils literal notranslate"><span class="pre">NR56</span></code> (between 5-6 rings),
+<code class="docutils literal notranslate"><span class="pre">NR66</span></code> (between 6-6 rings).</p>
+<p><strong>Nitrogen sp3, 4 bonds</strong> –
+<code class="docutils literal notranslate"><span class="pre">NT</span></code> (no H),
+<code class="docutils literal notranslate"><span class="pre">NT1</span></code> (1H),
+<code class="docutils literal notranslate"><span class="pre">NT2</span></code> (2H),
+<code class="docutils literal notranslate"><span class="pre">NT3</span></code> (3H),
+<code class="docutils literal notranslate"><span class="pre">NT4</span></code> (4H).
+<strong>Nitrogen sp3, 3 bonds</strong> –
+<code class="docutils literal notranslate"><span class="pre">N</span></code>/<code class="docutils literal notranslate"><span class="pre">N30</span></code> (no H),
+<code class="docutils literal notranslate"><span class="pre">N31</span></code> (1H),
+<code class="docutils literal notranslate"><span class="pre">N32</span></code> (2H),
+<code class="docutils literal notranslate"><span class="pre">N33</span></code> (3H).</p>
+<p><strong>Oxygen sp2</strong> –
+<code class="docutils literal notranslate"><span class="pre">O</span></code> (no charge, main-chain O),
+<code class="docutils literal notranslate"><span class="pre">OC</span></code> (charged),
+<code class="docutils literal notranslate"><span class="pre">OP</span></code> (charged, bonded to P),
+<code class="docutils literal notranslate"><span class="pre">OS</span></code> (charged, bonded to S),
+<code class="docutils literal notranslate"><span class="pre">OB</span></code> (charged, bonded to B).
+<strong>Oxygen sp3</strong> –
+<code class="docutils literal notranslate"><span class="pre">O2</span></code> (2 bonds),
+<code class="docutils literal notranslate"><span class="pre">OC2</span></code> (2 bonds, charged),
+<code class="docutils literal notranslate"><span class="pre">OH1</span></code> (alcohol),
+<code class="docutils literal notranslate"><span class="pre">OH2</span></code> (water).</p>
+<p><strong>Phosphorus</strong> –
+<code class="docutils literal notranslate"><span class="pre">P</span></code> (4 bonds),
+<code class="docutils literal notranslate"><span class="pre">P1</span></code> (3 bonds).</p>
+<p><strong>Sulfur</strong> –
+<code class="docutils literal notranslate"><span class="pre">S</span></code> (no H),
+<code class="docutils literal notranslate"><span class="pre">SH1</span></code> (1H),
+<code class="docutils literal notranslate"><span class="pre">S1</span></code> (1 double bond),
+<code class="docutils literal notranslate"><span class="pre">S2</span></code> (2 bonds),
+<code class="docutils literal notranslate"><span class="pre">S3</span></code> (3 bonds, sulphoxide).</p>
+<p><strong>Silicon</strong> –
+<code class="docutils literal notranslate"><span class="pre">SI</span></code> (tetragonal),
+<code class="docutils literal notranslate"><span class="pre">SI1</span></code> (other).</p>
+<p><strong>Hydrogen</strong> –
+<code class="docutils literal notranslate"><span class="pre">H</span></code> (generic),
+plus specific subtypes: <code class="docutils literal notranslate"><span class="pre">HCH</span></code>, <code class="docutils literal notranslate"><span class="pre">HCR</span></code>, <code class="docutils literal notranslate"><span class="pre">HNC1</span></code>, <code class="docutils literal notranslate"><span class="pre">HNC2</span></code>,
+<code class="docutils literal notranslate"><span class="pre">HNH1</span></code>, <code class="docutils literal notranslate"><span class="pre">HNH2</span></code>, <code class="docutils literal notranslate"><span class="pre">HNR5</span></code>, <code class="docutils literal notranslate"><span class="pre">HNR6</span></code>, <code class="docutils literal notranslate"><span class="pre">HOH1</span></code>, <code class="docutils literal notranslate"><span class="pre">HOH2</span></code>, <code class="docutils literal notranslate"><span class="pre">HSH1</span></code>.</p>
+<p>Historically, energy types were also used to look up ideal bond lengths
+and angles. In practice this turned out to be too complex for too little gain.
+Currently, their main purpose is to provide hydrogen-bonding type,
+van der Waals radii, and ionic radii – i.e. parameters for
+non-bonding interactions.</p>
+<p>AceDRG environment types (described <a class="reference internal" href="#acedrg-env-signatures"><span class="std std-ref">below</span></a>)
+are far richer, but there are around 800 000 of them.
+In principle they could also be used for non-bonding interaction analysis,
+but this has not been done yet.</p>
+</section>
+<section id="acedrg-environment-signatures">
+<span id="acedrg-env-signatures"></span><h3>AceDRG environment signatures<a class="headerlink" href="#acedrg-environment-signatures" title="Link to this heading">¶</a></h3>
+<p>AceDRG environment types are explicit local-neighborhood signatures.
+Examples from AceDRG tables include <code class="docutils literal notranslate"><span class="pre">C(C)(H)3</span></code>, <code class="docutils literal notranslate"><span class="pre">N(CC)</span></code>, <code class="docutils literal notranslate"><span class="pre">O(C)(H)</span></code>,
+<code class="docutils literal notranslate"><span class="pre">S(CC)(O)3</span></code>, <code class="docutils literal notranslate"><span class="pre">P(CC)3(O)</span></code>, and ring/aromatic-aware forms such as
+<code class="docutils literal notranslate"><span class="pre">C(C[6a]C[6a]2)</span></code> and <code class="docutils literal notranslate"><span class="pre">N(C[6a]C[6a]2)</span></code>.</p>
+<p>More complex “full” signatures can be substantially richer, for example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">C[5a,6a](C[5a,6a]C[6a]N[5a])(N[5a]C[5a]C[5])(N[6a]C[6a]){1|C&lt;4&gt;,1|N&lt;2&gt;,1|N&lt;3&gt;,1|O&lt;2&gt;,3|H&lt;1&gt;}</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">N[5a](C[5a,6a]C[5a,6a]N[6a])(C[5]C[5]O[5]H)(C[5a]N[5a]H){1|H&lt;1&gt;,1|O&lt;2&gt;,2|C&lt;3&gt;,2|C&lt;4&gt;}</span></code>.</p></li>
+</ul>
+<p>In <code class="docutils literal notranslate"><span class="pre">allAtomTypesFromMolsCoded.list</span></code>, these labels are paired with coded
+keys (for example <code class="docutils literal notranslate"><span class="pre">240_652_0</span>&#160;&#160;&#160; <span class="pre">C(C)(H)3</span></code>).</p>
+</section>
+<section id="how-to-read-complex-signatures">
+<h3>How to read complex signatures<a class="headerlink" href="#how-to-read-complex-signatures" title="Link to this heading">¶</a></h3>
+<p>A full AceDRG signature can contain several layers of context:</p>
+<ul class="simple">
+<li><p>center token (for example <code class="docutils literal notranslate"><span class="pre">C[5a,6a]</span></code>) describes the central atom and
+ring/aromatic context,</p></li>
+<li><p>parenthesized groups encode key bonded-neighbor environments,</p></li>
+<li><p>optional brace blocks (for example <code class="docutils literal notranslate"><span class="pre">{1|C&lt;4&gt;,1|N&lt;2&gt;,...}</span></code>) summarize
+additional counted local features used to disambiguate similar motifs.</p></li>
+</ul>
+<p>This expressiveness is one reason AceDRG signatures can separate subtle
+chemical environments better than simpler type systems.</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+
+
+        <div class="related-pages">
+          <a class="next-page" href="mol.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Macromolecular models</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="misc.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Miscellaneous utils</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                &#169; Global Phasing Ltd
+            </div>
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> and customized theme
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Chemistry</a><ul>
+<li><a class="reference internal" href="#elements">Elements</a></li>
+<li><a class="reference internal" href="#small-molecules">Small Molecules</a><ul>
+<li><a class="reference internal" href="#smallstructure-spacegroup">SmallStructure::spacegroup</a></li>
+<li><a class="reference internal" href="#without-cif-file">without CIF file</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#chemical-components">Chemical Components</a><ul>
+<li><a class="reference internal" href="#built-in-data">Built-in data</a></li>
+<li><a class="reference internal" href="#ccd-and-monomer-cif-files">CCD and monomer CIF files</a></li>
+<li><a class="reference internal" href="#smarts-matching">SMARTS Matching</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#chemical-normalization">Chemical normalization</a><ul>
+<li><a class="reference internal" href="#apply-chemical-adjustments">apply_chemical_adjustments()</a><ul>
+<li><a class="reference internal" href="#acid-oxoacid-deprotonation">Acid/oxoacid deprotonation</a></li>
+<li><a class="reference internal" href="#resonance-normalization">Resonance normalization</a></li>
+<li><a class="reference internal" href="#targeted-handling">Targeted handling</a></li>
+<li><a class="reference internal" href="#cationic-nitrogen-completion-protonation">Cationic nitrogen completion/protonation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#prepare-chemcomp">prepare_chemcomp()</a><ul>
+<li><a class="reference internal" href="#execution-order">Execution order</a></li>
+<li><a class="reference internal" href="#explicit-options">Explicit options</a><ul>
+<li><a class="reference internal" href="#mode-semantics">Mode semantics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#monomer-library">Monomer library</a><ul>
+<li><a class="reference internal" href="#enerlib">EnerLib</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#gemmi-drg-high-level-overview">gemmi drg: high-level overview</a><ul>
+<li><a class="reference internal" href="#workflow-and-data-sources">Workflow and data sources</a></li>
+<li><a class="reference internal" href="#input-expectations-and-normalization">Input expectations and normalization</a></li>
+<li><a class="reference internal" href="#core-pipeline">Core pipeline</a></li>
+<li><a class="reference internal" href="#restraint-assignment-strategy">Restraint assignment strategy</a><ul>
+<li><a class="reference internal" href="#bond-table-matching-levels">Bond-table matching levels</a></li>
+<li><a class="reference internal" href="#angle-table-matching-levels">Angle-table matching levels</a></li>
+<li><a class="reference internal" href="#thresholding-and-final-fallbacks">Thresholding and final fallbacks</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ring-aromaticity-and-fused-ring-context">Ring aromaticity and fused-ring context</a></li>
+<li><a class="reference internal" href="#special-chemistry-handling">Special chemistry handling</a></li>
+<li><a class="reference internal" href="#output-restraint-categories">Output restraint categories</a></li>
+<li><a class="reference internal" href="#compatibility-focus-and-scope">Compatibility focus and scope</a></li>
+<li><a class="reference internal" href="#atom-typing-ccp4-energy-types">Atom typing: CCP4 energy types</a></li>
+<li><a class="reference internal" href="#acedrg-environment-signatures">AceDRG environment signatures</a></li>
+<li><a class="reference internal" href="#how-to-read-complex-signatures">How to read complex signatures</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=9c96f6c5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="_static/tabs.js?v=3ee01567"></script>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+digraph "gemmi/refln.hpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="gemmi/refln.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Structure and accessors for reflection data from SF-mmCIF files."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="gemmi/cif2mtz.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$cif2mtz_8hpp.html",tooltip="Convert structure factor data from mmCIF to MTZ format."];
+}

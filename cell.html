@@ -1,0 +1,1206 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Miscellaneous utils" href="misc.html"><link rel="prev" title="Symmetry" href="symmetry.html">
+
+    <!-- Generated with Sphinx 8.1.3 and Furo 2025.12.19 -->
+        <title>Math and unit cell - Gemmi 0.7.6-dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=ee168a85" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Gemmi 0.7.6-dev documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  <span class="sidebar-brand-text">Gemmi 0.7.6-dev documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="install.html">Installation</a><input aria-label="Toggle navigation of Installation" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#c-library">C++ library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#python-module">Python module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#fortran-and-c-bindings">Fortran and C bindings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#webassembly">WebAssembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#program">Program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#testing">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="program.html">Gemmi program</a><input aria-label="Toggle navigation of Gemmi program" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="program.html#validate">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#grep">grep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#cif2json">cif2json</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#json2cif">json2cif</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#cifdiff">cifdiff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#convert">convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#set">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#tags">tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#map">map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#mask">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#mtz">mtz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#mtz2cif">mtz2cif</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#cif2mtz">cif2mtz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#sf2map">sf2map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#map2sf">map2sf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#merge">merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#ecalc">ecalc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#sfcalc">sfcalc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#fprime">fprime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#reindex">reindex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#residues">residues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#align">align</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#sg">sg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#contents">contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#contact">contact</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#blobs">blobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#h">h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#mondiff">mondiff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#crd">crd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#drg">drg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#wcn">wcn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#xds2mtz">xds2mtz</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Prerequisites</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="cif.html">CIF Parser</a><input aria-label="Toggle navigation of CIF Parser" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#what-are-star-cif-ddl-mmcif">What are STAR, CIF, DDL, mmCIF?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#what-is-parsed">What is parsed?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#dom-and-sax">DOM and SAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#reading-and-writing">Reading and writing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#document">Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#block">Block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#pairs-and-loops">Pairs and Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#column">Column</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#table">Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#validation">Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#design-choices">Design choices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="symmetry.html">Symmetry</a><input aria-label="Toggle navigation of Symmetry" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="symmetry.html#space-group-table">Space group table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetry.html#spacegroup">SpaceGroup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetry.html#operations">Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetry.html#groups-of-operations">Groups of Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetry.html#asu">ASU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetry.html#twinning">Twinning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetry.html#c-example">C++ Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetry.html#implementation-notes">Implementation notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Math and unit cell</a><input aria-label="Toggle navigation of Math and unit cell" checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="#vectors-and-coordinates">Vectors and coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#x3-matrices">3x3 matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#transformations">Transformations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#box">Box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unit-cell">Unit cell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unit-cell-reduction">Unit cell reduction</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="misc.html">Miscellaneous utils</a><input aria-label="Toggle navigation of Miscellaneous utils" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#fasta-and-pir-reader">FASTA and PIR reader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#logger">Logger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#copy-of-the-pdb-archive">Copy of the PDB archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#directory-walking">Directory walking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#input-abstractions-decompressing-on-the-fly">Input abstractions (decompressing on the fly)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Working with Molecules</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chemistry.html">Chemistry</a><input aria-label="Toggle navigation of Chemistry" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="chemistry.html#elements">Elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chemistry.html#small-molecules">Small Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chemistry.html#chemical-components">Chemical Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chemistry.html#chemical-normalization">Chemical normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chemistry.html#monomer-library">Monomer library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chemistry.html#gemmi-drg-high-level-overview">gemmi drg: high-level overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="mol.html">Macromolecular models</a><input aria-label="Toggle navigation of Macromolecular models" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#coordinate-files">Coordinate files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#structure">Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#model">Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#chain">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#residue">Residue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#atom">Atom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#atomaddress-and-cra">AtomAddress and CRA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#flat-structure-representation">Flat Structure Representation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="analysis.html">Structure analysis</a><input aria-label="Toggle navigation of Structure analysis" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#neighbor-search">Neighbor search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#contact-search">Contact search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#matthews-coefficient">Matthews coefficient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#sequence-alignment">Sequence alignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#superposition">Superposition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#selections-cid">Selections (CID)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#selections-pymol-syntax">Selections (PyMOL syntax)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#graph-analysis">Graph analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#torsion-angles">Torsion angles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#topology">Topology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#modelling-b-factors">Modelling B-factors</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Working with Data</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="grid.html">Grids and maps</a><input aria-label="Toggle navigation of Grids and maps" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="grid.html#volumetric-grid">Volumetric grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid.html#mrc-ccp4-maps">MRC/CCP4 maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid.html#dsn6-brix-maps">DSN6/BRIX maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid.html#isosurface-extraction">Isosurface extraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="hkl.html">Reciprocal space</a><input aria-label="Toggle navigation of Reciprocal space" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#mtz-format">MTZ format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#sf-mmcif">SF mmCIF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#mtz-mmcif">MTZ ↔ mmCIF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#xds-ascii">XDS_ASCII</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#sx-hkl-cif">SX hkl CIF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#resolution-bins">Resolution bins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#intensities">Intensities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#asudata-merged-reflections">AsuData: merged reflections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#reciprocal-space-grid">Reciprocal-space grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#fft">FFT</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="scattering.html">Scattering</a><input aria-label="Toggle navigation of Scattering" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="scattering.html#x-ray-form-factors">X-ray form factors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scattering.html#anomalous-scattering">Anomalous scattering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scattering.html#electron-form-factors">Electron form factors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scattering.html#neutron-scattering">Neutron scattering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scattering.html#direct-summation">Direct summation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scattering.html#density-for-fft">Density for FFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scattering.html#mott-bethe-formula">Mott-Bethe formula</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scattering.html#scaling-and-bulk-solvent-correction">Scaling and bulk solvent correction</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/project-gemmi/gemmi/releases">ChangeLog</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://project-gemmi.github.io/python-api/">Python API reference</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api.html">C++ API Reference</a><input aria-label="Toggle navigation of C++ API Reference" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#core-data-structures">Core Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#cif-data-reading-and-writing">CIF Data Reading and Writing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#structure-i-o">Structure I/O</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#reflection-data">Reflection Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#map-and-grid-data">Map and Grid Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#calculations-and-analysis">Calculations and Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#structure-factor-calculations">Structure Factor Calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#chemistry-and-restraints">Chemistry and Restraints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#scattering-math-and-geometry">Scattering, Math, and Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#sequence-alignment-and-twinning">Sequence Alignment and Twinning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#density-analysis-and-numerical-methods">Density Analysis and Numerical Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#i-o-and-filesystem-utilities">I/O and Filesystem Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#low-level-primitives">Low-level Primitives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="https://github.com/project-gemmi/gemmi/blob/master/docs/cell.rst?plain=true" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div><div class="edit-this-page">
+  <a class="muted-link" href="https://github.com/project-gemmi/gemmi/edit/master/docs/cell.rst" rel="edit" title="Edit this page">
+    <svg><use href="#svg-pencil"></use></svg>
+    <span class="visually-hidden">Edit this page</span>
+  </a>
+</div><div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="math-and-unit-cell">
+<h1>Math and unit cell<a class="headerlink" href="#math-and-unit-cell" title="Link to this heading">¶</a></h1>
+<section id="vectors-and-coordinates">
+<span id="coordinates"></span><h2>Vectors and coordinates<a class="headerlink" href="#vectors-and-coordinates" title="Link to this heading">¶</a></h2>
+<p>Coordinates are represented by two classes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Position</span></code> for coordinates in Angstroms (orthogonal coordinates),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Fractional</span></code> for coordinates relative to the unit cell
+(fractional coordinates).</p></li>
+</ul>
+<p>Both <code class="docutils literal notranslate"><span class="pre">Position</span></code> and <code class="docutils literal notranslate"><span class="pre">Fractional</span></code> are derived from <code class="docutils literal notranslate"><span class="pre">Vec3</span></code>,
+which has three numeric properties: <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">gemmi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">Vec3</span><span class="p">(</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">x</span>
+</pre></div>
+</div>
+<p>The elements can also be indexed:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># C++ equivalent: v.at(0)</span>
+<span class="go">5.6</span>
+</pre></div>
+</div>
+<p>The only reason to have separate types is to prevent functions that
+expect fractional coordinates from accepting orthogonal ones, and vice versa.</p>
+<p>In Python, vectors can be created from list and exported to a list:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">fromlist</span><span class="p">([</span><span class="mf">3.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.5</span><span class="p">,</span> <span class="mf">4.6</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="go">[3.0, -4.5, 4.6]</span>
+</pre></div>
+</div>
+<p>Vec3 has a number of methods:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="o">-</span><span class="n">v</span>
+<span class="go">&lt;gemmi.Vec3(-3, 4.5, -4.6)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">+</span> <span class="n">v</span>
+<span class="go">&lt;gemmi.Vec3(6, -9, 9.2)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">+=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">Vec3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">-</span> <span class="n">v</span>
+<span class="go">&lt;gemmi.Vec3(0, 0, 0)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">-=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">Vec3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">*</span> <span class="n">v</span>
+<span class="go">&lt;gemmi.Vec3(6, -9, 9.2)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="go">&lt;gemmi.Vec3(1.5, -2.25, 2.3)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="go">50.41</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="go">&lt;gemmi.Vec3(0, 0, 0)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">length</span><span class="p">()</span>
+<span class="go">7.1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">approx</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1e-9</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>These methods are inherited by Position and Fractional.
+Some of them are overridden to return the derived type,
+others are not overridden and return the base class:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">frac</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">Fractional</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">frac</span> <span class="o">+</span> <span class="n">frac</span>
+<span class="go">&lt;gemmi.Fractional(1, 1, 1)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">*</span> <span class="n">frac</span>
+<span class="go">&lt;gemmi.Vec3(1, 1, 1)&gt;</span>
+</pre></div>
+</div>
+<p>Additionally, derived classes have their own methods:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">Fractional</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span><span class="o">.</span><span class="n">wrap_to_unit</span><span class="p">()</span>
+<span class="go">&lt;gemmi.Fractional(0.3, 0.7, 0.5)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">Position</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">70</span><span class="p">)</span><span class="o">.</span><span class="n">dist</span><span class="p">(</span><span class="n">gemmi</span><span class="o">.</span><span class="n">Position</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
+<span class="go">30.0</span>
+</pre></div>
+</div>
+<p>and we have non-member functions that calculate angles in Cartesian
+coordinates:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">degrees</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p1</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">Position</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p2</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">Position</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p3</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">Position</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p4</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">Position</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">degrees</span><span class="p">(</span><span class="n">gemmi</span><span class="o">.</span><span class="n">calculate_angle</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">))</span>
+<span class="go">45.00000000000001</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">degrees</span><span class="p">(</span><span class="n">gemmi</span><span class="o">.</span><span class="n">calculate_dihedral</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">))</span>
+<span class="go">90.0</span>
+</pre></div>
+</div>
+<p>There are more functions in C++.
+See headers <code class="docutils literal notranslate"><span class="pre">gemmi/math.hpp</span></code> and <code class="docutils literal notranslate"><span class="pre">gemmi/calculate.hpp</span></code>.</p>
+</section>
+<section id="x3-matrices">
+<h2>3x3 matrices<a class="headerlink" href="#x3-matrices" title="Link to this heading">¶</a></h2>
+<p>Gemmi has only 3x3 matrices.
+<code class="docutils literal notranslate"><span class="pre">Mat33</span></code> is a matrix that can represent rotation and scaling,
+and <code class="docutils literal notranslate"><span class="pre">SMat33</span></code> is a symmetric matrix (6 elements) that can represent
+anisotropic ADP tensor. Let us start with the former.</p>
+<p>Similarly to vectors, Mat33 can be converted to and from a Python list:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mat33</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">Mat33</span><span class="p">()</span>  <span class="c1"># identity matrix</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">mat33</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span>
+<span class="go">[[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mat33</span><span class="o">.</span><span class="n">fromlist</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mat33</span>
+<span class="go">&lt;gemmi.Mat33 [1, 0, 0]</span>
+<span class="go">             [0, 1, -5]</span>
+<span class="go">             [0, 0, 1]&gt;</span>
+</pre></div>
+</div>
+<p>We have the usual methods expected in a matrix class:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mat33</span><span class="o">.</span><span class="n">trace</span><span class="p">()</span>
+<span class="go">3.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mat33</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="go">&lt;gemmi.Mat33 [1, 0, 0]</span>
+<span class="go">             [0, 1, 0]</span>
+<span class="go">             [0, -5, 1]&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mat33</span> <span class="o">+</span> <span class="n">mat33</span>
+<span class="go">&lt;gemmi.Mat33 [2, 0, 0]</span>
+<span class="go">             [0, 2, -10]</span>
+<span class="go">             [0, 0, 2]&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mat33</span> <span class="o">@</span> <span class="n">mat33</span>  <span class="c1"># in C++: .multiply()</span>
+<span class="go">&lt;gemmi.Mat33 [1, 0, 0]</span>
+<span class="go">             [0, 1, -10]</span>
+<span class="go">             [0, 0, 1]&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mat33</span> <span class="o">@</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">Vec3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">&lt;gemmi.Vec3(1, -13, 3)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mat33</span><span class="o">.</span><span class="n">determinant</span><span class="p">()</span>
+<span class="go">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mat33</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span>
+<span class="go">&lt;gemmi.Mat33 [1, 0, 0]</span>
+<span class="go">             [0, 1, 5]</span>
+<span class="go">             [0, 0, 1]&gt;</span>
+</pre></div>
+</div>
+<p>(and a few others that are not documented yet).</p>
+<hr class="docutils" />
+<p>The symmetric matrix SMat33 is implemented as a C++ template
+that can work with either 32- or 64-bit floating-point numbers.
+In Python we have two corresponding classes: SMat33f (32-bit)
+and SMat33d (64-bit).
+These classes are used primarily for anisotropic ADP tensors;
+their member variables are named <code class="docutils literal notranslate"><span class="pre">u11</span></code>, <code class="docutils literal notranslate"><span class="pre">u22</span></code>, <code class="docutils literal notranslate"><span class="pre">u33</span></code>,
+<code class="docutils literal notranslate"><span class="pre">u12</span></code>, <code class="docutils literal notranslate"><span class="pre">u13</span></code> and <code class="docutils literal notranslate"><span class="pre">u23</span></code>.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aniso</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">read_small_structure</span><span class="p">(</span><span class="s1">&#39;../tests/4003024.cif&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sites</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">aniso</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">aniso</span><span class="o">.</span><span class="n">u11</span>
+<span class="go">0.103</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">aniso</span><span class="o">.</span><span class="n">elements_pdb</span><span class="p">()</span>    <span class="c1"># (u11, u22, u33, u12, u13, u23)</span>
+<span class="go">[0.103, 0.156, 0.156, 0.0, 0.0, 0.0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">aniso</span><span class="o">.</span><span class="n">elements_voigt</span><span class="p">()</span>  <span class="c1"># (u11, u22, u33, u23, u13, u12)</span>
+<span class="go">[0.103, 0.156, 0.156, 0.0, 0.0, 0.0]</span>
+</pre></div>
+</div>
+<p>SMat33 provides about a dozen methods,
+including calculations of eigenvalues and eigenvectors.
+(This documentation is not complete yet.)</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aniso</span><span class="o">.</span><span class="n">trace</span><span class="p">()</span>
+<span class="go">0.41500000000000004</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">aniso</span><span class="o">.</span><span class="n">determinant</span><span class="p">()</span>
+<span class="go">0.002506608</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">aniso</span><span class="o">.</span><span class="n">calculate_eigenvalues</span><span class="p">()</span>
+<span class="go">[0.103, 0.156, 0.156]</span>
+</pre></div>
+</div>
+</section>
+<section id="transformations">
+<span id="transform"></span><h2>Transformations<a class="headerlink" href="#transformations" title="Link to this heading">¶</a></h2>
+<p>Working with macromolecular coordinates involves 3D transformations,
+such as crystallographic and non-crystallographic symmetry operations,
+and fractionalization and orthogonalization of coordinates.</p>
+<p>3D transformations tend to be represented either by a 4x4 matrix,
+a dual quaternion, or a 3x3 matrix and a translation vector.
+Gemmi uses the latter. Transformations are represented by
+the <code class="docutils literal notranslate"><span class="pre">Transform</span></code> class, which has two member variables:
+<code class="docutils literal notranslate"><span class="pre">mat</span></code> (of type <code class="docutils literal notranslate"><span class="pre">Mat33</span></code>) and <code class="docutils literal notranslate"><span class="pre">vec</span></code> (of type <code class="docutils literal notranslate"><span class="pre">Vec3</span></code>).</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tr</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">Transform</span><span class="p">()</span>  <span class="c1"># identity</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tr</span><span class="o">.</span><span class="n">mat</span>
+<span class="go">&lt;gemmi.Mat33 [1, 0, 0]</span>
+<span class="go">             [0, 1, 0]</span>
+<span class="go">             [0, 0, 1]&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tr</span><span class="o">.</span><span class="n">vec</span>
+<span class="go">&lt;gemmi.Vec3(0, 0, 0)&gt;</span>
+</pre></div>
+</div>
+<p>Here is an example that shows a transformation read from a PDB file:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># get NCS transformation from an example pdb file</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ncs_op</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">read_structure</span><span class="p">(</span><span class="s1">&#39;../tests/1lzh.pdb.gz&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">ncs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tr</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">ncs_op</span><span class="p">)</span>
+<span class="go">&lt;class &#39;gemmi.Transform&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ncs_op</span><span class="o">.</span><span class="n">mat</span>
+<span class="go">&lt;gemmi.Mat33 [0.97571, -0.2076, 0.06998]</span>
+<span class="go">             [0.2156, 0.96659, -0.13867]</span>
+<span class="go">             [-0.03885, 0.15039, 0.98786]&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span><span class="o">.</span><span class="n">determinant</span><span class="p">()</span>
+<span class="go">1.0000038877996669</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ncs_op</span><span class="o">.</span><span class="n">mat</span><span class="o">.</span><span class="n">trace</span><span class="p">()</span>
+<span class="go">2.93016</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">acos</span><span class="p">((</span><span class="n">_</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>  <span class="c1"># calculate rotation angle</span>
+<span class="go">15.186116047571074</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ncs_op</span><span class="o">.</span><span class="n">vec</span>
+<span class="go">&lt;gemmi.Vec3(-14.1959, 0.72997, -30.5229)&gt;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># is the 3x3 matrix above orthogonal?</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mat</span> <span class="o">=</span> <span class="n">ncs_op</span><span class="o">.</span><span class="n">mat</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">identity</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">Mat33</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mat</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">mat</span><span class="o">.</span><span class="n">transpose</span><span class="p">())</span><span class="o">.</span><span class="n">approx</span><span class="p">(</span><span class="n">identity</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">)</span>
+<span class="go">True</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ncs_op</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">gemmi</span><span class="o">.</span><span class="n">Vec3</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">))</span>
+<span class="go">&lt;gemmi.Vec3(1.8895, 28.4929, 12.7262)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ncs_op</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">_</span><span class="p">)</span>
+<span class="go">&lt;gemmi.Vec3(20, 30, 40)&gt;</span>
+</pre></div>
+</div>
+<p>To avoid mixing orthogonal and fractional coordinates
+Gemmi also has <code class="docutils literal notranslate"><span class="pre">FTransform</span></code>, which is like <code class="docutils literal notranslate"><span class="pre">Transform</span></code>,
+but can be applied only to <code class="docutils literal notranslate"><span class="pre">Fractional</span></code> coordinates.</p>
+</section>
+<section id="box">
+<span id="id1"></span><h2>Box<a class="headerlink" href="#box" title="Link to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Box</span></code> is a small utility for calculating bounding boxes.
+It comes in two variants: for <code class="docutils literal notranslate"><span class="pre">Position</span></code> and <code class="docutils literal notranslate"><span class="pre">Fractional</span></code>:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">box</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">PositionBox</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">box</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">gemmi</span><span class="o">.</span><span class="n">Position</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">box</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">gemmi</span><span class="o">.</span><span class="n">Position</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">box</span><span class="o">.</span><span class="n">minimum</span>
+<span class="go">&lt;gemmi.Position(-5, 4, -1)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">box</span><span class="o">.</span><span class="n">maximum</span>
+<span class="go">&lt;gemmi.Position(4, 5, 0)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">box</span><span class="o">.</span><span class="n">get_size</span><span class="p">()</span>
+<span class="go">&lt;gemmi.Position(9, 1, 1)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">box</span><span class="o">.</span><span class="n">add_margin</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>  <span class="c1"># changes both minimum and maximum</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">box</span><span class="o">.</span><span class="n">get_size</span><span class="p">()</span>
+<span class="go">&lt;gemmi.Position(10, 2, 2)&gt;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Fractional variant works in the same way</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">box</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">FractionalBox</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In C++ it is a template <code class="docutils literal notranslate"><span class="pre">Box&lt;T&gt;</span></code> defined in <code class="docutils literal notranslate"><span class="pre">gemmi/math.hpp</span></code>.</p>
+</section>
+<section id="unit-cell">
+<span id="unitcell"></span><h2>Unit cell<a class="headerlink" href="#unit-cell" title="Link to this heading">¶</a></h2>
+<p>When working with a structural model in a crystal we need to know
+the unit cell. In particular, we use the unit cell to switch between
+orthogonal (Cartesian) and fractional coordinates.</p>
+<p>The UnitCell class stores the cell parameters
+(<code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">c</span></code>, <code class="docutils literal notranslate"><span class="pre">alpha</span></code>, <code class="docutils literal notranslate"><span class="pre">beta</span></code>, <code class="docutils literal notranslate"><span class="pre">gamma</span></code>)
+and other properties of the cell precalculated for efficiency
+(orthogonalization and fractionalization transformations,
+the volume, parameters of the reciprocal unit cell).</p>
+<p>Here are the most important properties of UnitCell and a couple of methods
+for switching between fractional and Cartesian coordinates:</p>
+<p><strong>C++</strong></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;gemmi/unitcell.hpp&gt;</span>
+
+<span class="n">gemmi</span><span class="o">::</span><span class="n">UnitCell</span><span class="w"> </span><span class="nf">cell</span><span class="p">(</span><span class="mf">25.14</span><span class="p">,</span><span class="w"> </span><span class="mf">39.50</span><span class="p">,</span><span class="w"> </span><span class="mf">45.07</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">);</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">param</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">cell</span><span class="p">.</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">cell</span><span class="p">.</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">cell</span><span class="p">.</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">cell</span><span class="p">.</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="n">cell</span><span class="p">.</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="n">cell</span><span class="p">.</span><span class="n">gamma</span><span class="p">};</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">volume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cell</span><span class="p">.</span><span class="n">volume</span><span class="p">;</span>
+<span class="n">gemmi</span><span class="o">::</span><span class="n">Position</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cell</span><span class="p">.</span><span class="n">orthogonalize</span><span class="p">(</span><span class="n">gemmi</span><span class="o">::</span><span class="n">Fractional</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">));</span>
+<span class="n">gemmi</span><span class="o">::</span><span class="n">Fractional</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cell</span><span class="p">.</span><span class="n">fractionalize</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Python</strong></p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">UnitCell</span><span class="p">(</span><span class="mf">25.12</span><span class="p">,</span> <span class="mf">39.50</span><span class="p">,</span> <span class="mf">45.07</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span>
+<span class="go">&lt;gemmi.UnitCell(25.12, 39.5, 45.07, 90, 90, 90)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="n">cell</span><span class="o">.</span><span class="n">b</span><span class="p">,</span> <span class="n">cell</span><span class="o">.</span><span class="n">c</span>
+<span class="go">(25.12, 39.5, 45.07)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">alpha</span><span class="p">,</span> <span class="n">cell</span><span class="o">.</span><span class="n">beta</span><span class="p">,</span> <span class="n">cell</span><span class="o">.</span><span class="n">gamma</span>
+<span class="go">(90.0, 90.0, 90.0)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">volume</span>
+<span class="go">44720.2568</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">frac</span><span class="o">.</span><span class="n">mat</span>  <span class="c1"># fractionalization matrix</span>
+<span class="go">&lt;gemmi.Mat33 [0.0398089, 0, 0]</span>
+<span class="go">             [0, 0.0253165, 0]</span>
+<span class="go">             [0, 0, 0.0221877]&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">fractionalize</span><span class="p">(</span><span class="n">gemmi</span><span class="o">.</span><span class="n">Position</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="go">&lt;gemmi.Fractional(0.398089, 0.253165, 0.221877)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">orth</span><span class="o">.</span><span class="n">mat</span>  <span class="c1"># orthogonalization matrix</span>
+<span class="go">&lt;gemmi.Mat33 [25.12, 0, 0]</span>
+<span class="go">             [0, 39.5, 0]</span>
+<span class="go">             [0, 0, 45.07]&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">orthogonalize</span><span class="p">(</span><span class="n">gemmi</span><span class="o">.</span><span class="n">Fractional</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+<span class="go">&lt;gemmi.Position(12.56, 19.75, 22.535)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">orthogonalize_box</span><span class="p">(</span><span class="n">box</span><span class="p">)</span>
+<span class="go">&lt;gemmi.PositionBox object at 0x...&gt;</span>
+</pre></div>
+</div>
+<p>A symmetry operation that works on fractional coordinates can also be
+“orthogonalized” – converted to <a class="reference internal" href="#transform"><span class="std std-ref">transformation</span></a>
+that operates on Cartesian coordinates:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">op_as_transform</span><span class="p">(</span><span class="n">gemmi</span><span class="o">.</span><span class="n">Op</span><span class="p">(</span><span class="s1">&#39;-z,y+1/2,-x&#39;</span><span class="p">))</span>  
+<span class="go">&lt;gemmi.Transform object at 0x...&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">gemmi</span><span class="o">.</span><span class="n">Position</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">))</span>
+<span class="go">&lt;gemmi.Vec3(-1.17045, 25.75, 0)&gt;</span>
+</pre></div>
+</div>
+<p>In very rare cases,
+as described in <a class="reference internal" href="mol.html#standard-frame"><span class="std std-ref">the section on coordinate frames</span></a>,
+the fractionalization and orthogonalization transformations are not related
+to the unit cell parameters in the usual way. These cases are so rare that
+you probably do not need to worry about them. But they are the reason
+why the transformations also have a shift component (which is zero
+in the usual cases):</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">orth</span><span class="o">.</span><span class="n">vec</span>
+<span class="go">&lt;gemmi.Vec3(0, 0, 0)&gt;</span>
+</pre></div>
+</div>
+<p>Cells can be compared with:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">approx()</span></code> — meant for almost identical cells that differ only
+due to numeric errors. It checks if the cell parameters differ
+by less than a given absolute tolerance ε:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cell2</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">UnitCell</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">88</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">approx</span><span class="p">(</span><span class="n">cell2</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_similar()</span></code> — uses relative tolerance to compare the edge lengths
+and absolute tolerance in degrees to compare the angles:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">is_similar</span><span class="p">(</span><span class="n">cell2</span><span class="p">,</span> <span class="n">rel</span><span class="o">=</span><span class="mf">0.03</span><span class="p">,</span> <span class="n">deg</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Next, we can obtain the reciprocal cell:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">reciprocal</span><span class="p">()</span>
+<span class="go">&lt;gemmi.UnitCell(0.0398089, 0.0253165, 0.0221877, 90, 90, 90)&gt;</span>
+</pre></div>
+</div>
+<p>and <a class="reference external" href="https://dictionary.iucr.org/Metric_tensor">metric tensors</a>
+in the direct and reciprocal space:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">metric_tensor</span><span class="p">()</span>
+<span class="go">&lt;gemmi.SMat33d(631.014, 1560.25, 2031.3, 0, 0, 0)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">reciprocal_metric_tensor</span><span class="p">()</span>
+<span class="go">&lt;gemmi.SMat33d(0.00158475, 0.000640923, 0.000492294, 0, 0, 0)&gt;</span>
+</pre></div>
+</div>
+<p>If the lattice is centered, we can obtain a primitive cell.
+We have a function that takes centring type (return value of
+<code class="docutils literal notranslate"><span class="pre">SpaceGroup.centring_type()</span></code>), uses the matrix from <code class="docutils literal notranslate"><span class="pre">centred_to_primitive()</span></code>
+and returns the orthogonalization matrix of a primitive cell:
+of the primitive cell:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">primitive_orth_matrix</span><span class="p">(</span><span class="s1">&#39;I&#39;</span><span class="p">)</span>
+<span class="go">&lt;gemmi.Mat33 [-12.56, 12.56, 12.56]</span>
+<span class="go">             [19.75, -19.75, 19.75]</span>
+<span class="go">             [22.535, 22.535, -22.535]&gt;</span>
+</pre></div>
+</div>
+<p>This matrix can be used to obtain the G<sup>6</sup> and S<sup>6</sup> vectors,
+which are used in Niggli and Selling-Delaunay <a class="reference internal" href="#niggli"><span class="std std-ref">cell reduction</span></a>.</p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">is_compatible_with_spacegroup</span></code> checks if the space group
+operations don’t change the metric tensor elements by more than <em>ε</em>
+(<em>ε</em>=0.001 by default):</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">is_compatible_with_spacegroup</span><span class="p">(</span><span class="n">gemmi</span><span class="o">.</span><span class="n">SpaceGroup</span><span class="p">(</span><span class="s1">&#39;I 2 2 2&#39;</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">is_compatible_with_spacegroup</span><span class="p">(</span><span class="n">gemmi</span><span class="o">.</span><span class="n">SpaceGroup</span><span class="p">(</span><span class="s1">&#39;P 3&#39;</span><span class="p">),</span> <span class="n">eps</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>The UnitCell object stores internally (in <code class="docutils literal notranslate"><span class="pre">UnitCell.images</span></code>) a list of
+symmetry transformations – crystallographic symmetry and, in the case of
+macromolecules, also NCS – that transform the asymmetric unit (ASU) into
+the complete unit cell. This list is populated by the class that contains
+the UnitCell. It is done automatically when reading a coordinate file.
+If you set the unit cell, space group or NCS manually,
+call Structure.setup_cell_images() or SmallStructure.setup_cell_images()
+to update <code class="docutils literal notranslate"><span class="pre">images</span></code>.
+(The NCS operations in this list are only those marked as not “given”
+in the MTRIX record in the PDB format or in _struct_ncs_oper in mmCIF).</p>
+<p>UnitCell.images are used for searching neighbors,
+calculating structure factors, and a few other things.
+The following functions also rely on it:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">UnitCell::volume_per_image()</span> <span class="pre">-&gt;</span> <span class="pre">double</span></code> – returns <code class="docutils literal notranslate"><span class="pre">UnitCell::volume</span></code>
+divided by the number of the molecule images in the unit cell.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">st</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">read_structure</span><span class="p">(</span><span class="s1">&#39;../tests/1pfe.cif.gz&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">st</span><span class="o">.</span><span class="n">spacegroup_hm</span>
+<span class="go">&#39;P 63 2 2&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">st</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">volume</span> <span class="o">/</span> <span class="n">st</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">volume_per_image</span><span class="p">()</span>
+<span class="go">12.0</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UnitCell::is_special_position(const</span> <span class="pre">Position&amp;</span> <span class="pre">pos,</span> <span class="pre">double</span> <span class="pre">max_dist=0.8)</span> <span class="pre">-&gt;</span> <span class="pre">int</span></code> –
+returns the number of nearby symmetry mates of an atom.
+Non-zero only for atoms on special positions.
+For example, it returns 3 for an atom on a 4-fold symmetry axis.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># chloride ion in 1PFE is significantly off the special position</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cl</span> <span class="o">=</span> <span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sole_residue</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">SeqId</span><span class="p">(</span><span class="s1">&#39;20&#39;</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cl</span>
+<span class="go">&lt;gemmi.Atom CL at (-0.3, 23.0, -19.6)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">cl</span><span class="o">.</span><span class="n">occ</span><span class="p">)</span>
+<span class="go">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">st</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">is_special_position</span><span class="p">(</span><span class="n">cl</span><span class="o">.</span><span class="n">pos</span><span class="p">,</span> <span class="n">max_dist</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">st</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">is_special_position</span><span class="p">(</span><span class="n">cl</span><span class="o">.</span><span class="n">pos</span><span class="p">,</span> <span class="n">max_dist</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">st</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">is_special_position</span><span class="p">(</span><span class="n">cl</span><span class="o">.</span><span class="n">pos</span><span class="p">,</span> <span class="n">max_dist</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="go">5</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UnitCell::find_nearest_image(const</span> <span class="pre">Position&amp;</span> <span class="pre">ref,</span> <span class="pre">const</span> <span class="pre">Position&amp;</span> <span class="pre">pos,</span> <span class="pre">Asu</span> <span class="pre">asu)</span> <span class="pre">-&gt;</span> <span class="pre">NearestImage</span></code> –
+with the last argument set to <code class="docutils literal notranslate"><span class="pre">Asu::Any</span></code>,
+it returns the symmetric image of <code class="docutils literal notranslate"><span class="pre">pos</span></code> that is nearest to <code class="docutils literal notranslate"><span class="pre">ref</span></code>.
+The last argument can also be set to <code class="docutils literal notranslate"><span class="pre">Asu::Same</span></code> or <code class="docutils literal notranslate"><span class="pre">Asu::Different</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UnitCell::find_nearest_pbc_image(const</span> <span class="pre">Position&amp;</span> <span class="pre">ref,</span> <span class="pre">const</span> <span class="pre">Position&amp;</span> <span class="pre">pos,</span> <span class="pre">int</span> <span class="pre">image_idx)</span></code> –
+similar to the function above, but takes the index of symmetry transformation
+as an argument and finds only the unit cell shift. The section about
+<a class="reference internal" href="analysis.html#neighbor-search"><span class="std std-ref">neighbor search</span></a> has an example of usage.</p></li>
+</ul>
+<p>The unit cell can be used to determine interplanar spacing <em>d</em><sub>hkl</sub>
+in the reciprocal space (the resolution corresponding to a reflection):</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">calculate_d</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="go">39.5</span>
+</pre></div>
+</div>
+<p>Computationally, <em>d</em> is calculated from 1/<em>d</em><sup>2</sup>, so if you
+need the latter you can calculate it directly:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">calculate_1_d2</span><span class="p">([</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="go">0.20256818878283983</span>
+</pre></div>
+</div>
+<p>When changing a symmetry setting of coordinates or reindexing reflections
+we need a new unit cell, which can be obtained with one of the functions
+<code class="docutils literal notranslate"><span class="pre">changed_basis_forward()</span></code> and <code class="docutils literal notranslate"><span class="pre">changed_basis_backward()</span></code>:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">changed_basis_backward</span><span class="p">(</span><span class="n">gemmi</span><span class="o">.</span><span class="n">Op</span><span class="p">(</span><span class="s1">&#39;y,z,x&#39;</span><span class="p">),</span> <span class="n">set_images</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">&lt;gemmi.UnitCell(45.07, 25.12, 39.5, 90, 90, 90)&gt;</span>
+</pre></div>
+</div>
+<p>With <code class="docutils literal notranslate"><span class="pre">set_images=False</span></code> the <code class="docutils literal notranslate"><span class="pre">images</span></code> list in the new unit cell is empty.
+With <code class="docutils literal notranslate"><span class="pre">True</span></code> – it contains the transformed original list
+(but it doesn’t work correctly when the cell volume changes).</p>
+</section>
+<section id="unit-cell-reduction">
+<span id="niggli"></span><h2>Unit cell reduction<a class="headerlink" href="#unit-cell-reduction" title="Link to this heading">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is about a specialized functionality that few people will ever need.</p>
+</div>
+<p>The reduction finds special bases of lattices. In practice, these bases are
+found by removing lattice centering (i.e. obtaining a primitive cell)
+and using a prescribed iterative procedure.
+As it is worded in the International Tables for Crystallography A 3.1.1.4 (2016),
+“the reduction procedures employ metrical properties to develop a sequence
+of basis transformations which lead to a <em>reduced basis</em> and <em>reduced cell</em>”.</p>
+<p>There are three popular unit cell reductions:</p>
+<ul class="simple">
+<li><p>the Minkowski-Buerger reduction, which minimizes <em>a</em>+<em>b</em>+<em>c</em>
+(in special, cases multiple, up to 6 different bases have the same
+minimal sum <em>a</em>+<em>b</em>+<em>c</em>),</p></li>
+<li><p>the Eisenstein-Niggli reduction, which adds extra conditions
+to the previous one and makes the result unique,</p></li>
+<li><p>the Selling-Delaunay reduction (the second name is alternatively
+transliterated as Delone), which minimizes
+<em>a</em><sup>2</sup>+<em>b</em><sup>2</sup>+<em>c</em><sup>2</sup>+(<em>a</em>+<em>b</em>+<em>c</em>)<sup>2</sup>.</p></li>
+</ul>
+<p>The first names here (Minkowski, Eisenstein, Selling) belong to mathematicians
+working on the reduction of quadratic forms.
+The second names – to people applying this math to crystallography.
+Usually, only the second name is used. The Niggli reduction is the most
+popular of the three.</p>
+<section id="niggli-and-buerger-reductions">
+<h3>Niggli and Buerger reductions<a class="headerlink" href="#niggli-and-buerger-reductions" title="Link to this heading">¶</a></h3>
+<p>Gemmi implements the Niggli and Buerger reductions separately.
+The procedures are iterative. Most of the unit cells from the PDB
+need only 1-2 iterations to get reduced (1.3 on average, not counting
+the <em>normalization</em> steps as separate iterations).
+On the other hand, one can always construct a primitive cell with extremely
+long basis vectors that would require hundreds of iterations.
+The Buerger reduction is simpler and faster than the Niggli,
+but the Niggli reduction is also fast – one iteration takes less than 1μs.</p>
+<p>Gemmi’s implementation is based on the algorithms published by B. Gruber
+in the 1970s: Gruber,
+<a class="reference external" href="https://doi.org/10.1107/S0567739473001063">Acta Cryst. A29, 433</a> (1973)
+for the Buerger reduction, and Křivý &amp; Gruber,
+<a class="reference external" href="https://doi.org/10.1107/S0567739476000636">Acta Cryst. A32, 297</a> (1976)
+for the Niggli reduction.
+Additionally, the Niggli reduction is uses ε to compare numbers, as proposed
+by Grosse-Kunstleve <em>et al</em>,
+<a class="reference external" href="https://doi.org/10.1107/S010876730302186X">Acta Cryst. A60, 1</a> (2004).</p>
+<p>Gruber’s algorithms use a vector named G<sup>6</sup>, which is
+<a class="reference external" href="https://dictionary.iucr.org/Metric_tensor">somewhat similar</a>
+to the metric tensor. G<sup>6</sup> has six elements named:
+A, B, C, ξ (xi), η (eta) and ζ (zeta), which correspond to:</p>
+<blockquote>
+<div><p>(<strong>a</strong><sup>2</sup>, <strong>b</strong><sup>2</sup>, <strong>c</strong><sup>2</sup>, 2<strong>b</strong>⋅<strong>c</strong>, 2<strong>a</strong>⋅<strong>c</strong>, 2<strong>a</strong>⋅<strong>b</strong>)</p>
+</div></blockquote>
+<p>Gemmi has a class named GruberVector that contains these six numbers
+and the reduction algorithms implemented as methods.
+This class can be initialized with a UnitCell and SpaceGroup:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">UnitCell</span><span class="p">(</span><span class="mf">63.78</span><span class="p">,</span> <span class="mf">63.86</span><span class="p">,</span> <span class="mf">124.42</span><span class="p">,</span> <span class="mf">90.0</span><span class="p">,</span> <span class="mf">90.0</span><span class="p">,</span> <span class="mf">90.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sg</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">SpaceGroup</span><span class="p">(</span><span class="s1">&#39;I 2 2 2&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gv</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">GruberVector</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">sg</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or with a 6-tuple corresponding to G<sup>6</sup> of a primitive cell:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">g6_param</span> <span class="o">=</span> <span class="n">gv</span><span class="o">.</span><span class="n">parameters</span>  <span class="c1"># obtain such a tuple</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">GruberVector</span><span class="p">(</span><span class="n">g6_param</span><span class="p">)</span>
+<span class="go">&lt;gemmi.GruberVector((5906.58, 5906.58, 5906.58, -7745.27, -7735.06, 3667.17))&gt;</span>
+</pre></div>
+</div>
+<p>We can check if G<sup>6</sup> already corresponds to a Buerger and Niggli cell:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gv</span><span class="o">.</span><span class="n">is_niggli</span><span class="p">()</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gv</span><span class="o">.</span><span class="n">is_buerger</span><span class="p">()</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>We can access the G<sup>6</sup> parameters as a tuple:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gv</span><span class="o">.</span><span class="n">parameters</span>
+<span class="go">(5906.5811, 5906.5811, 5906.5811, -7745.2738, -7735.0626, 3667.1742)</span>
+</pre></div>
+</div>
+<p>and obtain the corresponding cell parameters (with angles in degrees):</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gv</span><span class="o">.</span><span class="n">cell_parameters</span><span class="p">()</span>  <span class="c1"># primitive cell  </span>
+<span class="go">(76.85428485126..., 76.85428485126..., 76.85428485126..., 130.96878780115..., 130.90322881367..., 71.91478106070...)</span>
+</pre></div>
+</div>
+<p>And most importantly, we can reduce the cell.
+<code class="docutils literal notranslate"><span class="pre">niggli_reduce()</span></code> performs the Niggli reduction on G<sup>6</sup>,
+returning the number of iterations it took:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gv</span><span class="o">.</span><span class="n">niggli_reduce</span><span class="p">()</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<p>Now G<sup>6</sup> contains smaller numbers:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gv</span>
+<span class="go">&lt;gemmi.GruberVector((4067.89, 4078.10, 5906.58, -4078.10, -4067.89, -0.00))&gt;</span>
+</pre></div>
+</div>
+<p>To create a new UnitCell with reduced parameters do:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">UnitCell</span><span class="p">(</span><span class="o">*</span> <span class="n">gv</span><span class="o">.</span><span class="n">cell_parameters</span><span class="p">())</span>
+<span class="go">&lt;gemmi.UnitCell(63.78, 63.86, 76.8543, 114.548, 114.516, 90)&gt;</span>
+</pre></div>
+</div>
+<p>or use a helper method:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gv</span><span class="o">.</span><span class="n">get_cell</span><span class="p">()</span>
+<span class="go">&lt;gemmi.UnitCell(63.78, 63.86, 76.8543, 114.548, 114.516, 90)&gt;</span>
+</pre></div>
+</div>
+<p>Similarly, we can perform the Buerger reduction:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gv</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">GruberVector</span><span class="p">(</span><span class="n">g6_param</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gv</span><span class="o">.</span><span class="n">buerger_reduce</span><span class="p">()</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<p>In this case both functions gave the same result.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gv</span><span class="o">.</span><span class="n">is_niggli</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gv</span><span class="o">.</span><span class="n">get_cell</span><span class="p">()</span>
+<span class="go">&lt;gemmi.UnitCell(63.78, 63.86, 76.8543, 114.548, 114.516, 90)&gt;</span>
+</pre></div>
+</div>
+<p>The functions <code class="docutils literal notranslate"><span class="pre">niggli_reduce</span></code>, <code class="docutils literal notranslate"><span class="pre">is_niggli</span></code> and <code class="docutils literal notranslate"><span class="pre">is_buerger</span></code> can take an optional
+parameter <code class="docutils literal notranslate"><span class="pre">epsilon</span></code> (default: 1e-9) that is used for comparing numbers.
+Additionally, <code class="docutils literal notranslate"><span class="pre">niggli_reduce</span></code> can take <code class="docutils literal notranslate"><span class="pre">iteration_limit</span></code> (default: 100).
+To check how the computations would work without ε we can set it to 0:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gv</span><span class="o">.</span><span class="n">is_buerger</span><span class="p">(</span><span class="n">epsilon</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gv</span><span class="o">.</span><span class="n">is_niggli</span><span class="p">(</span><span class="n">epsilon</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gv</span><span class="o">.</span><span class="n">niggli_reduce</span><span class="p">(</span><span class="n">epsilon</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">iteration_limit</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="go">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gv</span><span class="o">.</span><span class="n">get_cell</span><span class="p">()</span>
+<span class="go">&lt;gemmi.UnitCell(63.78, 63.86, 76.8543, 114.548, 114.516, 90)&gt;</span>
+</pre></div>
+</div>
+<p>Here, the Niggli conditions were initially found not fulfilled because
+one expression that should be non-negative was about -5e-13.
+A few extra iterations sorted it out (without any real changes),
+but it’s not always the case – that’s why we have <code class="docutils literal notranslate"><span class="pre">iteration_limit</span></code>
+to prevent an infinite loop.</p>
+<p>The original Křivý-Gruber algorithm doesn’t calculate the change-of-basis
+transformation that leads to the reduced cell. In gemmi,
+this transformation can be obtained as proposed in the 2004 paper
+of Grosse-Kunstleve <em>et al</em>: the change-of-basis matrix is updated
+in each step together with the Gruber vector.
+Updating this matrix makes the reduction twice as slow
+(but it’s still in tens of ns, so it’s fast enough for any purpose).
+To track the change of basis, pass the following option:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gv</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">GruberVector</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">sg</span><span class="p">,</span> <span class="n">track_change_of_basis</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>After the Niggli reduction, the transformation will be available
+in the <code class="docutils literal notranslate"><span class="pre">change_of_basis</span></code> property:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gv</span><span class="o">.</span><span class="n">niggli_reduce</span><span class="p">()</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cob</span> <span class="o">=</span> <span class="n">gv</span><span class="o">.</span><span class="n">change_of_basis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cob</span>
+<span class="go">&lt;gemmi.Op(&quot;x-z/2,y-z/2,z/2&quot;)&gt;</span>
+</pre></div>
+</div>
+<p>This operator transforms the Niggli cell to the original cell
+(so it’s actually <em>the inverse</em> of the reduction change-of-basis):</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gv</span><span class="o">.</span><span class="n">get_cell</span><span class="p">()</span><span class="o">.</span><span class="n">changed_basis_forward</span><span class="p">(</span><span class="n">cob</span><span class="p">,</span> <span class="n">set_images</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">&lt;gemmi.UnitCell(63.78, 63.86, 124.42, 90, 90, 90)&gt;</span>
+</pre></div>
+</div>
+<p>and the other way around:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">changed_basis_backward</span><span class="p">(</span><span class="n">cob</span><span class="p">,</span> <span class="n">set_images</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">&lt;gemmi.UnitCell(63.78, 63.86, 76.8543, 114.548, 114.516, 90)&gt;</span>
+</pre></div>
+</div>
+<p>Currently, tracking is implemented only for the Niggli reduction,
+not for the Buerger reduction.</p>
+</section>
+<section id="selling-delaunay-reduction">
+<h3>Selling-Delaunay reduction<a class="headerlink" href="#selling-delaunay-reduction" title="Link to this heading">¶</a></h3>
+<p>Gemmi’s implementation is based on</p>
+<ul class="simple">
+<li><p>section <a class="reference external" href="https://onlinelibrary.wiley.com/iucr/itc/Ac/ch3o1v0001/">3.1.2.3</a>
+“Delaunay reduction and standardization” in the Tables vol. A (2016),</p></li>
+<li><p>Patterson &amp; Love (1957), “Remarks on the Delaunay reduction”,
+<a class="reference external" href="https://doi.org/10.1107/S0365110X57000328">Acta Cryst. 10, 111</a>,</p></li>
+<li><p>Andrews <em>et al</em> (2019),
+“Selling reduction versus Niggli reduction for crystallographic lattices”,
+<a class="reference external" href="https://doi.org/10.1107/S2053273318015413">Acta Cryst. A75, 115</a>.</p></li>
+</ul>
+<p>Similarly to the GruberVector, here we have a class named SellingVector
+that contains the six elements of S<sup>6</sup> – the inner products
+among the four vectors <strong>a</strong>, <strong>b</strong>, <strong>c</strong>
+and <strong>d</strong>=–(<strong>a</strong>+<strong>b</strong>+<strong>c</strong>):</p>
+<blockquote>
+<div><p><em>s</em><sub>23</sub>=<strong>b</strong>⋅<strong>c</strong>,
+<em>s</em><sub>13</sub>=<strong>a</strong>⋅<strong>c</strong>,
+<em>s</em><sub>12</sub>=<strong>a</strong>⋅<strong>b</strong>,
+<em>s</em><sub>14</sub>=<strong>a</strong>⋅<strong>d</strong>,
+<em>s</em><sub>24</sub>=<strong>b</strong>⋅<strong>d</strong>,
+<em>s</em><sub>34</sub>=<strong>c</strong>⋅<strong>d</strong>.</p>
+</div></blockquote>
+<p>SellingVector can be initialized with a UnitCell and SpaceGroup:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sv</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">SellingVector</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">sg</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or with a tuple of six numbers S<sup>6</sup>:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sv</span><span class="o">.</span><span class="n">parameters</span>
+<span class="go">(-3872.6369, -3867.5313, 1833.5871, -3872.6369, -3867.5313, 1833.5871)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">SellingVector</span><span class="p">(</span><span class="n">_</span><span class="p">)</span>
+<span class="go">&lt;gemmi.SellingVector((-3872.64, -3867.53, 1833.59, -3872.64, -3867.53, 1833.59))&gt;</span>
+</pre></div>
+</div>
+<p>We can check if S<sup>6</sup> already corresponds to a Delaunay cell:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sv</span><span class="o">.</span><span class="n">is_reduced</span><span class="p">()</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>Each reduction step decreases Σ<strong>b</strong><sub>i</sub><sup>2</sup>
+(<strong>b</strong><sub>1</sub>, <strong>b</strong><sub>2</sub>, <strong>b</strong><sub>3</sub> and <strong>b</strong><sub>4</sub>
+are alternative symbols for <strong>a</strong>, <strong>b</strong>, <strong>c</strong> and <strong>d</strong>).
+The sum Σ<strong>b</strong><sub>i</sub><sup>2</sup> can be calculated with:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sv</span><span class="o">.</span><span class="n">sum_b_squared</span><span class="p">()</span>
+<span class="go">23626.3244</span>
+</pre></div>
+</div>
+<p>Similarly to <code class="docutils literal notranslate"><span class="pre">niggli_reduce()</span></code>, the Selling reduction procedure takes
+optional arguments <code class="docutils literal notranslate"><span class="pre">epsilon</span></code> and <code class="docutils literal notranslate"><span class="pre">iteration_limit</span></code>,
+and returns the iteration count:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sv</span><span class="o">.</span><span class="n">reduce</span><span class="p">()</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+<p>Now we can check the result:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sv</span>
+<span class="go">&lt;gemmi.SellingVector((-2033.94, -2033.94, -1833.59, -2039.05, -2039.05, 0.00))&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sv</span><span class="o">.</span><span class="n">is_reduced</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sv</span><span class="o">.</span><span class="n">sum_b_squared</span><span class="p">()</span>
+<span class="go">19959.1502</span>
+</pre></div>
+</div>
+<p>Now, the corresponding four vectors can be in any order.
+We may sort them so that <em>a</em>≤<em>b</em>≤<em>c</em>≤<em>d</em>:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sv</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sv</span>
+<span class="go">&lt;gemmi.SellingVector((-2039.05, -2033.94, 0.00, -2033.94, -2039.05, -1833.59))&gt;</span>
+</pre></div>
+</div>
+<p>Finally, we can get the corresponding UnitCell:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">UnitCell</span><span class="p">(</span><span class="o">*</span> <span class="n">sv</span><span class="o">.</span><span class="n">cell_parameters</span><span class="p">())</span>
+<span class="go">&lt;gemmi.UnitCell(63.78, 63.86, 76.8543, 114.548, 114.516, 90)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sv</span><span class="o">.</span><span class="n">get_cell</span><span class="p">()</span>  <span class="c1"># helper function that does the same</span>
+<span class="go">&lt;gemmi.UnitCell(63.78, 63.86, 76.8543, 114.548, 114.516, 90)&gt;</span>
+</pre></div>
+</div>
+<p>S<sup>6</sup> can be used to calculate G<sup>6</sup>, and the other way around:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sv</span><span class="o">.</span><span class="n">gruber</span><span class="p">()</span>
+<span class="go">&lt;gemmi.GruberVector((4067.89, 4078.10, 5906.58, -4078.10, -4067.89, 0.00))&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span><span class="o">.</span><span class="n">selling</span><span class="p">()</span>
+<span class="go">&lt;gemmi.SellingVector((-2039.05, -2033.94, 0.00, -2033.94, -2039.05, -1833.59))&gt;</span>
+</pre></div>
+</div>
+<p>TBC</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+
+
+        <div class="related-pages">
+          <a class="next-page" href="misc.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Miscellaneous utils</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="symmetry.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Symmetry</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                &#169; Global Phasing Ltd
+            </div>
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> and customized theme
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Math and unit cell</a><ul>
+<li><a class="reference internal" href="#vectors-and-coordinates">Vectors and coordinates</a></li>
+<li><a class="reference internal" href="#x3-matrices">3x3 matrices</a></li>
+<li><a class="reference internal" href="#transformations">Transformations</a></li>
+<li><a class="reference internal" href="#box">Box</a></li>
+<li><a class="reference internal" href="#unit-cell">Unit cell</a></li>
+<li><a class="reference internal" href="#unit-cell-reduction">Unit cell reduction</a><ul>
+<li><a class="reference internal" href="#niggli-and-buerger-reductions">Niggli and Buerger reductions</a></li>
+<li><a class="reference internal" href="#selling-delaunay-reduction">Selling-Delaunay reduction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=9c96f6c5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="_static/tabs.js?v=3ee01567"></script>
+    </body>
+</html>

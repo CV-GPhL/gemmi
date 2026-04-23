@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['occ_5819',['occ',['../structgemmi_1_1Atom.html#ad4dd64352e22b201462040458a3459a4',1,'gemmi::Atom::occ()'],['../structgemmi_1_1SmallStructure_1_1Site.html#a111c32c275445640886244b68766558a',1,'gemmi::SmallStructure::Site::occ()'],['../structgemmi_1_1FlatAtom.html#ad12121df19ca0e57df369fc4e8132e0b',1,'gemmi::FlatAtom::occ()']]],
+  ['old_5fid_5820',['old_id',['../structgemmi_1_1ChemComp_1_1Atom.html#a883466a9f4b575683fa3371c995ccdaf',1,'gemmi::ChemComp::Atom::old_id()'],['../structgemmi_1_1ChemMod_1_1AtomMod.html#adc4b2e8e6790dfe1b834f37e10bdd6f7',1,'gemmi::ChemMod::AtomMod::old_id()']]],
+  ['oligomeric_5fcount_5821',['oligomeric_count',['../structgemmi_1_1Assembly.html#a9dac8cb6f68808979e92175c5466f5ca',1,'gemmi::Assembly']]],
+  ['oligomeric_5fdetails_5822',['oligomeric_details',['../structgemmi_1_1Assembly.html#a784f161184afa129b9c08801f82235cc',1,'gemmi::Assembly']]],
+  ['one_5fletter_5fcode_5823',['one_letter_code',['../structgemmi_1_1ResidueInfo.html#a5bd0e34f17edbf459da495e98f008d3e',1,'gemmi::ResidueInfo']]],
+  ['only_5faltloc_5824',['only_altloc',['../structgemmi_1_1CisPep.html#a9772f4a8144803b2b3bda34855ba1b92',1,'gemmi::CisPep']]],
+  ['only_5fbonds_5825',['only_bonds',['../structgemmi_1_1Topo.html#a0bd98d8a8d2595d03c89bf3a2eb74666',1,'gemmi::Topo']]],
+  ['op_5826',['op',['../structgemmi_1_1psimpl_1_1BfactorNode.html#a228d9400ad07899709801cd09c1972f0',1,'gemmi::psimpl::BfactorNode::op()'],['../structgemmi_1_1psimpl_1_1OccupancyNode.html#a7f160a46836d7b4b9f0f71fcbfd927ab',1,'gemmi::psimpl::OccupancyNode::op()']]],
+  ['operators_5827',['operators',['../structgemmi_1_1Assembly_1_1Gen.html#a325b1ad53155fb277fbab5eb546eacb1',1,'gemmi::Assembly::Gen']]],
+  ['optics_5828',['optics',['../namespacegemmi.html#a027c814a669ad2aceb07f83fabfe5555',1,'gemmi::optics()'],['../structgemmi_1_1DiffractionInfo.html#a2f7a6815bc19e2264a3e4f0e2cdd4f3c',1,'gemmi::DiffractionInfo::optics()']]],
+  ['options_5829',['options',['../structgemmi_1_1DsspCalculator.html#aa8c0e07d59ffac3062e2ee7a6d15db0a',1,'gemmi::DsspCalculator']]],
+  ['ordinal_5830',['ordinal',['../structgemmi_1_1Restraints_1_1Bond.html#a5c885f7d8827f1c9776b391b1e4f1df0',1,'gemmi::Restraints::Bond']]],
+  ['orgx_5831',['orgx',['../structgemmi_1_1XdsAsciiMetadata.html#a1803fb658aabd405a225e1fcbbfc83db',1,'gemmi::XdsAsciiMetadata']]],
+  ['orgy_5832',['orgy',['../structgemmi_1_1XdsAsciiMetadata.html#a0a810ea2ef0577a38e5bda4e1da747f4',1,'gemmi::XdsAsciiMetadata']]],
+  ['orig_5fchemcomp_5833',['orig_chemcomp',['../structgemmi_1_1Topo_1_1ResInfo.html#afcb594bd13a9e261ad2c3250faea9269',1,'gemmi::Topo::ResInfo']]],
+  ['origin_5834',['origin',['../structgemmi_1_1TlsGroup.html#a7f80e1de1496fb7301efaf376cde4eb9',1,'gemmi::TlsGroup']]],
+  ['origx_5835',['origx',['../structgemmi_1_1Structure.html#a5a8f274c32d6ca40131a60d271724e2c',1,'gemmi::Structure::origx()'],['../structgemmi_1_1MmcifOutputGroups.html#abd2140775765880277723c0d782cd37d',1,'gemmi::MmcifOutputGroups::origx()']]],
+  ['orth_5836',['orth',['../structgemmi_1_1UnitCell.html#af39950a1c60f7cd9e77dd9e17878fd66',1,'gemmi::UnitCell']]],
+  ['orth_5fn_5837',['orth_n',['../structgemmi_1_1Grid.html#abf389b86dfd9fe841fb72381a433e7c2',1,'gemmi::Grid']]],
+  ['oscillation_5frange_5838',['oscillation_range',['../structgemmi_1_1XdsAsciiMetadata.html#af39af3bf8d3b4c62eab71a02babcb859',1,'gemmi::XdsAsciiMetadata']]]
+];

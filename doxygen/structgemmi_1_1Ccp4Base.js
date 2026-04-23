@@ -1,0 +1,26 @@
+var structgemmi_1_1Ccp4Base =
+[
+    [ "axis_positions", "structgemmi_1_1Ccp4Base.html#a2111d2ef2354942ccd3e3e0a1155554c", null ],
+    [ "full_cell_", "structgemmi_1_1Ccp4Base.html#a681ef4561e91269fb72c0a54f7c8b421", null ],
+    [ "get_extent", "structgemmi_1_1Ccp4Base.html#ae48fe61cb7851d93c4b73144291aee43", null ],
+    [ "get_origin", "structgemmi_1_1Ccp4Base.html#a3472e463c50117b6f082a783fc8a3c03", null ],
+    [ "get_skew_transformation", "structgemmi_1_1Ccp4Base.html#ad6f00c63944ee79b6e1dacff33e6fe6f", null ],
+    [ "has_skew_transformation", "structgemmi_1_1Ccp4Base.html#ae90e018a7105065eea10d27a57869ebe", null ],
+    [ "header_3i32", "structgemmi_1_1Ccp4Base.html#a2190850efbb085f0447b798fada106e2", null ],
+    [ "header_float", "structgemmi_1_1Ccp4Base.html#a808231ef161bb92f50147b3b475cd52f", null ],
+    [ "header_i32", "structgemmi_1_1Ccp4Base.html#a7942c247cae5036674a38863c1b3f782", null ],
+    [ "header_rfloat", "structgemmi_1_1Ccp4Base.html#a9cd421f792f503ee65e72c67a5dbf0df", null ],
+    [ "header_str", "structgemmi_1_1Ccp4Base.html#a1538cc0231b4d6c1f1db386ed4f6d2b8", null ],
+    [ "header_word", "structgemmi_1_1Ccp4Base.html#a2286bbd7c282b98b0cdb838e7b697d50", null ],
+    [ "header_word", "structgemmi_1_1Ccp4Base.html#a051b0bc051ac3bc829bf3da79db3b095", null ],
+    [ "prepare_ccp4_header_except_mode_and_stats", "structgemmi_1_1Ccp4Base.html#a398e29a5a8f10246197ea08ac251b6e4", null ],
+    [ "read_ccp4_header_", "structgemmi_1_1Ccp4Base.html#afc5f8e48ba3ce9608c4ad7e4b58ee476", null ],
+    [ "set_header_3i32", "structgemmi_1_1Ccp4Base.html#a2bf06f4fc782df6c34ce1efcd8792945", null ],
+    [ "set_header_float", "structgemmi_1_1Ccp4Base.html#ab23abb1278af38e8d47e7f1e00260daf", null ],
+    [ "set_header_i32", "structgemmi_1_1Ccp4Base.html#a279723da6a26fdea435b875313591b05", null ],
+    [ "set_header_str", "structgemmi_1_1Ccp4Base.html#a0d56e964d9e81be8030132ed9ed13467", null ],
+    [ "update_header_mode_and_stats", "structgemmi_1_1Ccp4Base.html#aed245415bf4d784a481199a9b429eca0", null ],
+    [ "ccp4_header", "structgemmi_1_1Ccp4Base.html#af7e7e343c816d150816c3a0b126e3f9e", null ],
+    [ "hstats", "structgemmi_1_1Ccp4Base.html#a2961b27c90bd3adc6f09c57d255a9701", null ],
+    [ "same_byte_order", "structgemmi_1_1Ccp4Base.html#aecbd4fc09352bf7fa8e07aae7aeb5791", null ]
+];

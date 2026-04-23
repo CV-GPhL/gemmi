@@ -1,0 +1,67 @@
+var model_8hpp =
+[
+    [ "PdbReadOptions", "structgemmi_1_1PdbReadOptions.html", "structgemmi_1_1PdbReadOptions" ],
+    [ "Atom", "structgemmi_1_1Atom.html", "structgemmi_1_1Atom" ],
+    [ "AtomGroup_", "structgemmi_1_1AtomGroup__.html", "structgemmi_1_1AtomGroup__" ],
+    [ "Residue", "structgemmi_1_1Residue.html", "structgemmi_1_1Residue" ],
+    [ "ConstResidueSpan", "structgemmi_1_1ConstResidueSpan.html", "structgemmi_1_1ConstResidueSpan" ],
+    [ "ResidueSpan", "structgemmi_1_1ResidueSpan.html", "structgemmi_1_1ResidueSpan" ],
+    [ "ResidueGroup", "structgemmi_1_1ResidueGroup.html", "structgemmi_1_1ResidueGroup" ],
+    [ "ConstResidueGroup", "structgemmi_1_1ConstResidueGroup.html", "structgemmi_1_1ConstResidueGroup" ],
+    [ "GroupingProxy", "structgemmi_1_1ResidueSpan_1_1GroupingProxy.html", "structgemmi_1_1ResidueSpan_1_1GroupingProxy" ],
+    [ "Chain", "structgemmi_1_1Chain.html", "structgemmi_1_1Chain" ],
+    [ "const_CRA", "structgemmi_1_1const__CRA.html", "structgemmi_1_1const__CRA" ],
+    [ "CRA", "structgemmi_1_1CRA.html", "structgemmi_1_1CRA" ],
+    [ "CraIterPolicy", "classgemmi_1_1CraIterPolicy.html", "classgemmi_1_1CraIterPolicy" ],
+    [ "CraProxy_", "structgemmi_1_1CraProxy__.html", "structgemmi_1_1CraProxy__" ],
+    [ "Model", "structgemmi_1_1Model.html", "structgemmi_1_1Model" ],
+    [ "Structure", "structgemmi_1_1Structure.html", "structgemmi_1_1Structure" ],
+    [ "AtomGroup", "model_8hpp.html#a3ca02741fc28981d269376bfc4ab65e7", null ],
+    [ "ConstAtomGroup", "model_8hpp.html#adc3cea647daf1f6daeff4afa65d63561", null ],
+    [ "ConstCraProxy", "model_8hpp.html#a7a3f244207a69ba14792f1962b8d9349", null ],
+    [ "CraProxy", "model_8hpp.html#aed33120d3ac30b2468688b6df3c643ba", null ],
+    [ "CalcFlag", "model_8hpp.html#acda4e949df56e1ade66401b3d0a37932", [
+      [ "NotSet", "model_8hpp.html#acda4e949df56e1ade66401b3d0a37932afaf396cbd83927b72a84d2616fac76ff", null ],
+      [ "NoHydrogen", "model_8hpp.html#acda4e949df56e1ade66401b3d0a37932af2c07d8bedecce2d3ceeddd1ed54e4e3", null ],
+      [ "Determined", "model_8hpp.html#acda4e949df56e1ade66401b3d0a37932a9eab843b7bbe513c36aebb9bc36bc209", null ],
+      [ "Calculated", "model_8hpp.html#acda4e949df56e1ade66401b3d0a37932a46057d774fc3b6bbcd90dcd1406bf889", null ],
+      [ "Dummy", "model_8hpp.html#acda4e949df56e1ade66401b3d0a37932abcf036b6f33e182d4705f4f5b1af13ac", null ]
+    ] ],
+    [ "CoorFormat", "model_8hpp.html#a86528850e3647ceade3d34b8e0bc473c", [
+      [ "Unknown", "model_8hpp.html#a86528850e3647ceade3d34b8e0bc473ca88183b946cc5f0e8c96b2e66e1c74a7e", null ],
+      [ "Detect", "model_8hpp.html#a86528850e3647ceade3d34b8e0bc473ca233e33f8fdca7b4cc98503e42feac9cf", null ],
+      [ "Pdb", "model_8hpp.html#a86528850e3647ceade3d34b8e0bc473cab693cea68a050d89a00c376652df1c5e", null ],
+      [ "Mmcif", "model_8hpp.html#a86528850e3647ceade3d34b8e0bc473ca2c2f2e83fd3164f0c5f1705cd8e340a9", null ],
+      [ "Mmjson", "model_8hpp.html#a86528850e3647ceade3d34b8e0bc473cafd3acb932ccc0439260fd88daccc71c9", null ],
+      [ "ChemComp", "model_8hpp.html#a86528850e3647ceade3d34b8e0bc473cad2fe9beb1a8448da8dd31f61e33c663f", null ]
+    ] ],
+    [ "ResidueSs", "model_8hpp.html#a0d2c4f3285f3ab4b95e7aa17cd543c9e", [
+      [ "Coil", "model_8hpp.html#a0d2c4f3285f3ab4b95e7aa17cd543c9eab59f43464380e4c2ab2b2639a2c40f60", null ],
+      [ "Helix", "model_8hpp.html#a0d2c4f3285f3ab4b95e7aa17cd543c9ea87b2ccc9693d1d35db611ffe6cf37f30", null ],
+      [ "Strand", "model_8hpp.html#a0d2c4f3285f3ab4b95e7aa17cd543c9ea3c027078bb3e8e6fa9af0c17f09a74c4", null ]
+    ] ],
+    [ "ResidueStrandSense", "model_8hpp.html#aab8a9f5320d9c9163bae8e02fb3ab500", [
+      [ "NotStrand", "model_8hpp.html#aab8a9f5320d9c9163bae8e02fb3ab500a09a52cdffae057c9f872a169bfb8f4dd", null ],
+      [ "Parallel", "model_8hpp.html#aab8a9f5320d9c9163bae8e02fb3ab500a98402eecfbcefc336954458a01752131", null ],
+      [ "First", "model_8hpp.html#aab8a9f5320d9c9163bae8e02fb3ab500a7fb55ed0b7a30342ba6da306428cae04", null ],
+      [ "Antiparallel", "model_8hpp.html#aab8a9f5320d9c9163bae8e02fb3ab500adb57115372a26017bfdab552d50ac27c", null ]
+    ] ],
+    [ "add_distinct_altlocs", "model_8hpp.html#a70e0705966b9d904514fd23cdeb99a0c", null ],
+    [ "assign_residue_ss_from_file", "model_8hpp.html#a2c607e5162361373e0cb6344c3e9313d", null ],
+    [ "atom_matches", "model_8hpp.html#a0bbd32422b80f93adf044a3b9a2031fb", null ],
+    [ "atom_str", "model_8hpp.html#a276db2373e86bdbab97e425485bcb10f", null ],
+    [ "atom_str", "model_8hpp.html#a21755e35833545aefedcb72e02f575d8", null ],
+    [ "chain_subchains", "model_8hpp.html#a35491eb8bbe82636850679b2a07ce197", null ],
+    [ "find_entity_of_subchain", "model_8hpp.html#af26b7331f4460c29c9f1449ed8f3b24c", null ],
+    [ "find_entity_of_subchain", "model_8hpp.html#aedf988e11b2d34f02a177242bf4ab2e4", null ],
+    [ "find_iter", "model_8hpp.html#a74c0d8a8e254fad25ad790105fcec048", null ],
+    [ "find_iter_", "model_8hpp.html#a4f40e09d19f0bfba3837785776ee9a58", null ],
+    [ "find_or_add", "model_8hpp.html#a86f0fb59154e3549bbe1ad31de4fd61b", null ],
+    [ "find_or_null", "model_8hpp.html#a8db268b4f22b2037a86cf848ec752f4c", null ],
+    [ "get_by_altloc", "model_8hpp.html#ac00a1f47e8be31c203479974d0d60bea", null ],
+    [ "get_id", "model_8hpp.html#a8a376cbac636d755430e94fb920b5e6f", null ],
+    [ "is_same_conformer", "model_8hpp.html#a5a53af869be3f7bd63734784d23a3139", null ],
+    [ "make_address", "model_8hpp.html#ad65956df41a9ba5f5feae87d94e3df50", null ],
+    [ "model_subchains", "model_8hpp.html#a8783240dc21f5f1fe423703e195945a3", null ],
+    [ "remove_empty_children", "model_8hpp.html#a6d5a4d2e1f2a1bb68ed0a1c701060803", null ]
+];

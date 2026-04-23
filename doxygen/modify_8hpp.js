@@ -1,0 +1,27 @@
+var modify_8hpp =
+[
+    [ "assign_b_iso", "modify_8hpp.html#aef4cf3884678d9805023d5207e8daacc", null ],
+    [ "assign_b_iso", "modify_8hpp.html#ab7cffaba9ae2efc9d6d76dd0fc9fa665", null ],
+    [ "assign_serial_numbers", "modify_8hpp.html#a02992b1c11c4e7f4e01f475296a6eb31", null ],
+    [ "assign_serial_numbers", "modify_8hpp.html#a9ff3bf35ad3164da3416cf10e6272c4f", null ],
+    [ "ensure_anisou", "modify_8hpp.html#aa3ce356a6f9935fb56a1c4771086d224", null ],
+    [ "ensure_anisou", "modify_8hpp.html#ae6ac6f92d4c026773b5c466ac4dc6a53", null ],
+    [ "process_addresses", "modify_8hpp.html#a43cdc2b5d999031752941f8b62d85b30", null ],
+    [ "process_sequence_ids", "modify_8hpp.html#ac9c80ce7738ed16f9400c618cf93112c", null ],
+    [ "remove_alternative_conformations", "modify_8hpp.html#aa85a532d79f7174f04855d9dd5f0b0d7", null ],
+    [ "remove_alternative_conformations", "modify_8hpp.html#a133c5ecad317aac77a6e4b3cb02be554", null ],
+    [ "remove_anisou", "modify_8hpp.html#aa16e7b43ce7fd44886a140b17581f1df", null ],
+    [ "remove_anisou", "modify_8hpp.html#a03a3e84c93cbff08b6fc1c00d7a8078c", null ],
+    [ "remove_hydrogens", "modify_8hpp.html#a6c7a58913e0711df022f122c84d03877", null ],
+    [ "remove_hydrogens", "modify_8hpp.html#a63b61e4e7fe9424d0042072d1dda0e8a", null ],
+    [ "rename_atom_names", "modify_8hpp.html#a9ae5f5cc183220ce81bca89321baf07f", null ],
+    [ "rename_chain", "modify_8hpp.html#a49182ea85ece8d5f6d2718940825a91e", null ],
+    [ "rename_residues", "modify_8hpp.html#a4fe0a7dfd30d1cbd791f3184a38950a2", null ],
+    [ "replace_d_fraction_with_altlocs", "modify_8hpp.html#a222eeb9b26748f7d1a59b752f5341884", null ],
+    [ "replace_deuterium_with_fraction", "modify_8hpp.html#a3d06d820b851658781c0ede0ac66263a", null ],
+    [ "set_deuterium_fraction_of_hydrogens", "modify_8hpp.html#a50a6d691af8eb6a78887b9167094fc64", null ],
+    [ "standardize_crystal_frame", "modify_8hpp.html#aaaa0496fb36c558926db10902cef5083", null ],
+    [ "store_deuterium_as_fraction", "modify_8hpp.html#a85e824efc239ff1696fb143c109bfbfc", null ],
+    [ "transform_pos_and_adp", "modify_8hpp.html#a6524e149007202e3a97561f7eba0f139", null ],
+    [ "transform_pos_and_adp", "modify_8hpp.html#a587c403e3c08cc11211dda99b321800e", null ]
+];

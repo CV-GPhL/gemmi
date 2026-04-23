@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['gamma_5618',['gamma',['../structgemmi_1_1UnitCellParameters.html#aea7335f1698625faada0b448c5792a19',1,'gemmi::UnitCellParameters']]],
+  ['gape_5619',['gape',['../structgemmi_1_1AlignmentScoring.html#ad415b3ec89fdb9e62424de1d72a9773c',1,'gemmi::AlignmentScoring']]],
+  ['gapo_5620',['gapo',['../structgemmi_1_1AlignmentScoring.html#ac997e5d7514e575a11df3eee2d6586d1',1,'gemmi::AlignmentScoring']]],
+  ['gemmi_5frun_5ffrom_5621',['gemmi_run_from',['../classgemmi_1_1MtzToCif.html#a5be5df421ceee10b76e3a9a943a27850',1,'gemmi::MtzToCif']]],
+  ['generated_5fby_5622',['generated_by',['../structgemmi_1_1XdsAsciiMetadata.html#af4a5199584dd736c36c440b26adfef0f',1,'gemmi::XdsAsciiMetadata']]],
+  ['generators_5623',['generators',['../structgemmi_1_1Assembly.html#ab618b698200e23c9c44fec37573ab46c',1,'gemmi::Assembly']]],
+  ['given_5624',['given',['../structgemmi_1_1NcsOp.html#afdf0771112ef9e53bf597b6361e5c25b',1,'gemmi::NcsOp']]],
+  ['global_5fmax_5fdist_5625',['global_max_dist',['../structgemmi_1_1LinkHunt.html#ac29d8653a340bb3c871acdca01e1b887',1,'gemmi::LinkHunt']]],
+  ['good_5fgapo_5626',['good_gapo',['../structgemmi_1_1AlignmentScoring.html#adede789ed78c67f4bbd7451ccc36d1e8',1,'gemmi::AlignmentScoring']]],
+  ['gops_5627',['gops',['../structgemmi_1_1GroupOps_1_1Iter.html#a0950fb4c7e089647e94244dc98b4e986',1,'gemmi::GroupOps::Iter']]],
+  ['grid_5628',['grid',['../structgemmi_1_1Ccp4.html#a75f177e1e21ecb60622809b466fb1cbc',1,'gemmi::Ccp4::grid()'],['../structgemmi_1_1NeighborSearch.html#a7fd0820cd518daba222969c90b47fe91',1,'gemmi::NeighborSearch::grid()'],['../structgemmi_1_1DensityCalculator.html#a6bf8244c87db574618eb7b4e44ebd125',1,'gemmi::DensityCalculator::grid()'],['../structgemmi_1_1MaskedGrid.html#a312324182740dd84176996c94c036ba3',1,'gemmi::MaskedGrid::grid()']]],
+  ['grid_5fiterator_5629',['grid_iterator',['../structgemmi_1_1MaskedGrid_1_1iterator.html#ae8936b2aea4bee3c821afe8343084741',1,'gemmi::MaskedGrid::iterator']]],
+  ['group_5630',['group',['../structgemmi_1_1ChemComp_1_1Aliasing.html#a6ce2b1b34b683fb63fc6b539faac7d3c',1,'gemmi::ChemComp::Aliasing::group()'],['../structgemmi_1_1ChemComp.html#a05e5ab9f808b1ffd9fa31514084e851c',1,'gemmi::ChemComp::group()'],['../structgemmi_1_1ChemLink_1_1Side.html#abff13edc6f0227e4b2ae5fcdf9c785ac',1,'gemmi::ChemLink::Side::group()']]],
+  ['group_5fddl2_5fcategories_5631',['group_ddl2_categories',['../structgemmi_1_1cif_1_1JsonWriteOptions.html#ac2bbc003ab484d39cefcc4148bb7f8a3',1,'gemmi::cif::JsonWriteOptions']]],
+  ['group_5fid_5632',['group_id',['../structgemmi_1_1ChemMod.html#a8ee53ce1e50dbe9f1dd67bcf17837bfd',1,'gemmi::ChemMod']]],
+  ['group_5fidx_5633',['group_idx',['../structgemmi_1_1Residue.html#a6211922b62990c9284517638e092f81c',1,'gemmi::Residue']]],
+  ['group_5fpdb_5634',['group_pdb',['../structgemmi_1_1MmcifOutputGroups.html#ab4a04dd81c9fdd57fb5ba0fb07cd7575',1,'gemmi::MmcifOutputGroups']]]
+];

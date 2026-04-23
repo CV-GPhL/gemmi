@@ -1,0 +1,17 @@
+digraph "gemmi::Binner"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="gemmi::Binner",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Divide reflections into resolution shells (bins) for statistics."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" cell" ,fontname="Helvetica"];
+  Node2 [label="gemmi::UnitCell",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1UnitCell.html",tooltip="Unit cell with pre-calculated transformation matrices and properties. Stores crystallographic unit ce..."];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="gemmi::UnitCellParameters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1UnitCellParameters.html",tooltip="Base parameters for a unit cell (6 parameters: 3 lengths and 3 angles). Stores the six independent pa..."];
+  Node4 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" frac\north" ,fontname="Helvetica"];
+  Node4 [label="gemmi::Transform",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1Transform.html",tooltip="Affine transformation: y = mat * x + vec."];
+  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" mat" ,fontname="Helvetica"];
+  Node5 [label="gemmi::Mat33",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1Mat33.html",tooltip="3×3 matrix of doubles"];
+  Node6 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" vec" ,fontname="Helvetica"];
+  Node6 [label="gemmi::Vec3_\< double \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1Vec3__.html",tooltip=" "];
+}

@@ -1,0 +1,25 @@
+digraph "gemmi::IntensitiesDataProxy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="gemmi::IntensitiesDataProxy",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Adapter providing DataProxy interface to Intensities data. Enables use of Intensities with generic al..."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" intensities_" ,fontname="Helvetica"];
+  Node2 [label="gemmi::Intensities",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1Intensities.html",tooltip="Container for intensity data from reflection measurements."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" unit_cell" ,fontname="Helvetica"];
+  Node3 [label="gemmi::UnitCell",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1UnitCell.html",tooltip="Unit cell with pre-calculated transformation matrices and properties. Stores crystallographic unit ce..."];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="gemmi::UnitCellParameters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1UnitCellParameters.html",tooltip="Base parameters for a unit cell (6 parameters: 3 lengths and 3 angles). Stores the six independent pa..."];
+  Node5 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" frac\north" ,fontname="Helvetica"];
+  Node5 [label="gemmi::Transform",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1Transform.html",tooltip="Affine transformation: y = mat * x + vec."];
+  Node6 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" mat" ,fontname="Helvetica"];
+  Node6 [label="gemmi::Mat33",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1Mat33.html",tooltip="3×3 matrix of doubles"];
+  Node7 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" vec" ,fontname="Helvetica"];
+  Node7 [label="gemmi::Vec3_\< double \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1Vec3__.html",tooltip=" "];
+  Node8 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" staraniso_b" ,fontname="Helvetica"];
+  Node8 [label="gemmi::Intensities\l::AnisoScaling",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1Intensities_1_1AnisoScaling.html",tooltip="Anisotropic scaling tensor for STARANISO B-factor correction."];
+  Node9 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" b" ,fontname="Helvetica"];
+  Node9 [label="gemmi::SMat33\< double \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1SMat33.html",tooltip=" "];
+  Node10 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" spacegroup" ,fontname="Helvetica"];
+  Node10 [label="gemmi::SpaceGroup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1SpaceGroup.html",tooltip="A crystallographic space group definition."];
+}

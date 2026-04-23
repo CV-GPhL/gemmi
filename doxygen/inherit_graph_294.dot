@@ -1,0 +1,10 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="gemmi::UnitCellParameters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1UnitCellParameters.html",tooltip="Base parameters for a unit cell (6 parameters: 3 lengths and 3 angles). Stores the six independent pa..."];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="gemmi::UnitCell",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1UnitCell.html",tooltip="Unit cell with pre-calculated transformation matrices and properties. Stores crystallographic unit ce..."];
+}

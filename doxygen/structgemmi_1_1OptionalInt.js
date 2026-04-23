@@ -1,0 +1,25 @@
+var structgemmi_1_1OptionalInt =
+[
+    [ "value_type", "structgemmi_1_1OptionalInt.html#a36d84fc49867ba725019f270d5084ec8", null ],
+    [ "OptionalInt", "structgemmi_1_1OptionalInt.html#a258a0432be50647d30fb97e0a2248434", null ],
+    [ "OptionalInt", "structgemmi_1_1OptionalInt.html#a7472b0e3641d8f902b41fa6c1cd2a764", null ],
+    [ "emplace", "structgemmi_1_1OptionalInt.html#a0584f2656b022f00655b68c5b9721cf5", null ],
+    [ "has_value", "structgemmi_1_1OptionalInt.html#aaa92926278baff67e8e3cc65ebd6b5cf", null ],
+    [ "operator bool", "structgemmi_1_1OptionalInt.html#a58aaf6d404338e2c3ccb6063ad7b490f", null ],
+    [ "operator int", "structgemmi_1_1OptionalInt.html#a95d8a47d69174f84cd7d9ed0ef3ab976", null ],
+    [ "operator!=", "structgemmi_1_1OptionalInt.html#a705fb3b5f0fa7ad88ad535c5660660cf", null ],
+    [ "operator!=", "structgemmi_1_1OptionalInt.html#ae48f64e5545bc923777cf871d9243410", null ],
+    [ "operator*", "structgemmi_1_1OptionalInt.html#ac73e5113d9cbb1bcd0bd3e7ce8760ef8", null ],
+    [ "operator*", "structgemmi_1_1OptionalInt.html#aa1112379ad80e557d93a7ac77d38a71d", null ],
+    [ "operator+", "structgemmi_1_1OptionalInt.html#ab5081567606074a53ab7d98c1c0dc6b0", null ],
+    [ "operator+=", "structgemmi_1_1OptionalInt.html#a5be18c28b463610de4f28f349477dab1", null ],
+    [ "operator-", "structgemmi_1_1OptionalInt.html#af2a0a6bf31748aca4fd536a1ca6b21c4", null ],
+    [ "operator-=", "structgemmi_1_1OptionalInt.html#a7bc5b087481f89563892447a5b0013c4", null ],
+    [ "operator<", "structgemmi_1_1OptionalInt.html#ad0893ec9da4decc9ec59fccc1cedf331", null ],
+    [ "operator=", "structgemmi_1_1OptionalInt.html#a8523743206b0580f732b9f23bcf30e22", null ],
+    [ "operator==", "structgemmi_1_1OptionalInt.html#aa65bfcbd9f7180947d0c6ef0afd443c8", null ],
+    [ "operator==", "structgemmi_1_1OptionalInt.html#a49a689198e864feec233744212c93f83", null ],
+    [ "reset", "structgemmi_1_1OptionalInt.html#a9d95a48ad7b5d234c69641c09bb1307f", null ],
+    [ "str", "structgemmi_1_1OptionalInt.html#a015618093e1789e7516e0e264eaf7a0b", null ],
+    [ "value", "structgemmi_1_1OptionalInt.html#ac4c49de258fda98d58c9a4b182b75f53", null ]
+];

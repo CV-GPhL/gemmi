@@ -1,0 +1,37 @@
+var structgemmi_1_1Restraints =
+[
+    [ "Angle", "structgemmi_1_1Restraints_1_1Angle.html", "structgemmi_1_1Restraints_1_1Angle" ],
+    [ "AtomId", "structgemmi_1_1Restraints_1_1AtomId.html", "structgemmi_1_1Restraints_1_1AtomId" ],
+    [ "Bond", "structgemmi_1_1Restraints_1_1Bond.html", "structgemmi_1_1Restraints_1_1Bond" ],
+    [ "Chirality", "structgemmi_1_1Restraints_1_1Chirality.html", "structgemmi_1_1Restraints_1_1Chirality" ],
+    [ "Plane", "structgemmi_1_1Restraints_1_1Plane.html", "structgemmi_1_1Restraints_1_1Plane" ],
+    [ "Torsion", "structgemmi_1_1Restraints_1_1Torsion.html", "structgemmi_1_1Restraints_1_1Torsion" ],
+    [ "DistanceOf", "structgemmi_1_1Restraints.html#a3c1c7de9fe84326d33205f7bc223a153", [
+      [ "ElectronCloud", "structgemmi_1_1Restraints.html#a3c1c7de9fe84326d33205f7bc223a153a8fa7b7f6c1e1bfc6fd25bbf3ed290806", null ],
+      [ "Nucleus", "structgemmi_1_1Restraints.html#a3c1c7de9fe84326d33205f7bc223a153ae0cbf1349b31b63d275d963e611b54c3", null ]
+    ] ],
+    [ "are_bonded", "structgemmi_1_1Restraints.html#a2fb660d5b34cc861b506da78e0034789", null ],
+    [ "chiral_abs_volume", "structgemmi_1_1Restraints.html#af765b5b995fcde7fad5140f0652d8f14", null ],
+    [ "empty", "structgemmi_1_1Restraints.html#a395aa7ecc5775d18a34285028f22fc5b", null ],
+    [ "find_angle", "structgemmi_1_1Restraints.html#aa3b57ff57bd4f9fddc13abfdd9a73967", null ],
+    [ "find_angle", "structgemmi_1_1Restraints.html#a3fbaa183b49b3d1803d6a628291c24a2", null ],
+    [ "find_bond", "structgemmi_1_1Restraints.html#a8a469c1482005705649e9c3eb2213e09", null ],
+    [ "find_bond", "structgemmi_1_1Restraints.html#a15396db07b9e5715d73fcfc00533693e", null ],
+    [ "find_chir", "structgemmi_1_1Restraints.html#a8ea0bfe3ba24c6ab7d54d5669d906b23", null ],
+    [ "find_chir", "structgemmi_1_1Restraints.html#abb3a5f8bee4ca825918b2ecc22c63ea6", null ],
+    [ "find_shortest_path", "structgemmi_1_1Restraints.html#aaca02f89d0af658d0a77f41520bb0b8d", null ],
+    [ "find_torsion", "structgemmi_1_1Restraints.html#a7f6b69e4026041d9296f6940ba7c5d4a", null ],
+    [ "find_torsion", "structgemmi_1_1Restraints.html#a57ce4f73b70d90ba6af5f8a40c3b2bfc", null ],
+    [ "first_bonded_atom", "structgemmi_1_1Restraints.html#a7ffa63ba9e81ed2c046a965347916eba", null ],
+    [ "get_angle", "structgemmi_1_1Restraints.html#a82e81d3ae9523fc7d0c5809c361db8a4", null ],
+    [ "get_bond", "structgemmi_1_1Restraints.html#a0cd98f8ab5fe52cb2204961d84bfba0d", null ],
+    [ "get_or_add_plane", "structgemmi_1_1Restraints.html#a7c7ca54b9fc1be150e29bfcdd329fd6c", null ],
+    [ "get_plane", "structgemmi_1_1Restraints.html#aefc4f07145d024901062b25d1bbe5df6", null ],
+    [ "lexicographic_str", "structgemmi_1_1Restraints.html#aeef3a3e016e3d3846379cf52e9d9f639", null ],
+    [ "rename_atom", "structgemmi_1_1Restraints.html#a593fa453f6aac18d1eb391c8e72baff1", null ],
+    [ "angles", "structgemmi_1_1Restraints.html#aaade3489373e6dc600c496a6686593ea", null ],
+    [ "bonds", "structgemmi_1_1Restraints.html#a37d367f543c563363199203f952441c2", null ],
+    [ "chirs", "structgemmi_1_1Restraints.html#a777bb0cca6acc19bf984ff755f62df68", null ],
+    [ "planes", "structgemmi_1_1Restraints.html#ad9fbdcfd6b47941c31015f92fa4387b0", null ],
+    [ "torsions", "structgemmi_1_1Restraints.html#ae01315ad1816ea2133a6a4db0d322c33", null ]
+];

@@ -1,0 +1,1071 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="C++ API Reference" href="api.html"><link rel="prev" title="Reciprocal space" href="hkl.html">
+
+    <!-- Generated with Sphinx 8.1.3 and Furo 2025.12.19 -->
+        <title>Scattering - Gemmi 0.7.6-dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=ee168a85" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Gemmi 0.7.6-dev documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  <span class="sidebar-brand-text">Gemmi 0.7.6-dev documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="install.html">Installation</a><input aria-label="Toggle navigation of Installation" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#c-library">C++ library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#python-module">Python module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#fortran-and-c-bindings">Fortran and C bindings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#webassembly">WebAssembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#program">Program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#testing">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="program.html">Gemmi program</a><input aria-label="Toggle navigation of Gemmi program" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="program.html#validate">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#grep">grep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#cif2json">cif2json</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#json2cif">json2cif</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#cifdiff">cifdiff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#convert">convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#set">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#tags">tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#map">map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#mask">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#mtz">mtz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#mtz2cif">mtz2cif</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#cif2mtz">cif2mtz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#sf2map">sf2map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#map2sf">map2sf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#merge">merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#ecalc">ecalc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#sfcalc">sfcalc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#fprime">fprime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#reindex">reindex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#residues">residues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#align">align</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#sg">sg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#contents">contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#contact">contact</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#blobs">blobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#h">h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#mondiff">mondiff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#crd">crd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#drg">drg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#wcn">wcn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#xds2mtz">xds2mtz</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Prerequisites</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="cif.html">CIF Parser</a><input aria-label="Toggle navigation of CIF Parser" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#what-are-star-cif-ddl-mmcif">What are STAR, CIF, DDL, mmCIF?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#what-is-parsed">What is parsed?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#dom-and-sax">DOM and SAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#reading-and-writing">Reading and writing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#document">Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#block">Block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#pairs-and-loops">Pairs and Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#column">Column</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#table">Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#validation">Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#design-choices">Design choices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cif.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="symmetry.html">Symmetry</a><input aria-label="Toggle navigation of Symmetry" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="symmetry.html#space-group-table">Space group table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetry.html#spacegroup">SpaceGroup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetry.html#operations">Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetry.html#groups-of-operations">Groups of Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetry.html#asu">ASU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetry.html#twinning">Twinning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetry.html#c-example">C++ Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetry.html#implementation-notes">Implementation notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="cell.html">Math and unit cell</a><input aria-label="Toggle navigation of Math and unit cell" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="cell.html#vectors-and-coordinates">Vectors and coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cell.html#x3-matrices">3x3 matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cell.html#transformations">Transformations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cell.html#box">Box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cell.html#unit-cell">Unit cell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cell.html#unit-cell-reduction">Unit cell reduction</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="misc.html">Miscellaneous utils</a><input aria-label="Toggle navigation of Miscellaneous utils" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#fasta-and-pir-reader">FASTA and PIR reader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#logger">Logger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#copy-of-the-pdb-archive">Copy of the PDB archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#directory-walking">Directory walking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#input-abstractions-decompressing-on-the-fly">Input abstractions (decompressing on the fly)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Working with Molecules</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chemistry.html">Chemistry</a><input aria-label="Toggle navigation of Chemistry" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="chemistry.html#elements">Elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chemistry.html#small-molecules">Small Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chemistry.html#chemical-components">Chemical Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chemistry.html#chemical-normalization">Chemical normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chemistry.html#monomer-library">Monomer library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chemistry.html#gemmi-drg-high-level-overview">gemmi drg: high-level overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="mol.html">Macromolecular models</a><input aria-label="Toggle navigation of Macromolecular models" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#coordinate-files">Coordinate files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#structure">Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#model">Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#chain">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#residue">Residue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#atom">Atom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#atomaddress-and-cra">AtomAddress and CRA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mol.html#flat-structure-representation">Flat Structure Representation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="analysis.html">Structure analysis</a><input aria-label="Toggle navigation of Structure analysis" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#neighbor-search">Neighbor search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#contact-search">Contact search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#matthews-coefficient">Matthews coefficient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#sequence-alignment">Sequence alignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#superposition">Superposition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#selections-cid">Selections (CID)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#selections-pymol-syntax">Selections (PyMOL syntax)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#graph-analysis">Graph analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#torsion-angles">Torsion angles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#topology">Topology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#modelling-b-factors">Modelling B-factors</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Working with Data</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="grid.html">Grids and maps</a><input aria-label="Toggle navigation of Grids and maps" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="grid.html#volumetric-grid">Volumetric grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid.html#mrc-ccp4-maps">MRC/CCP4 maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid.html#dsn6-brix-maps">DSN6/BRIX maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid.html#isosurface-extraction">Isosurface extraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="hkl.html">Reciprocal space</a><input aria-label="Toggle navigation of Reciprocal space" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#mtz-format">MTZ format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#sf-mmcif">SF mmCIF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#mtz-mmcif">MTZ ↔ mmCIF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#xds-ascii">XDS_ASCII</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#sx-hkl-cif">SX hkl CIF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#resolution-bins">Resolution bins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#intensities">Intensities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#asudata-merged-reflections">AsuData: merged reflections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#reciprocal-space-grid">Reciprocal-space grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hkl.html#fft">FFT</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Scattering</a><input aria-label="Toggle navigation of Scattering" checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="#x-ray-form-factors">X-ray form factors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anomalous-scattering">Anomalous scattering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#electron-form-factors">Electron form factors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#neutron-scattering">Neutron scattering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#direct-summation">Direct summation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#density-for-fft">Density for FFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mott-bethe-formula">Mott-Bethe formula</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scaling-and-bulk-solvent-correction">Scaling and bulk solvent correction</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/project-gemmi/gemmi/releases">ChangeLog</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://project-gemmi.github.io/python-api/">Python API reference</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api.html">C++ API Reference</a><input aria-label="Toggle navigation of C++ API Reference" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#core-data-structures">Core Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#cif-data-reading-and-writing">CIF Data Reading and Writing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#structure-i-o">Structure I/O</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#reflection-data">Reflection Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#map-and-grid-data">Map and Grid Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#calculations-and-analysis">Calculations and Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#structure-factor-calculations">Structure Factor Calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#chemistry-and-restraints">Chemistry and Restraints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#scattering-math-and-geometry">Scattering, Math, and Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#sequence-alignment-and-twinning">Sequence Alignment and Twinning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#density-analysis-and-numerical-methods">Density Analysis and Numerical Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#i-o-and-filesystem-utilities">I/O and Filesystem Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#low-level-primitives">Low-level Primitives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="https://github.com/project-gemmi/gemmi/blob/master/docs/scattering.rst?plain=true" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div><div class="edit-this-page">
+  <a class="muted-link" href="https://github.com/project-gemmi/gemmi/edit/master/docs/scattering.rst" rel="edit" title="Edit this page">
+    <svg><use href="#svg-pencil"></use></svg>
+    <span class="visually-hidden">Edit this page</span>
+  </a>
+</div><div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="scattering">
+<span id="id1"></span><h1>Scattering<a class="headerlink" href="#scattering" title="Link to this heading">¶</a></h1>
+<p>On this page:</p>
+<ul class="simple">
+<li><p>First, we cover parameters describing how atoms scatter
+<a class="reference internal" href="#xray-scattering"><span class="std std-ref">X-rays</span></a>,
+<a class="reference internal" href="#electron-scattering"><span class="std std-ref">electrons</span></a> and
+<a class="reference internal" href="#neutron-scattering"><span class="std std-ref">neutrons</span></a>.
+This data can be viewed as properties of <a class="reference internal" href="chemistry.html#elements"><span class="std std-ref">Elements</span></a>.</p></li>
+<li><p>Next, we introduce functions that use these properties to calculate
+structure factors (<a class="reference internal" href="#direct-summation"><span class="std std-ref">Direct summation</span></a>),
+and functions that use the same properties to calculate
+<a class="reference internal" href="#density"><span class="std std-ref">real-space density</span></a>,
+which can then be used to calculate structure factors more efficiently.</p></li>
+<li><p>Finally, we cover complementary calculations, such as approximating
+the contribution of bulk solvent to the total scattering.</p></li>
+</ul>
+<section id="x-ray-form-factors">
+<span id="xray-scattering"></span><h2>X-ray form factors<a class="headerlink" href="#x-ray-form-factors" title="Link to this heading">¶</a></h2>
+<p>The X-ray scattering contribution from an isolated atom is described by the
+atomic form factor. Nowadays, two form factor parametrizations are commonly
+used: one from the International Tables of Crystallography Vol. C
+(4 Gaussians + constant factor), and the other from Waasmaier &amp; Kirfel (1995),
+<a class="reference external" href="https://doi.org/10.1107/S0108767394013292">Acta Cryst. A51, 416</a>
+(5 Gaussians).
+Other parametrizations exist (for example, with only two Gaussians),
+but are not widely used.</p>
+<p>Currently, Gemmi includes only the ITC parametrization.</p>
+<p>In C++, the form factor coefficients are listed in the <code class="file docutils literal notranslate"><span class="pre">it92.hpp</span></code> header.
+In Python, these coefficients can be accessed as a property of an element
+(only coefficients for neutral atoms):</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s1">&#39;Fe&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">it92</span>  
+<span class="go">&lt;gemmi.IT92Coef object at 0x...&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s1">&#39;Es&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">it92</span>  <span class="c1"># -&gt; None (no parametrization for Einsteinium)</span>
+</pre></div>
+</div>
+<p>or by using the function <code class="docutils literal notranslate"><span class="pre">IT92_get_exact()</span></code> that takes an element and a charge
+as arguments and returns None if this exact atom or ion is absent in the table.</p>
+<p>The charges listed in a coordinates file might not be reliable for determining
+the scattering of an atom, so by default, we use coefficients for neutral atoms
+regardless of the formal charge. To use coefficients for ions, you first need to
+change <code class="docutils literal notranslate"><span class="pre">IT92::ignore_charge</span></code>:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">IT92_set_ignore_charge</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">IT92_get_exact</span><span class="p">(</span><span class="n">gemmi</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s1">&#39;Mg&#39;</span><span class="p">),</span> <span class="o">+</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># for Mg2+ </span>
+<span class="go">&lt;gemmi.IT92Coef object at 0x...&gt;</span>
+</pre></div>
+</div>
+<p>You can get the coefficients as numbers:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fe_coef</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s1">&#39;Fe&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">it92</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fe_coef</span><span class="o">.</span><span class="n">a</span>
+<span class="go">[11.7695, 7.3573, 3.5222, 2.3045]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fe_coef</span><span class="o">.</span><span class="n">b</span>
+<span class="go">[4.7611, 0.3072, 15.3535, 76.8805]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fe_coef</span><span class="o">.</span><span class="n">c</span>
+<span class="go">1.0369</span>
+</pre></div>
+</div>
+<p>The <em>a</em>’s and <em>c</em> should sum up to the number of electrons (<em>Z</em> - <em>charge</em>),
+but the numbers from the Tables may differ slightly:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s1">&#39;Fe&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">atomic_number</span>
+<span class="go">26</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sum</span><span class="p">(</span><span class="n">fe_coef</span><span class="o">.</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">fe_coef</span><span class="o">.</span><span class="n">c</span>  
+<span class="go">25.9904...</span>
+</pre></div>
+</div>
+<p>Some programs (Refmac) normalize the coefficients,
+which means multiplying them by a factor between 0.99995 and 1.00113.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># let&#39;s store the original values first</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">orig_coefs</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span> <span class="p">:</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">it92</span><span class="o">.</span><span class="n">get_coefs</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">99</span><span class="p">)}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># now we normalize the values</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">IT92_normalize</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># and we can see that the values have changed</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fe_coef</span><span class="o">.</span><span class="n">a</span>  
+<span class="go">[11.7738..., 7.3600..., 3.5235..., 2.30535...]</span>
+</pre></div>
+</div>
+<p>Now let’s use the function <code class="docutils literal notranslate"><span class="pre">set_coefs()</span></code> to change the coefficients back
+to the original values (for neutral atoms):</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">99</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">gemmi</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">it92</span><span class="o">.</span><span class="n">set_coefs</span><span class="p">(</span><span class="n">orig_coefs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Macromolecular models may have unknown atoms with the element specified as X.
+By default, we use oxygen’s coefficients for X,
+but you may change it (as well as the coefficients of any other atom):</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c_coefs</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">it92</span><span class="o">.</span><span class="n">get_coefs</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">it92</span><span class="o">.</span><span class="n">set_coefs</span><span class="p">(</span><span class="n">c_coefs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The coefficients can be used to directly calculate the sum of Gaussians –
+the structure factor contribution:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fe_coef</span><span class="o">.</span><span class="n">calculate_sf</span><span class="p">(</span><span class="n">stol2</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>  <span class="c1"># argument: (sin(theta)/lambda)^2</span>
+<span class="go">9.303603172302246</span>
+</pre></div>
+</div>
+<p>The large number of reflections in macromolecular crystallography makes direct
+calculation of structure factors inefficient. Instead, we can calculate electron
+density on a grid and use FFT to obtain structure factors.
+In the simplest case, the atom’s contribution to the electron density at a grid
+point can be calculated as:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># arguments are distance^2 and isotropic ADP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fe_coef</span><span class="o">.</span><span class="n">calculate_density_iso</span><span class="p">(</span><span class="n">r2</span><span class="o">=</span><span class="mf">2.3</span><span class="p">,</span> <span class="n">B</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="go">0.5279340744018555</span>
+</pre></div>
+</div>
+<p>The C++ interface provides more functions to calculate the electron density.
+We have separate functions to work with isotropic and anisotropic ADPs.
+For efficiency, the computations are split into two stages: the first one is
+performed once per atom, and the second one for each nearby grid point.</p>
+<p>In the usual scenario, we add <em>f’</em> (the real component of anomalous
+scattering – see the next section) to the constant coefficient <em>c</em>.</p>
+</section>
+<section id="anomalous-scattering">
+<span id="anomalous"></span><h2>Anomalous scattering<a class="headerlink" href="#anomalous-scattering" title="Link to this heading">¶</a></h2>
+<p>The anomalous dispersion is wavelength-dependent.
+Gemmi provides the function <code class="docutils literal notranslate"><span class="pre">cromer_liberman</span></code>, which calculates
+the real and imaginary components <em>f’</em> and <em>f”</em>
+for isolated atoms from Z=3 to Z=92.</p>
+<p>As the name suggests, this function uses the Cromer-Liberman algorithm.
+This algorithm, as noted on the
+<a class="reference external" href="https://subversion.xray.aps.anl.gov/trac/pyFprime/">pyFprime website</a>,
+“fails in computing <em>f’</em> for wavelengths &lt; 0.16 Å (&gt; 77.48 keV)
+for the heaviest elements (Au-Cf)
+and fails to correctly compute <em>f’</em>, <em>f”</em> and <em>μ</em>
+for wavelengths &gt; 2.67 Å (&lt; 4.64 keV) for very heavy elements (Am-Cf).”</p>
+<p>The implementation is contained in a single C++ header file
+<code class="file docutils literal notranslate"><span class="pre">fprime.hpp</span></code> with no dependencies.
+All the data is embedded in the code.
+The binary size after compilation is about 100kB.</p>
+<p>Reportedly, the data tables synthesized by C.T. Chantler are more accurate.
+Consider using them instead. They are available from the
+<a class="reference external" href="https://www.nist.gov/pml/x-ray-form-factor-attenuation-and-scattering-tables">NIST website</a>
+and the <a class="reference external" href="https://github.com/xraypy/XrayDB">XrayDB</a> project.</p>
+<p>The code in <code class="file docutils literal notranslate"><span class="pre">fprime.hpp</span></code> is based on the X-ray spectroscopy project
+<a class="reference external" href="https://xraypy.github.io/xraylarch/">Larch</a>
+and should give the same results as the
+<a class="reference external" href="https://xraypy.github.io/xraylarch/xray/index.html#_xray.f1f2_cl">f1f2_cl</a>
+function there. The Fortran code in Larch is, in turn, based on the
+<a class="reference external" href="https://aip.scitation.org/doi/10.1063/1.1142625">Brennan and Cowan</a>
+routines. Which, in turn, were based on the
+<a class="reference external" href="https://doi.org/10.1107/S0021889883010791">original program</a>
+from Don Cromer. Along the way, the code was extensively modified.
+Importantly, the Jensen correction has been removed (as is recommended
+in the chapter 4.2.6 of <a class="reference external" href="https://it.iucr.org/Cb/contents/">ITvC</a>)
+and the <a class="reference external" href="https://doi.org/10.1107/S0108767389010718">Kissel and Pratt (1990)</a>
+correction has been added.
+Therefore, it gives different results than the
+<a class="reference external" href="http://legacy.ccp4.ac.uk/html/crossec.html">crossec</a> program,
+which was contributed to CCP4 directly by Don Cromer in the 1990’s.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">cromer_liberman</span></code> function is available in both C++ and Python:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s1">&#39;Se&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">atomic_number</span>
+<span class="go">34</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">cromer_liberman</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">_</span><span class="p">,</span> <span class="n">energy</span><span class="o">=</span><span class="mf">10332.0</span><span class="p">)</span> <span class="c1"># energy in eV  </span>
+<span class="go">(-1.41862..., 0.72389...)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># use gemmi.hc to convert wavelength [A] to energy [eV]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">cromer_liberman</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="mi">34</span><span class="p">,</span> <span class="n">energy</span><span class="o">=</span><span class="n">gemmi</span><span class="o">.</span><span class="n">hc</span><span class="o">/</span><span class="mf">0.71073</span><span class="p">)</span>  
+<span class="go">(-0.09201..., 2.23336...)</span>
+</pre></div>
+</div>
+<p>The same values can be printed from the command line program
+<a class="reference internal" href="program.html#fprime"><span class="std std-ref">gemmi-fprime</span></a>.</p>
+</section>
+<section id="electron-form-factors">
+<span id="electron-scattering"></span><h2>Electron form factors<a class="headerlink" href="#electron-form-factors" title="Link to this heading">¶</a></h2>
+<p>The electron form factors are parametrized as 5 Gaussians,
+using coefficients from International Tables for Crystallography
+Volume C, edition 2011, table 4.3.2.2 (pp. 282-283),
+“Elastic atomic scattering factors of electrons for neutral atoms
+and <em>s</em> up to 2.0 A<sup>–1</sup>”.
+The same parametrization is used in cctbx and CCP4.</p>
+<p>In gemmi, we refer to these coefficients as C4322 (after the volume and
+table number in the International Tables).
+For C++, the form factor coefficients are tabulated
+in the <code class="file docutils literal notranslate"><span class="pre">c4322.hpp</span></code> header.
+In Python, they can be accessed as a property of an element:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fe_coef</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s1">&#39;Fe&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">c4322</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fe_coef</span><span class="o">.</span><span class="n">a</span>
+<span class="go">[0.3946, 1.2725, 1.7031, 2.314, 1.4795]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fe_coef</span><span class="o">.</span><span class="n">b</span>
+<span class="go">[0.2717, 2.0443, 7.6007, 29.9714, 86.2265]</span>
+</pre></div>
+</div>
+<p>Similarly to the X-ray coefficients, they can be used to calculate
+structure factors and density:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fe_coef</span><span class="o">.</span><span class="n">calculate_sf</span><span class="p">(</span><span class="n">stol2</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>  <span class="c1"># argument: (sin(theta)/lambda)^2</span>
+<span class="go">0.9971507787704468</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fe_coef</span><span class="o">.</span><span class="n">calculate_density_iso</span><span class="p">(</span><span class="n">r2</span><span class="o">=</span><span class="mf">2.3</span><span class="p">,</span> <span class="n">B</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="go">0.13794779777526855</span>
+</pre></div>
+</div>
+<p>Unlike for X-ray form factors, we do not add anomalous scattering here.</p>
+</section>
+<section id="neutron-scattering">
+<span id="id2"></span><h2>Neutron scattering<a class="headerlink" href="#neutron-scattering" title="Link to this heading">¶</a></h2>
+<p>For neutrons, we use bound coherent scattering lengths
+<a class="reference external" href="https://www.ncnr.nist.gov/resources/n-lengths/list.html">from NCNR</a>,
+which are based on Neutron News, Vol. 3, No. 3, 1992.</p>
+<p>In C++, this data is in the <code class="file docutils literal notranslate"><span class="pre">neutron92.hpp</span></code> header.
+In Python, it can be accessed as a property of an element:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">h_neut</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">neutron92</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h_neut</span><span class="o">.</span><span class="n">get_coefs</span><span class="p">()</span>  <span class="c1"># bound coherent scat. length in fm (10^-15 m)</span>
+<span class="go">[-3.739]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h_neut</span><span class="o">.</span><span class="n">calculate_sf</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># the argument is ignored</span>
+<span class="go">-3.739</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h_neut</span><span class="o">.</span><span class="n">calculate_density_iso</span><span class="p">(</span><span class="n">r2</span><span class="o">=</span><span class="mf">1.3</span><span class="p">,</span> <span class="n">B</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="go">-0.17104358254308388</span>
+</pre></div>
+</div>
+<p>We don’t store data for individual isotopes, except for deuterium.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gemmi</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">neutron92</span><span class="o">.</span><span class="n">get_coefs</span><span class="p">()</span>
+<span class="go">[6.671]</span>
+</pre></div>
+</div>
+</section>
+<section id="direct-summation">
+<span id="id3"></span><h2>Direct summation<a class="headerlink" href="#direct-summation" title="Link to this heading">¶</a></h2>
+<p>Gemmi has functions to calculate structure factor by direct summation
+of structure factors from individual atoms. This route is not commonly used
+in macromolecular crystallography and it was implemented primarily to check
+the accuracy of FFT-based computations. Therefore, the efficiency was not
+a priority here. In particular, space group specific optimizations, described
+by <a class="reference external" href="https://doi.org/10.1107/S2053273314022207">Bourhis et al (2014)</a>,
+are not included.</p>
+<p>In Python classes <code class="docutils literal notranslate"><span class="pre">StructureFactorCalculatorX</span></code> and <code class="docutils literal notranslate"><span class="pre">StructureFactorCalculatorE</span></code>
+perform direct summation using X-ray and electron form factors, respectively.
+Class <code class="docutils literal notranslate"><span class="pre">StructureFactorCalculatorN</span></code> does calculations for neutrons.
+The C++ interface is similar, although it uses a single templated class
+<code class="docutils literal notranslate"><span class="pre">StructureFactorCalculator</span></code>.
+These classes are constructed with <code class="docutils literal notranslate"><span class="pre">UnitCell</span></code> as a parameter (we don’t pass
+<code class="docutils literal notranslate"><span class="pre">SpaceGroup</span></code> because <code class="docutils literal notranslate"><span class="pre">UnitCell</span></code> already contains a list of symmetry operations).</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">st</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">read_structure</span><span class="p">(</span><span class="s1">&#39;../tests/4oz7.pdb&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">calc_e</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">StructureFactorCalculatorE</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">cell</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now we can compute structure factors from Model for any (hkl):</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">calc_e</span><span class="o">.</span><span class="n">calculate_sf_from_model</span><span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>  
+<span class="go">(54.50873...+53.39498...j)</span>
+</pre></div>
+</div>
+<p>Similarly, for small molecules:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">small</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">read_small_structure</span><span class="p">(</span><span class="s1">&#39;../tests/1011031.cif&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">small</span><span class="o">.</span><span class="n">change_occupancies_to_crystallographic</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">calc_x</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">StructureFactorCalculatorX</span><span class="p">(</span><span class="n">small</span><span class="o">.</span><span class="n">cell</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">calc_x</span><span class="o">.</span><span class="n">calculate_sf_from_small_structure</span><span class="p">(</span><span class="n">small</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="go">(17.849694728851315-6.557871454633539e-15j)</span>
+</pre></div>
+</div>
+<p>For each atom, the Debye-Waller factor (used in the structure factor
+calculation) is obtained using either isotropic or anisotropic ADPs
+(B-factors). If anisotropic ADPs are non-zero, isotropic ADP is ignored.</p>
+<section id="addends">
+<span id="id4"></span><h3>Addends<a class="headerlink" href="#addends" title="Link to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">StructureFactorCalculator</span></code> also contains addends – per-element values
+that are to be added to the form factor coefficient <em>c</em>
+(which is the same as adding it to the total atomic contribution
+to the structure factor):</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">calc_x</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">StructureFactorCalculatorX</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">cell</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">calc_x</span><span class="o">.</span><span class="n">addends</span>  
+<span class="go">&lt;gemmi.Addends object at 0x...&gt;</span>
+</pre></div>
+</div>
+<p>When calculating X-ray structure factors, one may want to include <em>f’</em>
+(real part of the <a class="reference internal" href="#anomalous"><span class="std std-ref">anomalous scattering</span></a>).
+To do this, <em>f’</em> needs to be set for each element present in the system.
+This is done with the function <code class="docutils literal notranslate"><span class="pre">set_addend()</span></code>, which sets an angle-independent
+value that will be added to the value calculated from the form factors.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">energy</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">hc</span> <span class="o">/</span> <span class="mf">0.8</span>  <span class="c1"># for wavelength 0.8A</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;Cu&#39;</span><span class="p">]:</span>
+<span class="gp">... </span>    <span class="n">el</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="n">symbol</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">fp</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">cromer_liberman</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">el</span><span class="o">.</span><span class="n">atomic_number</span><span class="p">,</span> <span class="n">energy</span><span class="o">=</span><span class="n">energy</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">calc_x</span><span class="o">.</span><span class="n">addends</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">el</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">calc_x</span><span class="o">.</span><span class="n">addends</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gemmi</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s1">&#39;Cu&#39;</span><span class="p">))</span>
+<span class="go">0.265503853559494</span>
+</pre></div>
+</div>
+<p>Alternatively, you could call a single function (here we first need
+to remove the previous values, so it makes two functions):</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">calc_x</span><span class="o">.</span><span class="n">addends</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">calc_x</span><span class="o">.</span><span class="n">addends</span><span class="o">.</span><span class="n">add_cl_fprime</span><span class="p">(</span><span class="n">energy</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>which calculates <em>f’</em> for all elements handled by the Cromer-Liberman
+algorithm (<em>Z</em> from 3 to 92). Although it seems wasteful, it takes
+well below 1ms.</p>
+<p>Structure factors calculated at this point incorporate the addends:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">calc_x</span><span class="o">.</span><span class="n">calculate_sf_from_model</span><span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>  
+<span class="go">(182.3655...+269.0002...j)</span>
+</pre></div>
+</div>
+<p>Addends can also be used to calculate electron scattering
+from X-ray form factors according to the Mott–Bethe formula,
+as shown in a <a class="reference internal" href="#mott-bethe"><span class="std std-ref">separate section</span></a>.</p>
+</section>
+</section>
+<section id="density-for-fft">
+<span id="density"></span><h2>Density for FFT<a class="headerlink" href="#density-for-fft" title="Link to this heading">¶</a></h2>
+<p>To use FFT to calculate structure factors, we first need to calculate
+the density of the scatterer (e.g. electron density for X-rays) on a grid.
+For this we use:</p>
+<ul class="simple">
+<li><p>in C++ – class <code class="docutils literal notranslate"><span class="pre">DensityCalculator</span></code> templated with a form factor table,</p></li>
+<li><p>in Python – classes <code class="docutils literal notranslate"><span class="pre">DensityCalculatorX</span></code> (corresponding to X-ray
+form factors), <code class="docutils literal notranslate"><span class="pre">DensityCalculatorE</span></code> (electron form factors)
+and <code class="docutils literal notranslate"><span class="pre">DensityCalculatorN</span></code> (neutrons).</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">DensityCalculator</span></code> contains a grid. The size of the grid is determined
+from two parameters that we need to set: <code class="docutils literal notranslate"><span class="pre">d_min</span></code> which corresponds to
+our resolution limit, and <code class="docutils literal notranslate"><span class="pre">rate</span></code> – the oversampling rate (1.5 by default).</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dencalc</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">DensityCalculatorE</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dencalc</span><span class="o">.</span><span class="n">d_min</span> <span class="o">=</span> <span class="mf">2.5</span> <span class="c1"># 2.5A</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dencalc</span><span class="o">.</span><span class="n">rate</span> <span class="o">=</span> <span class="mf">1.5</span>  <span class="c1"># we could skip it, this is the default value</span>
+</pre></div>
+</div>
+<p>These two parameters are only used to determine the spacing of the grid.
+In this case, about 2.5Å / (2 * 1.5) = 0.83Å.</p>
+<p>As with <code class="docutils literal notranslate"><span class="pre">StructureFactorCalculator</span></code>, here we also have <a class="reference internal" href="#addends"><span class="std std-ref">addends</span></a>:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dencalc</span><span class="o">.</span><span class="n">addends</span>  
+<span class="go">&lt;gemmi.Addends object at 0x...&gt;</span>
+</pre></div>
+</div>
+<p>To create a grid and calculate the density we use two function calls:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dencalc</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">setup_from</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dencalc</span><span class="o">.</span><span class="n">put_model_density_on_grid</span><span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Calling <code class="docutils literal notranslate"><span class="pre">put_model_density_on_grid</span></code> is equivalent to these three functions:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dencalc</span><span class="o">.</span><span class="n">initialize_grid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dencalc</span><span class="o">.</span><span class="n">add_model_density_to_grid</span><span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dencalc</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">symmetrize_sum</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">initialize_grid()</span></code>, in this case, uses <code class="docutils literal notranslate"><span class="pre">d_min</span></code> and <code class="docutils literal notranslate"><span class="pre">rate</span></code>
+to determine the required grid spacing and uses this spacing to setup the grid.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">d_min</span></code> is not set but the grid size is already set,
+<code class="docutils literal notranslate"><span class="pre">initialize_grid()</span></code> zeros the grid values without changing its size.</p>
+<p>At this point, we have a grid with density:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dencalc</span><span class="o">.</span><span class="n">grid</span>
+<span class="go">&lt;gemmi.FloatGrid(48, 48, 50)&gt;</span>
+</pre></div>
+</div>
+<p>which can be transformed (as described <a class="reference internal" href="hkl.html#fft"><span class="std std-ref">above</span></a>)
+into a structure factor grid:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sf_grid</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">transform_map_to_f_phi</span><span class="p">(</span><span class="n">dencalc</span><span class="o">.</span><span class="n">grid</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sf_grid</span>
+<span class="go">&lt;gemmi.ReciprocalComplexGrid(48, 48, 50)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sf_grid</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  
+<span class="go">(54.5276...+53.4189...j)</span>
+</pre></div>
+</div>
+<p>In addition to <code class="docutils literal notranslate"><span class="pre">d_min</span></code> and <code class="docutils literal notranslate"><span class="pre">rate</span></code>, which govern the grid density,
+DensityCalculator has two more parameters that affect the accuracy
+of the calculated structure factors:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cutoff</span></code> (default: 1e-5) – the density cut-off in the same unit as the map.
+It determines the atomic radius <em>r</em> within which the density is calculated
+(density at distance <em>r</em> will be approximately equal to <code class="docutils literal notranslate"><span class="pre">cutoff</span></code>).
+A smaller cutoff gives more accurate but slower calculations.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">blur</span></code> (default: 0) – Gaussian dampening (blurring) factor,
+an artificial temperature factor <em>B</em><sub>extra</sub> added to all atomic
+B-factors (the structure factors must be corrected later to cancel it out).</p></li>
+</ul>
+<p id="blur">Choosing these parameters is a trade-off between efficiency and accuracy.
+<em>B</em><sub>extra</sub> is the most interesting one.
+It is discussed in the <a class="reference external" href="https://it.iucr.org/Bb/contents/">ITfC vol B</a>,
+section 1.3.4.4.5 by G. Bricogne, and further in papers by
+<a class="reference external" href="https://doi.org/10.1107/S0108767302016318">J. Navaza (2002)</a> and
+<a class="reference external" href="https://doi.org/10.1107/S0108767303022062">P. Afonine and A. Urzhumtsev (2003)</a>,
+but no formula for the optimal value exists.
+The value of <em>B</em><sub>extra</sub> that
+gives the most accurate results depends on resolution, oversampling,
+atomic radius cut-off, and the distribution of B-factors
+(particularly the minimal B-factor in the model).
+Additionally, increasing the dampening slows down computations
+because it increases the atomic radius.</p>
+<p><em>B</em><sub>extra</sub> can be set explicitly (it can even be negative):</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dencalc</span><span class="o">.</span><span class="n">blur</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<p>or using the formula from Refmac (a function of the grid spacing
+and <em>B</em><sub>min</sub>). If the formula results in a negative number,
+Refmac sets <em>B</em><sub>extra</sub>to 0, while Servalcat uses the negative value.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dencalc</span><span class="o">.</span><span class="n">set_refmac_compatible_blur</span><span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">allow_negative</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dencalc</span><span class="o">.</span><span class="n">blur</span>
+<span class="go">31.01648695048263</span>
+</pre></div>
+</div>
+<p>The <a class="reference internal" href="program.html#sfcalc"><span class="std std-ref">sfcalc</span></a> program can be used to test different choices
+of <em>B</em><sub>extra</sub>.</p>
+<p>If the density was blurred, it needs to accounted for by either
+adding the <code class="docutils literal notranslate"><span class="pre">unblur</span></code> option to <code class="docutils literal notranslate"><span class="pre">prepare_asu_data()</span></code>:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">asu_data</span> <span class="o">=</span> <span class="n">sf_grid</span><span class="o">.</span><span class="n">prepare_asu_data</span><span class="p">(</span><span class="n">dmin</span><span class="o">=</span><span class="n">dencalc</span><span class="o">.</span><span class="n">d_min</span><span class="p">,</span> <span class="n">unblur</span><span class="o">=</span><span class="n">dencalc</span><span class="o">.</span><span class="n">blur</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or by multiplying individual structure factors by
+<code class="docutils literal notranslate"><span class="pre">dencalc.reciprocal_space_multiplier(inv_d2)</span></code>.</p>
+</section>
+<section id="mott-bethe-formula">
+<span id="mott-bethe"></span><h2>Mott-Bethe formula<a class="headerlink" href="#mott-bethe-formula" title="Link to this heading">¶</a></h2>
+<p>(This is a niche topic that most readers should skip.)</p>
+<p>Electron scattering can be computed using X-ray form factors.
+To do this, we use <em>f</em><sub>x</sub>–<em>Z</em> as form factors
+and multiply the result by a factor derived from the Mott-Bethe formula.
+This factor includes <em>d</em><sup> 2</sup> (the squared length of the scattering
+vector) and is negated because we use <em>f</em><sub>x</sub>–<em>Z</em>
+instead of <em>Z</em>–<em>f</em><sub>x</sub>.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">calc_x</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">StructureFactorCalculatorX</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">cell</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">calc_x</span><span class="o">.</span><span class="n">addends</span><span class="o">.</span><span class="n">subtract_z</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># this also stores d^2 in calc_x, which is then used in mott_bethe_factor()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sf</span> <span class="o">=</span> <span class="n">calc_x</span><span class="o">.</span><span class="n">calculate_sf_from_model</span><span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">calc_x</span><span class="o">.</span><span class="n">mott_bethe_factor</span><span class="p">()</span>  
+<span class="go">-2.95382566...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">calc_x</span><span class="o">.</span><span class="n">mott_bethe_factor</span><span class="p">()</span> <span class="o">*</span> <span class="n">sf</span>  
+<span class="go">(54.065...+52.968...j)</span>
+</pre></div>
+</div>
+<p>We can use the same trick when calculating structure factors through FFT:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dc</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">DensityCalculatorX</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dc</span><span class="o">.</span><span class="n">d_min</span> <span class="o">=</span> <span class="mf">2.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dc</span><span class="o">.</span><span class="n">addends</span><span class="o">.</span><span class="n">subtract_z</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dc</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">setup_from</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dc</span><span class="o">.</span><span class="n">set_refmac_compatible_blur</span><span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dc</span><span class="o">.</span><span class="n">put_model_density_on_grid</span><span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">grid</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">transform_map_to_f_phi</span><span class="p">(</span><span class="n">dc</span><span class="o">.</span><span class="n">grid</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then we multiply it by –1/(2<em>π</em><sup>2</sup><em>a</em><sub>0</sub><em>d</em><sup> 2</sup>)
+to get <em>f</em><sub>e</sub>.</p>
+<p>We either multiply individual values by <code class="docutils literal notranslate"><span class="pre">mott_bethe_factor()</span></code>
+(which includes <code class="docutils literal notranslate"><span class="pre">reciprocal_space_multiplier()</span></code>):</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dc</span><span class="o">.</span><span class="n">mott_bethe_factor</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span> <span class="o">*</span> <span class="n">grid</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>  
+<span class="go">(54.063...+52.970...j)</span>
+</pre></div>
+</div>
+<p>or we call <code class="docutils literal notranslate"><span class="pre">prepare_asu_data()</span></code> with <code class="docutils literal notranslate"><span class="pre">mott_bethe=True</span></code>:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">asu_data</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">prepare_asu_data</span><span class="p">(</span><span class="n">dmin</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">mott_bethe</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">unblur</span><span class="o">=</span><span class="n">dencalc</span><span class="o">.</span><span class="n">blur</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">asu_data</span><span class="o">.</span><span class="n">value_array</span><span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">asu_data</span><span class="o">.</span><span class="n">miller_array</span> <span class="o">==</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>  
+<span class="go">array([54.063...+52.970...j], dtype=complex64)</span>
+</pre></div>
+</div>
+<p>That is all.
+If you want to separate the positions of hydrogen nuclei and electron clouds,
+first use a model in which hydrogen coordinates point to electron clouds.
+Call <code class="docutils literal notranslate"><span class="pre">subtract_z()</span></code> as:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dc</span><span class="o">.</span><span class="n">addends</span><span class="o">.</span><span class="n">subtract_z</span><span class="p">(</span><span class="n">except_hydrogen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then adjust the hydrogen coordinates to proton positions
+and subtract Z=1 by adding c=-1:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">cra</span> <span class="ow">in</span> <span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="n">cra</span><span class="o">.</span><span class="n">atom</span><span class="o">.</span><span class="n">is_hydrogen</span><span class="p">():</span>
+<span class="gp">... </span>        <span class="n">dc</span><span class="o">.</span><span class="n">add_c_contribution_to_grid</span><span class="p">(</span><span class="n">cra</span><span class="o">.</span><span class="n">atom</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="scaling-and-bulk-solvent-correction">
+<span id="scaling"></span><h2>Scaling and bulk solvent correction<a class="headerlink" href="#scaling-and-bulk-solvent-correction" title="Link to this heading">¶</a></h2>
+<p>Anisotropic scaling of calculated structure factors <strong>F</strong> and bulk solvent
+correction are usually handled together because the bulk solvent parameters
+are optimized along with the scaling parameters.
+In Gemmi, both are implemented in one class: Scaling.</p>
+<p>The bulk solvent correction is optional and used only with crystallographic
+data. The solvent (not modeled as individual atoms) occupies a significant
+volume of a macromolecular crystal, so accounting for it makes a difference.
+If we have a model with atomic coordinates, we can create a mask,
+as described in the section about <a class="reference internal" href="grid.html#solventmask"><span class="std std-ref">solvent masking</span></a>,
+to model bulk solvent as a flat scatterer.
+Then, we Fourier-transform the mask and obtain <strong>F</strong><sub>mask</sub>.</p>
+<p>The solvent correction is parametrized as:</p>
+<blockquote>
+<div><p><strong>F</strong><sub>sol</sub> = <em>k</em><sub>sol</sub> exp(–<em>B</em><sub>sol</sub> <em>s</em><sup>2</sup>/4) <strong>F</strong><sub>mask</sub></p>
+</div></blockquote>
+<p><em>k</em><sub>sol</sub> and <em>B</em><sub>sol</sub> are refined together with the overall
+anisotropic scaling parameters, <em>k</em><sub>ov</sub> and <strong>B</strong><sub>ov</sub>:</p>
+<blockquote>
+<div><p><strong>F</strong><sub>tot</sub> = <em>k</em><sub>ov</sub> exp(–<strong>s</strong><sup>T</sup> <strong>B</strong><sub>ov</sub> <strong>s</strong> / 4) (<strong>F</strong><sub>cryst</sub> + <strong>F</strong><sub>sol</sub>)</p>
+</div></blockquote>
+<p><strong>B</strong><sub>ov</sub> is a crystallographic anisotropic tensor that obeys
+the symmetry; effectively, from a single fittable parameter for a cubic
+crystal to 6 parameters for a primitive crystal.
+All the parameters (<em>k</em><sub>ov</sub>, <strong>B</strong><sub>ov</sub>,
+<em>k</em><sub>sol</sub> and <em>B</em><sub>sol</sub>), or only selected ones,
+are optimized to make the total calculated amplitude
+<em>F</em><sub>tot</sub> = |<strong>F</strong><sub>tot</sub>|
+match the diffraction data <em>F</em><sub>obs</sub>.
+But according to what criterion?</p>
+<p>First, there is least-squares scaling, which minimizes
+∑(<em>F</em><sub>tot</sub> – <em>F</em><sub>obs</sub>)<sup>2</sup>.
+While this target function has fallen out of favor in macromolecular
+crystallography (because the errors are not really Gaussian-distributed),
+it is still routinely used for the calculation of statistics such as R-factors.</p>
+<p>The workhorse algorithm for non-linear least squares optimization
+is the Levenberg-Marquardt method. Unlike other popular algorithms,
+such as BFGS and conjugate gradient methods, L-M works only for least squares.
+This is because while the other methods estimate the Hessian from the result of
+the previous optimization step (BFGS) or ignore the second derivatives (CG),
+L-M approximates the Hessian as a squared Jacobian (<strong>J</strong><sup>T</sup> <strong>J</strong>),
+which holds only for quadratic forms. However, for these forms L-M tends
+to converge faster than the other methods.</p>
+<p>Here is a full example. We read <em>F</em><sub>obs</sub> from an mtz file,
+then we read a corresponding model and use it to calculate
+<strong>F</strong><sub>cryst</sub> and <strong>F</strong><sub>mask</sub>.
+These functions were described in the previous sections.
+Then we instantiate the Scaling class, pass the data points to it,
+and finally we perform the least squares scaling.</p>
+<p><strong>Note: functions in class Scaling are likely to change soon</strong>.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># read Fobs</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mtz</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">read_mtz_file</span><span class="p">(</span><span class="s1">&#39;../tests/5e5z.mtz&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mtz</span><span class="o">.</span><span class="n">update_reso</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f_obs</span> <span class="o">=</span> <span class="n">mtz</span><span class="o">.</span><span class="n">get_value_sigma</span><span class="p">(</span><span class="s1">&#39;FP&#39;</span><span class="p">,</span> <span class="s1">&#39;SIGFP&#39;</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># calculate Fcryst</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">st</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">read_structure</span><span class="p">(</span><span class="s1">&#39;../tests/5e5z.pdb&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d_min</span> <span class="o">=</span> <span class="n">mtz</span><span class="o">.</span><span class="n">resolution_high</span><span class="p">()</span> <span class="o">-</span> <span class="mf">1e-9</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dc</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">DensityCalculatorX</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dc</span><span class="o">.</span><span class="n">d_min</span> <span class="o">=</span> <span class="n">d_min</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dc</span><span class="o">.</span><span class="n">set_refmac_compatible_blur</span><span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dc</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">setup_from</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dc</span><span class="o">.</span><span class="n">put_model_density_on_grid</span><span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">grid</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">transform_map_to_f_phi</span><span class="p">(</span><span class="n">dc</span><span class="o">.</span><span class="n">grid</span><span class="p">,</span> <span class="n">half_l</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f_cryst</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">prepare_asu_data</span><span class="p">(</span><span class="n">dmin</span><span class="o">=</span><span class="n">d_min</span><span class="p">,</span> <span class="n">unblur</span><span class="o">=</span><span class="n">dc</span><span class="o">.</span><span class="n">blur</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># calculate Fmask</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mask_grid</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">FloatGrid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mask_grid</span><span class="o">.</span><span class="n">setup_from</span><span class="p">(</span><span class="n">st</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">d_min</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="mf">1e-9</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">masker</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">SolventMasker</span><span class="p">(</span><span class="n">gemmi</span><span class="o">.</span><span class="n">AtomicRadiiSet</span><span class="o">.</span><span class="n">Refmac</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">masker</span><span class="o">.</span><span class="n">put_mask_on_float_grid</span><span class="p">(</span><span class="n">mask_grid</span><span class="p">,</span> <span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fmask_gr</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">transform_map_to_f_phi</span><span class="p">(</span><span class="n">mask_grid</span><span class="p">,</span> <span class="n">half_l</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f_mask</span> <span class="o">=</span> <span class="n">fmask_gr</span><span class="o">.</span><span class="n">prepare_asu_data</span><span class="p">(</span><span class="n">dmin</span><span class="o">=</span><span class="n">d_min</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># now we can start with Scaling</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scaling</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">Scaling</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">cell</span><span class="p">,</span> <span class="n">st</span><span class="o">.</span><span class="n">find_spacegroup</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scaling</span><span class="o">.</span><span class="n">use_solvent</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scaling</span><span class="o">.</span><span class="n">prepare_points</span><span class="p">(</span><span class="n">f_cryst</span><span class="p">,</span> <span class="n">f_obs</span><span class="p">,</span> <span class="n">f_mask</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scaling</span><span class="o">.</span><span class="n">fit_isotropic_b_approximately</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wssr</span> <span class="o">=</span> <span class="n">scaling</span><span class="o">.</span><span class="n">fit_parameters</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;RMSE: </span><span class="si">{</span><span class="p">(</span><span class="n">wssr</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">f_obs</span><span class="p">))</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mf">0.5</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="go">RMSE: 6.4176</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;R-factor: </span><span class="si">{</span><span class="n">scaling</span><span class="o">.</span><span class="n">calculate_r_factor</span><span class="p">()</span><span class="si">:</span><span class="s1">.2%</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="go">R-factor: 17.73%</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># get scaled Ftotal</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f_tot</span> <span class="o">=</span> <span class="n">f_cryst</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scaling</span><span class="o">.</span><span class="n">scale_data</span><span class="p">(</span><span class="n">f_tot</span><span class="p">,</span> <span class="n">f_mask</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Least squares are sensitive to outliers. To make the scaling less sensitive,
+we must change the target function. The absolute differences in R-factor are
+less affected by outliers than the squared differences.
+If we choose a target that’s more similar to the R-factor,
+we’ll get more robust scaling, and also a lower R-factor.</p>
+<p>This requires a different optimization algorithm. Actually, it’s also possible
+to <em>robustify</em> least squares and keep using (modified) Levenberg-Marquardt,
+as was <a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-319-10602-1_50">reviewed</a>
+for the bundle adjustment procedure, but I haven’t found any research indicating
+these methods are preferable to simply using another algorithm.</p>
+<p>TBC</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+
+
+        <div class="related-pages">
+          <a class="next-page" href="api.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">C++ API Reference</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="hkl.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Reciprocal space</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                &#169; Global Phasing Ltd
+            </div>
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> and customized theme
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Scattering</a><ul>
+<li><a class="reference internal" href="#x-ray-form-factors">X-ray form factors</a></li>
+<li><a class="reference internal" href="#anomalous-scattering">Anomalous scattering</a></li>
+<li><a class="reference internal" href="#electron-form-factors">Electron form factors</a></li>
+<li><a class="reference internal" href="#neutron-scattering">Neutron scattering</a></li>
+<li><a class="reference internal" href="#direct-summation">Direct summation</a><ul>
+<li><a class="reference internal" href="#addends">Addends</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#density-for-fft">Density for FFT</a></li>
+<li><a class="reference internal" href="#mott-bethe-formula">Mott-Bethe formula</a></li>
+<li><a class="reference internal" href="#scaling-and-bulk-solvent-correction">Scaling and bulk solvent correction</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=9c96f6c5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="_static/tabs.js?v=3ee01567"></script>
+    </body>
+</html>

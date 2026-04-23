@@ -1,0 +1,26 @@
+var structgemmi_1_1Atom =
+[
+    [ "altloc_matches", "structgemmi_1_1Atom.html#a5490b181e4f49ae89692cbe17407f36d", null ],
+    [ "altloc_or", "structgemmi_1_1Atom.html#add59e3d9d86197d4689db6b64f4caec7", null ],
+    [ "b_eq", "structgemmi_1_1Atom.html#a0e18336241aea10690459963d4bbe096", null ],
+    [ "empty_copy", "structgemmi_1_1Atom.html#ae227678f22ffcbc0332aa8a5f9df2b55", null ],
+    [ "group_key", "structgemmi_1_1Atom.html#aafe16bbd9dc6076463b0c8ea7d49f8ad", null ],
+    [ "has_altloc", "structgemmi_1_1Atom.html#af4259ef273c300f9a189c078910dbf44", null ],
+    [ "is_hydrogen", "structgemmi_1_1Atom.html#a3313cbfa66ffc623bfa858521c4d2cf9", null ],
+    [ "padded_name", "structgemmi_1_1Atom.html#ab6754cc8c41ef344ae75d7891ddeaf8a", null ],
+    [ "same_conformer", "structgemmi_1_1Atom.html#adc0445f7aca935de3b18c8a6fe630980", null ],
+    [ "what", "structgemmi_1_1Atom.html#ad081542c431d9d038496401fd7ea92dd", null ],
+    [ "altloc", "structgemmi_1_1Atom.html#a294de70ab822707de64e6a163131d0af", null ],
+    [ "aniso", "structgemmi_1_1Atom.html#a26580fdad581fa3a2bfc99ea2adb5895", null ],
+    [ "b_iso", "structgemmi_1_1Atom.html#a8ef85bee8d2b8d6169583afcc4e59862", null ],
+    [ "calc_flag", "structgemmi_1_1Atom.html#aabb20bdc1fea8ff0b508d2ba7b25a121", null ],
+    [ "charge", "structgemmi_1_1Atom.html#a4e53a98c775db2a20be9b91823dcc093", null ],
+    [ "element", "structgemmi_1_1Atom.html#a93a1f28f4cf7aafc35f0ec6e90d029e6", null ],
+    [ "flag", "structgemmi_1_1Atom.html#a5d9a17b5468f16fe41db12aacda89aca", null ],
+    [ "fraction", "structgemmi_1_1Atom.html#aaa06580ff9f05beaf1e74b822ce362c1", null ],
+    [ "name", "structgemmi_1_1Atom.html#af92f49d75d30c9d61446a3c280dd7f74", null ],
+    [ "occ", "structgemmi_1_1Atom.html#ad4dd64352e22b201462040458a3459a4", null ],
+    [ "pos", "structgemmi_1_1Atom.html#af5682c57d3574e2428734ec021e68f26", null ],
+    [ "serial", "structgemmi_1_1Atom.html#a5496bdf0c90a56fa23d244d956d0f1ec", null ],
+    [ "tls_group_id", "structgemmi_1_1Atom.html#a295370227161e1dfff26fba41346c3ef", null ]
+];

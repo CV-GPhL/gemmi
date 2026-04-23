@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['half_5fl_5635',['half_l',['../structgemmi_1_1ReciprocalGrid.html#aaa1bd0b9ce901a2481521fdb2fc15e07',1,'gemmi::ReciprocalGrid']]],
+  ['hall_5636',['hall',['../structgemmi_1_1SpaceGroup.html#a2c1247290b0af7005a280d6436d12a7d',1,'gemmi::SpaceGroup']]],
+  ['has_5fbreak_5637',['has_break',['../structgemmi_1_1SecondaryStructureInfo.html#aa12d49f6fb1ee1f1c89bbba8e8c891d9',1,'gemmi::SecondaryStructureInfo']]],
+  ['has_5fcoordinates_5638',['has_coordinates',['../structgemmi_1_1ChemComp.html#a23a95de888968627fd44caadf6f28484',1,'gemmi::ChemComp']]],
+  ['has_5fd_5ffraction_5639',['has_d_fraction',['../structgemmi_1_1Structure.html#a919b8bbfa112a0fba6351628016a1603',1,'gemmi::Structure']]],
+  ['has_5forigx_5640',['has_origx',['../structgemmi_1_1Structure.html#abab21f5b5115a9f08e8cb1f09f48b19c',1,'gemmi::Structure']]],
+  ['hb_5ftype_5641',['hb_type',['../structgemmi_1_1EnerLib_1_1Atom.html#a5c8884c8e33560bc7c42cf93319c7ac4',1,'gemmi::EnerLib::Atom']]],
+  ['hbond_5fatom1_5642',['hbond_atom1',['../structgemmi_1_1Sheet_1_1Strand.html#ab3847ada1eb553a756a71810eeca0121',1,'gemmi::Sheet::Strand']]],
+  ['hbond_5fatom2_5643',['hbond_atom2',['../structgemmi_1_1Sheet_1_1Strand.html#ab3b666188699285dca12370d46d71833',1,'gemmi::Sheet::Strand']]],
+  ['hbond_5fdefinition_5644',['hbond_definition',['../structgemmi_1_1DsspOptions.html#ad10e45c3555cd44d55ad1129257d2efe',1,'gemmi::DsspOptions']]],
+  ['hbond_5fenergy_5fcutoff_5645',['hbond_energy_cutoff',['../structgemmi_1_1DsspOptions.html#af20978b7fe644812dc9f537abdb5b76f',1,'gemmi::DsspOptions']]],
+  ['header_5646',['header',['../structgemmi_1_1FastaSeq.html#a992cd750784816c4ad7faae10c2cbf91',1,'gemmi::FastaSeq']]],
+  ['header_5foffset_5647',['header_offset',['../structgemmi_1_1MtzMetadata.html#ae20a9a3379d642219b0a885c5d6fa593',1,'gemmi::MtzMetadata']]],
+  ['helices_5648',['helices',['../structgemmi_1_1Structure.html#a6af4ea5ac14cd1de3bf20f9a7bf17cd9',1,'gemmi::Structure']]],
+  ['helix_5fpositions_5649',['helix_positions',['../structgemmi_1_1SecondaryStructureInfo.html#afee0c504f1e404e10116dfd1b9cdf997',1,'gemmi::SecondaryStructureInfo']]],
+  ['het_5fflag_5650',['het_flag',['../structgemmi_1_1FlatAtom.html#a12dcd1a0094a9675675ff12c28b18c9b',1,'gemmi::FlatAtom::het_flag()'],['../structgemmi_1_1Residue.html#ae6d98da71462f9ea73a52c0b701032e9',1,'gemmi::Residue::het_flag()']]],
+  ['hetatm_5651',['hetatm',['../structgemmi_1_1psimpl_1_1HetatmNode.html#abdaed3032c96bb1a4d274236f92733cc',1,'gemmi::psimpl::HetatmNode']]],
+  ['history_5652',['history',['../structgemmi_1_1CifToMtz.html#af0907018efc2820c4355ddbfaef75e00',1,'gemmi::CifToMtz::history()'],['../structgemmi_1_1MtzMetadata.html#a79a8645fe2ceae587f92e6099e381bc1',1,'gemmi::MtzMetadata::history()']]],
+  ['hkl_5653',['hkl',['../structgemmi_1_1HklValue.html#a685ab42011ac256e02b596dfcfa29be8',1,'gemmi::HklValue::hkl()'],['../structgemmi_1_1Intensities_1_1Refl.html#a743c2716562e82efec42a6e938bcf595',1,'gemmi::Intensities::Refl::hkl()'],['../structgemmi_1_1Scaling_1_1Point.html#a47ba68db76ef8ad570b6c1541712cd55',1,'gemmi::Scaling::Point::hkl()'],['../structgemmi_1_1XdsAscii_1_1Refl.html#abc780889d2cb76285e2be0690427d32f',1,'gemmi::XdsAscii::Refl::hkl()']]],
+  ['hkl_5fcols_5f_5654',['hkl_cols_',['../structgemmi_1_1ReflnDataProxy.html#a690e80b8ff347a4685a0b38087ef7d6b',1,'gemmi::ReflnDataProxy']]],
+  ['hm_5655',['hm',['../structgemmi_1_1SpaceGroup.html#a50c40981a3ffe43b06adee9f4fd5caab',1,'gemmi::SpaceGroup::hm()'],['../structgemmi_1_1SpaceGroupAltName.html#a9e34c08d2a7e502d56efe50b730d01e6',1,'gemmi::SpaceGroupAltName::hm()']]],
+  ['how_5656',['how',['../structgemmi_1_1ChainNameGenerator.html#a3d83d346b813cfe5c047caa98d960d41',1,'gemmi::ChainNameGenerator']]],
+  ['hstats_5657',['hstats',['../structgemmi_1_1Ccp4Base.html#a2961b27c90bd3adc6f09c57d255a9701',1,'gemmi::Ccp4Base']]],
+  ['hydrogen_5fcount_5658',['hydrogen_count',['../structgemmi_1_1ResidueInfo.html#ae890292394450df87dfa80d98b4d616e',1,'gemmi::ResidueInfo']]],
+  ['hydrogen_5fmode_5659',['hydrogen_mode',['../structgemmi_1_1DsspOptions.html#ab250040756e729a5a023f4098cfb986a',1,'gemmi::DsspOptions']]]
+];

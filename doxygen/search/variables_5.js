@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['fcmol_5593',['fcmol',['../structgemmi_1_1Scaling_1_1Point.html#ae48006b0ab077be19086f6c26a6fd057',1,'gemmi::Scaling::Point']]],
+  ['filter_5594',['filter',['../classgemmi_1_1DirWalk.html#a9a7af098c6b7e47b9de296a7ac99693d',1,'gemmi::DirWalk::filter()'],['../structgemmi_1_1FilterProxy.html#aa4c8a4f884d39eed084e867e81630b22',1,'gemmi::FilterProxy::filter()'],['../structgemmi_1_1ConstFilterProxy.html#a24124833cfd8d62461f0cbec52ef8c30',1,'gemmi::ConstFilterProxy::filter()']]],
+  ['fix_5fb_5fsol_5595',['fix_b_sol',['../structgemmi_1_1Scaling.html#abbc41657f5ac06e3ad7d3c492fdd42d2',1,'gemmi::Scaling']]],
+  ['fix_5fk_5fsol_5596',['fix_k_sol',['../structgemmi_1_1Scaling.html#a7f34aa7f6f1889c22651ca99dd67e8b1',1,'gemmi::Scaling']]],
+  ['flag_5597',['flag',['../structgemmi_1_1Atom.html#a5d9a17b5468f16fe41db12aacda89aca',1,'gemmi::Atom::flag()'],['../structgemmi_1_1Residue.html#a8a0f5bc9a279d26ed37e44c0fa4694f5',1,'gemmi::Residue::flag()']]],
+  ['floats_5598',['floats',['../structgemmi_1_1Mtz_1_1Batch.html#a16e655f636c26f73df3623c0804d2e78',1,'gemmi::Mtz::Batch']]],
+  ['fmask_5599',['fmask',['../structgemmi_1_1Scaling_1_1Point.html#a4d0ff47929ceac2beefcc99f9f62d172',1,'gemmi::Scaling::Point']]],
+  ['fobs_5600',['fobs',['../structgemmi_1_1Scaling_1_1Point.html#a2e15481d26b7745f468d24e03b5b8d43',1,'gemmi::Scaling::Point']]],
+  ['force_5funmerged_5601',['force_unmerged',['../structgemmi_1_1CifToMtz.html#a3b91efbc21f408dd2030fa876553b22d',1,'gemmi::CifToMtz']]],
+  ['found_5602',['found',['../structgemmi_1_1NodeInfo.html#ae9eefad30d61c361cdef94ce8071fcae',1,'gemmi::NodeInfo']]],
+  ['frac_5603',['frac',['../structgemmi_1_1UnitCell.html#a1a9d01dde95a1e34dc6f414aca5beef1',1,'gemmi::UnitCell']]],
+  ['fract_5604',['fract',['../structgemmi_1_1SmallStructure_1_1Site.html#aa2142a1cd83c7a3b30a9a49513c6f995',1,'gemmi::SmallStructure::Site']]],
+  ['fraction_5605',['fraction',['../structgemmi_1_1Atom.html#aaa06580ff9f05beaf1e74b822ce362c1',1,'gemmi::Atom']]],
+  ['frame_5606',['frame',['../structgemmi_1_1cif_1_1Item.html#ad306c06efb04e5383c9b7862888dc8de',1,'gemmi::cif::Item']]],
+  ['frame_5fcount_5607',['frame_count',['../structgemmi_1_1XdsAsciiMetadata_1_1Iset.html#a26e45e3b11ad9dae47d65b348191de83',1,'gemmi::XdsAsciiMetadata::Iset']]],
+  ['frame_5fnumber_5fmax_5608',['frame_number_max',['../structgemmi_1_1XdsAsciiMetadata_1_1Iset.html#a559657a163420cfcc6c2fe8bfd622a9e',1,'gemmi::XdsAsciiMetadata::Iset']]],
+  ['frame_5fnumber_5fmin_5609',['frame_number_min',['../structgemmi_1_1XdsAsciiMetadata_1_1Iset.html#a0bc90b60b8b12cd4a9954096843e95c3',1,'gemmi::XdsAsciiMetadata::Iset']]],
+  ['free_5fflag_5fvalue_5610',['free_flag_value',['../classgemmi_1_1MtzToCif.html#a399e8ca72d675bc2ca78c243f779a9c0',1,'gemmi::MtzToCif']]],
+  ['friedels_5flaw_5611',['friedels_law',['../structgemmi_1_1XdsAsciiMetadata.html#ab865a8597b54e0a474fb4586055b5dc9',1,'gemmi::XdsAsciiMetadata']]],
+  ['from_5fseqid_5612',['from_seqid',['../structgemmi_1_1Selection.html#a6398e7a77bee199502f071ad53e7f47a',1,'gemmi::Selection']]],
+  ['fsc_5ffree_5613',['fsc_free',['../structgemmi_1_1BasicRefinementInfo.html#af2d10340970108efaabb3cfdf5fb93c6',1,'gemmi::BasicRefinementInfo']]],
+  ['fsc_5fwork_5614',['fsc_work',['../structgemmi_1_1BasicRefinementInfo.html#aeb0eab25cb46bb5999719a17072b137a',1,'gemmi::BasicRefinementInfo']]],
+  ['full_5fsequence_5615',['full_sequence',['../structgemmi_1_1Entity.html#a7911c85201bb370dcbeaaad64b507683',1,'gemmi::Entity']]],
+  ['func_5616',['func',['../structgemmi_1_1ChemMod_1_1AtomMod.html#acab2777767397d6699c82bb5c7dca803',1,'gemmi::ChemMod::AtomMod']]],
+  ['function_5617',['function',['../structgemmi_1_1RefinementInfo_1_1Restr.html#a03c82181624157be63b8d70ef9d6e0f0',1,'gemmi::RefinementInfo::Restr']]]
+];

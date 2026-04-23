@@ -1,0 +1,19 @@
+digraph "gemmi::SupResult"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="gemmi::SupResult",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Result of quaternion-based structural superposition. Stores the optimal rotation, translation,..."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" transform" ,fontname="Helvetica"];
+  Node2 [label="gemmi::Transform",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1Transform.html",tooltip="Affine transformation: y = mat * x + vec."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" mat" ,fontname="Helvetica"];
+  Node3 [label="gemmi::Mat33",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1Mat33.html",tooltip="3×3 matrix of doubles"];
+  Node4 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" vec" ,fontname="Helvetica"];
+  Node4 [label="gemmi::Vec3_\< double \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1Vec3__.html",tooltip=" "];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" count" ,fontname="Helvetica"];
+  Node5 [label="size_t",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" center1\ncenter2" ,fontname="Helvetica"];
+  Node6 [label="gemmi::Position",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1Position.html",tooltip="Coordinates in Angstroms - orthogonal (Cartesian) coordinates. Represents a position in 3D Cartesian ..."];
+  Node7 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Vec3",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1Vec3__.html",tooltip=" "];
+}

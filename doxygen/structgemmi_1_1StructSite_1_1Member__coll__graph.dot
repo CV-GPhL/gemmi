@@ -1,0 +1,16 @@
+digraph "gemmi::StructSite::Member"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="gemmi::StructSite::\lMember",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Residue or atom participating in the site."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" auth" ,fontname="Helvetica"];
+  Node2 [label="gemmi::AtomAddress",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1AtomAddress.html",tooltip="Complete atom address: chain + residue + atom + alternate location."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" res_id" ,fontname="Helvetica"];
+  Node3 [label="gemmi::ResidueId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1ResidueId.html",tooltip="Complete residue identifier: sequence ID + segment + residue name."];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" seqid" ,fontname="Helvetica"];
+  Node4 [label="gemmi::SeqId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1SeqId.html",tooltip="Residue sequence identifier: sequence number plus insertion code."];
+  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" num" ,fontname="Helvetica"];
+  Node5 [label="gemmi::OptionalInt\l\< INT_MIN \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1OptionalInt.html",tooltip=" "];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" label_seq" ,fontname="Helvetica"];
+}

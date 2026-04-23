@@ -1,0 +1,13 @@
+digraph "gemmi::ChemComp::Atom"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="gemmi::ChemComp::Atom",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Atom in a chemical component."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" el" ,fontname="Helvetica"];
+  Node2 [label="gemmi::Element",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1Element.html",tooltip="Convenient wrapper for element properties and operations."];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" xyz" ,fontname="Helvetica"];
+  Node3 [label="gemmi::Position",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1Position.html",tooltip="Coordinates in Angstroms - orthogonal (Cartesian) coordinates. Represents a position in 3D Cartesian ..."];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Vec3",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1Vec3__.html",tooltip=" "];
+}

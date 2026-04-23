@@ -1,0 +1,9 @@
+digraph "gemmi::GroupOps::Iter"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="gemmi::GroupOps::Iter",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Forward iterator over all symmetry operations in this group."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" gops" ,fontname="Helvetica"];
+  Node2 [label="gemmi::GroupOps",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1GroupOps.html",tooltip="A crystallographic space group represented as generators and centring vectors."];
+}

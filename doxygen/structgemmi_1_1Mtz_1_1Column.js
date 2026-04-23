@@ -1,0 +1,28 @@
+var structgemmi_1_1Mtz_1_1Column =
+[
+    [ "const_iterator", "structgemmi_1_1Mtz_1_1Column.html#a89223e1d3a73ce42a172b10276399f88", null ],
+    [ "iterator", "structgemmi_1_1Mtz_1_1Column.html#a88f78b0b2c4e30857cc1b271debe9aff", null ],
+    [ "at", "structgemmi_1_1Mtz_1_1Column.html#a5cca8023de7e3e7305a40de50be959cc", null ],
+    [ "at", "structgemmi_1_1Mtz_1_1Column.html#a258c334f9753b31c82b1957b7914540a", null ],
+    [ "begin", "structgemmi_1_1Mtz_1_1Column.html#ac3915654400fd4741c63ab60f4c3ea1e", null ],
+    [ "begin", "structgemmi_1_1Mtz_1_1Column.html#ac109f5e38d94fefa584b0e6e19514cf9", null ],
+    [ "dataset", "structgemmi_1_1Mtz_1_1Column.html#afd6229ff4896448831d0a3f56f341797", null ],
+    [ "dataset", "structgemmi_1_1Mtz_1_1Column.html#a29d60324ec3c291ae2066635af0f1ea9", null ],
+    [ "end", "structgemmi_1_1Mtz_1_1Column.html#adeef165ba5fa397091241f3819bccdd4", null ],
+    [ "end", "structgemmi_1_1Mtz_1_1Column.html#ad05e5dc6c651595eaf7f06a957391063", null ],
+    [ "get_next_column_if_type", "structgemmi_1_1Mtz_1_1Column.html#a02d5f442bcc5059c2e849742059db338", null ],
+    [ "has_data", "structgemmi_1_1Mtz_1_1Column.html#afeed20c2cca5a2c4bc230572807dc550", null ],
+    [ "is_integer", "structgemmi_1_1Mtz_1_1Column.html#a10831f9b874e2c2ff79413437cefbd04", null ],
+    [ "operator[]", "structgemmi_1_1Mtz_1_1Column.html#ab776deaa88514757417b935a096a426c", null ],
+    [ "operator[]", "structgemmi_1_1Mtz_1_1Column.html#aa6d167a90737cdcba98176fb8f4fbc2d", null ],
+    [ "size", "structgemmi_1_1Mtz_1_1Column.html#a8438141e70de73dfdb43a8fffe7e57b5", null ],
+    [ "stride", "structgemmi_1_1Mtz_1_1Column.html#a27664ffc61eb6dfefaa12086d6eaa55d", null ],
+    [ "dataset_id", "structgemmi_1_1Mtz_1_1Column.html#af69f1fde4271252ee75b50268b3cc91e", null ],
+    [ "idx", "structgemmi_1_1Mtz_1_1Column.html#a6d1f2c44dec1ceeae3a9e67e9ac0f6d8", null ],
+    [ "label", "structgemmi_1_1Mtz_1_1Column.html#afab3066c42278a51ea84bab2cc7b63cb", null ],
+    [ "max_value", "structgemmi_1_1Mtz_1_1Column.html#a0cdb5702e230978d4df17da5dbef63dd", null ],
+    [ "min_value", "structgemmi_1_1Mtz_1_1Column.html#a750f720f52df3ac369e999d6799a6a04", null ],
+    [ "parent", "structgemmi_1_1Mtz_1_1Column.html#a864b79100ad52e9395b86b5073d8d3b8", null ],
+    [ "source", "structgemmi_1_1Mtz_1_1Column.html#aef672ad006d9f339e135b46dc5881137", null ],
+    [ "type", "structgemmi_1_1Mtz_1_1Column.html#af454b920073493b1d8420e3d329f024b", null ]
+];

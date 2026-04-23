@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['identifier_3444',['identifier',['../structgemmi_1_1psimpl_1_1identifier.html',1,'gemmi::psimpl']]],
+  ['ifstream_3445',['Ifstream',['../structgemmi_1_1Ifstream.html',1,'gemmi']]],
+  ['indexrangenode_3446',['IndexRangeNode',['../structgemmi_1_1psimpl_1_1IndexRangeNode.html',1,'gemmi::psimpl']]],
+  ['indirectiterpolicy_3447',['IndirectIterPolicy',['../classgemmi_1_1IndirectIterPolicy.html',1,'gemmi']]],
+  ['integer_3448',['integer',['../structgemmi_1_1psimpl_1_1integer.html',1,'gemmi::psimpl']]],
+  ['intensities_3449',['Intensities',['../structgemmi_1_1Intensities.html',1,'gemmi']]],
+  ['intensitiesdataproxy_3450',['IntensitiesDataProxy',['../structgemmi_1_1IntensitiesDataProxy.html',1,'gemmi']]],
+  ['isanyfile_3451',['IsAnyFile',['../structgemmi_1_1impl_1_1IsAnyFile.html',1,'gemmi::impl']]],
+  ['isciffile_3452',['IsCifFile',['../structgemmi_1_1impl_1_1IsCifFile.html',1,'gemmi::impl']]],
+  ['iscoordinatefile_3453',['IsCoordinateFile',['../structgemmi_1_1impl_1_1IsCoordinateFile.html',1,'gemmi::impl']]],
+  ['iset_3454',['Iset',['../structgemmi_1_1XdsAsciiMetadata_1_1Iset.html',1,'gemmi::XdsAsciiMetadata']]],
+  ['ismatchingfile_3455',['IsMatchingFile',['../structgemmi_1_1impl_1_1IsMatchingFile.html',1,'gemmi::impl']]],
+  ['ismmciffile_3456',['IsMmCifFile',['../structgemmi_1_1impl_1_1IsMmCifFile.html',1,'gemmi::impl']]],
+  ['isosurface_3457',['IsoSurface',['../structgemmi_1_1IsoSurface.html',1,'gemmi']]],
+  ['ispdbfile_3458',['IsPdbFile',['../structgemmi_1_1impl_1_1IsPdbFile.html',1,'gemmi::impl']]],
+  ['it92_3459',['IT92',['../structgemmi_1_1IT92.html',1,'gemmi']]],
+  ['item_3460',['Item',['../structgemmi_1_1AlignmentResult_1_1Item.html',1,'gemmi::AlignmentResult::Item'],['../structgemmi_1_1cif_1_1Item.html',1,'gemmi::cif::Item']]],
+  ['item_5ftag_3461',['item_tag',['../structgemmi_1_1cif_1_1rules_1_1item__tag.html',1,'gemmi::cif::rules']]],
+  ['item_5fvalue_3462',['item_value',['../structgemmi_1_1cif_1_1rules_1_1item__value.html',1,'gemmi::cif::rules']]],
+  ['itemgroup_3463',['ItemGroup',['../structgemmi_1_1ItemGroup.html',1,'gemmi']]],
+  ['itemgroup_3c_20atomtype_20_3e_3464',['ItemGroup&lt; AtomType &gt;',['../structgemmi_1_1ItemGroup.html',1,'gemmi']]],
+  ['itemspan_3465',['ItemSpan',['../structgemmi_1_1cif_1_1ItemSpan.html',1,'gemmi::cif']]],
+  ['iter_3466',['Iter',['../structgemmi_1_1DirWalk_1_1Iter.html',1,'gemmi::DirWalk&lt; FileOnly, Filter &gt;::Iter'],['../structgemmi_1_1GroupOps_1_1Iter.html',1,'gemmi::GroupOps::Iter']]],
+  ['iterator_3467',['iterator',['../structgemmi_1_1cif_1_1Table_1_1iterator.html',1,'gemmi::cif::Table::iterator'],['../structgemmi_1_1GridBase_1_1iterator.html',1,'gemmi::GridBase&lt; T &gt;::iterator'],['../structgemmi_1_1ItemGroup_1_1iterator.html',1,'gemmi::ItemGroup&lt; Item &gt;::iterator'],['../structgemmi_1_1MaskedGrid_1_1iterator.html',1,'gemmi::MaskedGrid&lt; T, V &gt;::iterator']]]
+];

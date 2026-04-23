@@ -1,0 +1,16 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node301 [label="tao::pegtl::one",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node301 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 [label="gemmi::psimpl::op_eq",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1psimpl_1_1op__eq.html",tooltip=" "];
+  Node301 -> Node303 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node303 [label="gemmi::psimpl::op_gt",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1psimpl_1_1op__gt.html",tooltip=" "];
+  Node301 -> Node304 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node304 [label="gemmi::psimpl::op_lt",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1psimpl_1_1op__lt.html",tooltip=" "];
+  Node301 -> Node305 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node305 [label="gemmi::psimpl::wildcard_char",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgemmi_1_1psimpl_1_1wildcard__char.html",tooltip=" "];
+}

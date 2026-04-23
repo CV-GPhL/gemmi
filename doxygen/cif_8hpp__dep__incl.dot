@@ -1,0 +1,9 @@
+digraph "gemmi/cif.hpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="gemmi/cif.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="PEGTL-based CIF parser with pluggable action handlers and Document construction."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="gemmi/mmread.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mmread_8hpp.html",tooltip="Auto-detect and read any supported coordinate file format (PDB, mmCIF, mmJSON, or chemical component)..."];
+}

@@ -1,0 +1,41 @@
+digraph "gemmi/fileutil.hpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="gemmi/fileutil.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="gemmi/ccp4.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ccp4_8hpp.html",tooltip="CCP4/MRC map file format (electron density maps and masks)."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="gemmi/cif.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$cif_8hpp.html",tooltip="PEGTL-based CIF parser with pluggable action handlers and Document construction."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="gemmi/mmread.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mmread_8hpp.html",tooltip="Auto-detect and read any supported coordinate file format (PDB, mmCIF, mmJSON, or chemical component)..."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="gemmi/dsn6.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dsn6_8hpp.html",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="gemmi/input.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$input_8hpp.html",tooltip=" "];
+  Node6 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="gemmi/gz.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$gz_8hpp.html",tooltip=" "];
+  Node6 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="gemmi/mtz.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mtz_8hpp.html",tooltip="MTZ reflection file format (X-ray crystallography)."];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="gemmi/cif2mtz.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$cif2mtz_8hpp.html",tooltip="Convert structure factor data from mmCIF to MTZ format."];
+  Node8 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="gemmi/mtz2cif.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mtz2cif_8hpp.html",tooltip="Converter for MTZ reflection data to SF-mmCIF format."];
+  Node8 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="gemmi/xds2mtz.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$xds2mtz_8hpp.html",tooltip="Converter for XDS reflection data to MTZ format."];
+  Node6 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="gemmi/pdb.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pdb_8hpp.html",tooltip="Read PDB file format and store coordinates in a Structure."];
+  Node12 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="gemmi/xds_ascii.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$xds__ascii_8hpp.html",tooltip="Reader for XDS_ASCII.HKL and INTEGRATE.HKL reflection files."];
+  Node13 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="gemmi/json.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$json_8hpp.html",tooltip="Reading JSON formats (mmJSON and CIF-JSON) into CIF documents."];
+  Node14 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="gemmi/read_cif.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$read__cif_8hpp.html",tooltip="Reading possibly gzip-compressed CIF and JSON files."];
+}

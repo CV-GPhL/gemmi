@@ -1,0 +1,25 @@
+var structgemmi_1_1cif_1_1Loop =
+[
+    [ "add_columns", "structgemmi_1_1cif_1_1Loop.html#a9d46ad4a42edb74642b63abf4aabb6d5", null ],
+    [ "add_comment_and_row", "structgemmi_1_1cif_1_1Loop.html#a007f97a4dd16fd0b1580fc045cfdfe39", null ],
+    [ "add_row", "structgemmi_1_1cif_1_1Loop.html#af6fe1b04e0b46b244a80fef1008545be", null ],
+    [ "add_row", "structgemmi_1_1cif_1_1Loop.html#ab234864dc26868ee7fc2026e2e306f8a", null ],
+    [ "add_values", "structgemmi_1_1cif_1_1Loop.html#a8207dd77ec17bd650c2784712a6d83ac", null ],
+    [ "add_values", "structgemmi_1_1cif_1_1Loop.html#a8a49f6d5a997bc22992b547408273067", null ],
+    [ "clear", "structgemmi_1_1cif_1_1Loop.html#ad39dd5d56b0b30cf441017325c35b0d2", null ],
+    [ "common_prefix", "structgemmi_1_1cif_1_1Loop.html#ab3ecd179eafc50327a439890cd2d6a02", null ],
+    [ "find_tag", "structgemmi_1_1cif_1_1Loop.html#a3341176041c4a0459215d5af990c2858", null ],
+    [ "find_tag_lc", "structgemmi_1_1cif_1_1Loop.html#ae939de430a2e2e4bfe10c716e4fe6496", null ],
+    [ "has_tag", "structgemmi_1_1cif_1_1Loop.html#ae7e666a463479aafb622cbe93477451d", null ],
+    [ "length", "structgemmi_1_1cif_1_1Loop.html#a690bebc92bdf9fb316e1a25587359562", null ],
+    [ "move_row", "structgemmi_1_1cif_1_1Loop.html#ad0d680ae040fee59f3a8dc1729cebdf0", null ],
+    [ "pop_row", "structgemmi_1_1cif_1_1Loop.html#aa80b90519ad9deefed29f05d648adf95", null ],
+    [ "remove_column", "structgemmi_1_1cif_1_1Loop.html#a12097a9c201aa618089723c2a63f127c", null ],
+    [ "remove_column_at", "structgemmi_1_1cif_1_1Loop.html#a1d25a0d7eda29a00124e12cc8287ed61", null ],
+    [ "set_all_values", "structgemmi_1_1cif_1_1Loop.html#a7b433bc3f0951103885791ef15b2e041", null ],
+    [ "val", "structgemmi_1_1cif_1_1Loop.html#aab8f6d68128a06d9f6e1b1857b2e2c31", null ],
+    [ "val", "structgemmi_1_1cif_1_1Loop.html#abfadcb575011168d5636bb83b73a3664", null ],
+    [ "width", "structgemmi_1_1cif_1_1Loop.html#a320c4a01c0cfa6ba13600ca58121f1eb", null ],
+    [ "tags", "structgemmi_1_1cif_1_1Loop.html#a372e7164f0a9e8031d39ad36b2bc4255", null ],
+    [ "values", "structgemmi_1_1cif_1_1Loop.html#a39aee24bac3ede0b0ed4effa998269ce", null ]
+];
