@@ -197,12 +197,142 @@ void write_ncs_op(const NcsOp& op, std::ostream& os) {
   }
 }
 
+// Inverse of read_remark3_line() in pdb.cpp: emit REMARK 3 (refinement) from
+// Metadata. gemmi reads these fields on input but, until now, dropped them when
+// writing PDB. Key strings must match the parser exactly so it round-trips.
+void write_remark_3(const Metadata& meta, std::ostream& os) {
+  if (meta.refinement.empty())
+    return;
+  char buf[88];
+  const RefinementInfo& ref = meta.refinement[0];
+  WRITELN("REMARK   3");
+  WRITELN("REMARK   3  REFINEMENT.");
+  for (const SoftwareItem& s : meta.software)
+    if (s.classification == SoftwareItem::Refinement) {
+      std::string v = s.name;
+      if (!s.version.empty()) { v += ' '; v += s.version; }
+      WRITELN("REMARK   3   PROGRAM     : %s", v.c_str());
+    }
+  WRITELN("REMARK   3");
+  WRITELN("REMARK   3  DATA USED IN REFINEMENT.");
+  if (!std::isnan(ref.resolution_high))
+    WRITELN("REMARK   3   RESOLUTION RANGE HIGH (ANGSTROMS) : %.2f", ref.resolution_high);
+  if (!std::isnan(ref.resolution_low))
+    WRITELN("REMARK   3   RESOLUTION RANGE LOW  (ANGSTROMS) : %.2f", ref.resolution_low);
+  if (!std::isnan(ref.completeness))
+    WRITELN("REMARK   3   COMPLETENESS FOR RANGE        (%%) : %.1f", ref.completeness);
+  if (ref.reflection_count != -1)
+    WRITELN("REMARK   3   NUMBER OF REFLECTIONS : %d", ref.reflection_count);
+  WRITELN("REMARK   3");
+  WRITELN("REMARK   3  FIT TO DATA USED IN REFINEMENT.");
+  if (!ref.cross_validation_method.empty())
+    WRITELN("REMARK   3   CROSS-VALIDATION METHOD : %s", ref.cross_validation_method.c_str());
+  if (!ref.rfree_selection_method.empty())
+    WRITELN("REMARK   3   FREE R VALUE TEST SET SELECTION : %s", ref.rfree_selection_method.c_str());
+  if (!std::isnan(ref.r_all))
+    WRITELN("REMARK   3   R VALUE     (WORKING + TEST SET) : %.4f", ref.r_all);
+  if (!std::isnan(ref.r_work))
+    WRITELN("REMARK   3   R VALUE            (WORKING SET) : %.4f", ref.r_work);
+  if (!std::isnan(ref.r_free))
+    WRITELN("REMARK   3   FREE R VALUE : %.4f", ref.r_free);
+  if (ref.rfree_set_count != -1)
+    WRITELN("REMARK   3   FREE R VALUE TEST SET COUNT : %d", ref.rfree_set_count);
+  if (!std::isnan(ref.mean_b)) {
+    WRITELN("REMARK   3");
+    WRITELN("REMARK   3  B VALUES.");
+    WRITELN("REMARK   3   MEAN B VALUE      (OVERALL, A**2) : %.2f", ref.mean_b);
+  }
+}
+
+// Inverse of read_remark_200_230_240() in pdb.cpp: emit data-collection
+// REMARKs. Uses REMARK 200/230/240 for x-ray/neutron/electron respectively
+// (the header record number is what the parser keys scattering type on).
+void write_remark_200_230_240(const Metadata& meta, std::ostream& os) {
+  char buf[88];
+  for (size_t i = 0; i < meta.experiments.size() && i < meta.crystals.size(); ++i) {
+    const ExperimentInfo& e = meta.experiments[i];
+    const CrystalInfo& c = meta.crystals[i];
+    if (c.diffractions.empty())
+      continue;
+    const DiffractionInfo& d = c.diffractions[0];
+    const char* R = "REMARK 200";
+    if (d.scattering_type == "neutron")       R = "REMARK 230";
+    else if (d.scattering_type == "electron") R = "REMARK 240";
+    WRITELN("%s", R);
+    WRITELN("%s  EXPERIMENTAL DETAILS", R);
+    if (!e.method.empty())
+      WRITELN("%s   EXPERIMENT TYPE : %s", R, e.method.c_str());
+    if (!std::isnan(d.temperature))
+      WRITELN("%s   TEMPERATURE           (KELVIN) : %g", R, d.temperature);
+    if (e.number_of_crystals != -1)
+      WRITELN("%s   NUMBER OF CRYSTALS USED : %d", R, e.number_of_crystals);
+    if (!std::isnan(c.ph))
+      WRITELN("%s   PH : %g", R, c.ph);
+    else if (!c.ph_range.empty())
+      WRITELN("%s   PH : %s", R, c.ph_range.c_str());
+    if (d.source == "SYNCHROTRON") {
+      WRITELN("%s   SYNCHROTRON              (Y/N) : Y", R);
+      if (!d.synchrotron.empty())
+        WRITELN("%s   RADIATION SOURCE : %s", R, d.synchrotron.c_str());
+      if (!d.beamline.empty())
+        WRITELN("%s   BEAMLINE : %s", R, d.beamline.c_str());
+    } else if (!d.source.empty() && d.scattering_type != "neutron") {
+      WRITELN("%s   RADIATION SOURCE : %s", R, d.source.c_str());
+      if (!d.source_type.empty())
+        WRITELN("%s   X-RAY GENERATOR MODEL : %s", R, d.source_type.c_str());
+    } else if (!d.source.empty()) {
+      WRITELN("%s   NEUTRON SOURCE : %s", R, d.source.c_str());
+    }
+    if (d.mono_or_laue)
+      WRITELN("%s   MONOCHROMATIC OR LAUE    (M/L) : %c", R, d.mono_or_laue);
+    if (!d.wavelengths.empty())
+      WRITELN("%s   WAVELENGTH OR RANGE        (A) : %s", R, d.wavelengths.c_str());
+    if (!d.monochromator.empty())
+      WRITELN("%s   MONOCHROMATOR : %s", R, d.monochromator.c_str());
+    if (!d.detector.empty())
+      WRITELN("%s   DETECTOR TYPE : %s", R, d.detector.c_str());
+    if (!d.detector_make.empty())
+      WRITELN("%s   DETECTOR MANUFACTURER : %s", R, d.detector_make.c_str());
+    for (const SoftwareItem& s : meta.software) {
+      if (s.classification == SoftwareItem::DataReduction)
+        WRITELN("%s   INTENSITY-INTEGRATION SOFTWARE : %s", R, s.name.c_str());
+      else if (s.classification == SoftwareItem::DataScaling)
+        WRITELN("%s   DATA SCALING SOFTWARE : %s", R, s.name.c_str());
+      else if (s.classification == SoftwareItem::Phasing)
+        WRITELN("%s   SOFTWARE USED : %s", R, s.name.c_str());
+    }
+    if (!meta.solved_by.empty())
+      WRITELN("%s   METHOD USED TO DETERMINE THE STRUCTURE : %s", R, meta.solved_by.c_str());
+    if (!meta.starting_model.empty())
+      WRITELN("%s   STARTING MODEL : %s", R, meta.starting_model.c_str());
+    const ReflectionsInfo& rf = e.reflections;
+    if (e.unique_reflections != -1)
+      WRITELN("%s   NUMBER OF UNIQUE REFLECTIONS : %d", R, e.unique_reflections);
+    if (!std::isnan(rf.resolution_high))
+      WRITELN("%s   RESOLUTION RANGE HIGH      (A) : %.3f", R, rf.resolution_high);
+    if (!std::isnan(rf.resolution_low))
+      WRITELN("%s   RESOLUTION RANGE LOW       (A) : %.3f", R, rf.resolution_low);
+    if (!std::isnan(rf.completeness))
+      WRITELN("%s   COMPLETENESS FOR RANGE     (%%) : %.1f", R, rf.completeness);
+    if (!std::isnan(rf.redundancy))
+      WRITELN("%s   DATA REDUNDANCY : %.3f", R, rf.redundancy);
+    if (!std::isnan(rf.r_merge))
+      WRITELN("%s   R MERGE                    (I) : %.5f", R, rf.r_merge);
+    if (!std::isnan(rf.r_sym))
+      WRITELN("%s   R SYM                      (I) : %.5f", R, rf.r_sym);
+    if (!std::isnan(rf.mean_I_over_sigma))
+      WRITELN("%s   <I/SIGMA(I)> FOR THE DATA SET : %.4f", R, rf.mean_I_over_sigma);
+  }
+}
+
 void write_remarks(const Structure& st, std::ostream& os) {
   char buf[88];
   if (st.resolution > 0) {
     WRITE("%-80s", "REMARK   2");
     WRITE("REMARK   2 RESOLUTION. %7.2f %-49s", st.resolution, "ANGSTROMS.");
   }
+  write_remark_3(st.meta, os);
+  write_remark_200_230_240(st.meta, os);
   if (!st.assemblies.empty()) {
     const char* preface[] = {
       "REMARK 350",
